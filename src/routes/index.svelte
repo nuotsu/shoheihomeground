@@ -1,1 +1,5 @@
-<h1>ShoheiHomeGround</h1>
+<Hero/>
+
+<script>
+	import Hero from '$lib/Hero.svelte'
+</script>
