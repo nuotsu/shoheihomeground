@@ -29,10 +29,17 @@ async function search(expression, results = [], cursor) {
 	return results
 }
 
-async function fetchImages({ byDateFile, byCategoryFile, codeRegex }) {
-	const data = await search('folder=shoheihomeground/* && resource_type=image')
+async function getMetadata() {
+	return await cloudinary.search
+		.expression('folder=shoheihomeground/* && resource_type=image')
+		.execute()
+		.catch(console.error)
+}
 
-	const images = data
+async function fetchImages({ byDateFile, byCategoryFile, metadataFile, codeRegex }) {
+	const results = await search('folder=shoheihomeground/* && resource_type=image')
+
+	const images = results
 		.map(({ public_id, folder, width, height, aspect_ratio }) => {
 			if (!folder) return
 
@@ -51,18 +58,20 @@ async function fetchImages({ byDateFile, byCategoryFile, codeRegex }) {
 		})
 		.filter(Boolean)
 
-	const byDate = groupBy('date', JSON.parse(JSON.stringify(images)), i => groupBy('category', i, groupByIndex))
-	fs.writeFileSync(byDateFile, JSON.stringify(byDate))
-	console.log(`Wrote to ${ byDateFile }`)
+	const byDate = groupBy('date', images, i => groupBy('category', i, groupByIndex))
+	write(byDateFile, byDate)
 
-	const byCategory = groupBy('category', JSON.parse(JSON.stringify(images)), i => groupBy('date', i, groupByIndex))
-	fs.writeFileSync(byCategoryFile, JSON.stringify(byCategory))
-	console.log(`Wrote to ${ byCategoryFile }`)
+	const byCategory = groupBy('category', images, i => groupBy('date', i, groupByIndex))
+	write(byCategoryFile, byCategory)
+
+	const { total_count } = await getMetadata()
+	write(metadataFile, { total_count, total_days: Object.keys(byDate).length })
 }
 
 fetchImages({
 	byDateFile: 'src/data/images-by-date.json',
 	byCategoryFile: 'src/data/images-by-category.json',
+	metadataFile: 'src/data/images-metadata.json',
 	codeRegex: /^(?<category>[_a-z])(?<i>\d{2})-(?<tn>\d)+(-(?<includes>[\d,]+))?/,
 })
 
@@ -106,4 +115,9 @@ function groupByIndex(images) {
 	})
 
 	return grouped
+}
+
+function write(file, data) {
+	fs.writeFileSync(file, JSON.stringify(data))
+	console.log(`Wrote to ${ file }`)
 }
