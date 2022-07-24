@@ -1,8 +1,12 @@
 .DS_Store
-node_modules
-/build
-/.svelte-kit
-/package
+node_modules/
+
+build/
+.svelte-kit/
+package/
 .env
 
+.netlify/
+
 src/data/images-*.json
+
