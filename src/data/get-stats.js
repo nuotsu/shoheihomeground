@@ -18,12 +18,10 @@ function getStat(fetch, season, game_type, sport) {
 
 export default async function(fetch) {
 	const [
-		playerInfo,
 		h_2022_R, p_2022_R,
 		h_2022_S, p_2022_S,
 		h_2021_R, p_2021_R,
 	] = await Promise.all([
-		getPlayerInfo(fetch),
 		getStat(fetch, 2022, 'R', 'hitting'),
 		getStat(fetch, 2022, 'R', 'pitching'),
 		getStat(fetch, 2022, 'S', 'hitting'),
@@ -33,7 +31,7 @@ export default async function(fetch) {
 	])
 
 	return {
-		playerInfo,
+		playerInfo: getPlayerInfo(fetch),
 		stats: {
 			2022: {
 				R: [h_2022_R, p_2022_R],
