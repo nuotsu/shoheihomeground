@@ -1,5 +1,5 @@
 <header>
-	ShoheiHomeGround
+	<a href="/">Shohei Home Ground</a>
 </header>
 
 <style>
