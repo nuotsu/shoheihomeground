@@ -72,13 +72,14 @@ fetchImages({
 	byDateFile: 'src/data/images-by-date.json',
 	byCategoryFile: 'src/data/images-by-category.json',
 	metadataFile: 'src/data/images-metadata.json',
-	codeRegex: /^(?<category>[_a-z])(?<photoset>\d{2})-(?<tn>\d)+(-(?<includes>[\d,]+))?/,
+	codeRegex: /^(?<category>[phowbdea_])(?<photoset>\d{2})-(?<tn>\d)+(-(?<includes>[\d,]+))?$/,
 })
 
 function groupBy(key, images, callback = img => img) {
 	let grouped = new Object()
+	let imagesCopy = JSON.parse(JSON.stringify(images))
 
-	for (let image of images) {
+	for (let image of imagesCopy) {
 		let k = image[key]
 
 		if (!grouped[k]) {

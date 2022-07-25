@@ -18,3 +18,10 @@
 		@apply underline hover:decoration-2;
 	}
 }
+
+@layer utilities {
+	.sticky-top {
+		position: sticky;
+		top: var(--header-height);
+	}
+}
