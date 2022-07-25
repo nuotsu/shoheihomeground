@@ -58,10 +58,10 @@ async function fetchImages({ byDateFile, byCategoryFile, metadataFile, codeRegex
 		})
 		.filter(Boolean)
 
-	const byDate = groupBy('date', images, i => groupBy('category', i, groupByIndex))
+	const byDate = groupBy('date', images, i => groupBy('category', i, groupByPhotoset))
 	write(byDateFile, byDate)
 
-	const byCategory = groupBy('category', images, i => groupBy('date', i, groupByIndex))
+	const byCategory = groupBy('category', images, i => groupBy('date', i, groupByPhotoset))
 	write(byCategoryFile, byCategory)
 
 	const { total_count } = await getMetadata()
@@ -72,10 +72,10 @@ fetchImages({
 	byDateFile: 'src/data/images-by-date.json',
 	byCategoryFile: 'src/data/images-by-category.json',
 	metadataFile: 'src/data/images-metadata.json',
-	codeRegex: /^(?<category>[_a-z])(?<i>\d{2})-(?<tn>\d)+(-(?<includes>[\d,]+))?/,
+	codeRegex: /^(?<category>[_a-z])(?<photoset>\d{2})-(?<tn>\d)+(-(?<includes>[\d,]+))?/,
 })
 
-function groupBy(key, images, callback = i => i) {
+function groupBy(key, images, callback = img => img) {
 	let grouped = new Object()
 
 	for (let image of images) {
@@ -97,20 +97,17 @@ function groupBy(key, images, callback = i => i) {
 	return grouped
 }
 
-function groupByIndex(images) {
-	let grouped = []
+function groupByPhotoset(images) {
+	let grouped = {}
 
-	images.forEach(({ i, tn, ...image }) => {
-		const index = Number(i) - 1
-
-		if (!grouped[index]) {
-			grouped[index] = {
-				index: i,
+	images.forEach(({ photoset, tn, ...image }) => {
+		if (!grouped[photoset]) {
+			grouped[photoset] = {
 				thumbnail: Number(tn) - 1,
 				images: [image],
 			}
 		} else {
-			grouped[index].images.push(image)
+			grouped[photoset].images.push(image)
 		}
 	})
 

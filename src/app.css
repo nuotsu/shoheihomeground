@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+	}
+
+	section {
+		outline: 1px dashed;
+		margin: 1rem;
+	}
+}
+
+@layer components {
+	.link {
+		@apply underline hover:decoration-2;
+	}
+}
