@@ -2,7 +2,9 @@
 	<p>Page not found...</p>
 </Heading>
 
-<p>Go back <a class="link" href="/">home</a>.</p>
+<section class="debug">
+	<p>Go back <a class="link" href="/">home</a>.</p>
+</section>
 
 <script>
 	import Heading from '$lib/Heading.svelte'

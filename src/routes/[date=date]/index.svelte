@@ -14,7 +14,7 @@
 
 	export let date, imagesByCategory
 
-	const isLatest = Object.keys(byDate)[0] === date
+	$: isLatest = Object.keys(byDate)[0] === date
 </script>
 
 <script context="module">
