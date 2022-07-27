@@ -27,7 +27,7 @@
 	._h { font-weight: bold;}
 	.h0 { @apply _h text-5xl; }
 	.h1 { @apply _h text-3xl; }
-	.h2 { @apply _h text-xl; }
+	.h2 { @apply _h text-2xl; }
 
 	.link {
 		@apply underline hover:decoration-2;
@@ -58,7 +58,7 @@
 		display: inline-flex;
 		gap: 0.25ch;
 		align-items: center;
-		justify-content: start;
+		justify-content: flex-start;
 	}
 
 	.prose > * + * { margin-top: 1em; }

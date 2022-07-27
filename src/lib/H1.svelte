@@ -30,7 +30,7 @@
 
 	@screen sm {
 		header {
-			align-items: end;
+			align-items: flex-end;
 		}
 	}
 </style>

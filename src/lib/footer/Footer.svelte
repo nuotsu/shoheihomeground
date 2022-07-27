@@ -1,8 +1,7 @@
 <footer>
 	<nav>
 		<div>
-			<a href="/">Shohei Home Ground</a>
-
+			<Logo/>
 			<Accounts/>
 		</div>
 
@@ -33,6 +32,7 @@
 </style>
 
 <script>
+	import Logo from '$lib/Logo.svelte'
 	import Accounts from '$lib/Accounts.svelte'
 	import FooterNav from './FooterNav.svelte'
 </script>

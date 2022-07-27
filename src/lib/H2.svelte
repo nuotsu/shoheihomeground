@@ -19,7 +19,7 @@
 	header {
 		display: flex;
 		gap: 0 1rem;
-		align-items: end;
+		align-items: flex-end;
 	}
 
 	p {

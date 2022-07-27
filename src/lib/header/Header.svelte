@@ -1,7 +1,7 @@
 <header bind:clientHeight>
 	<nav>
 		<div style:grid-area="top">
-			<a href="/">Shohei Home Ground</a>
+			<Logo/>
 		</div>
 
 		<Toggle/>
@@ -48,6 +48,7 @@
 </style>
 
 <script>
+	import Logo from '$lib/Logo.svelte'
 	import Toggle from './Toggle.svelte'
 	import HeaderNav from './HeaderNav.svelte'
 	import Accounts from '$lib/Accounts.svelte'

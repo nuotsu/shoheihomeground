@@ -48,8 +48,6 @@
 			)
 		)
 
-	console.log(images)
-
 	let set = thumbnails.length >= 10
 		? thumbnails
 		: images
