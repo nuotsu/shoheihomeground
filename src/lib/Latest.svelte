@@ -1,4 +1,4 @@
-<section>
+<section class="debug">
 	<h2>
 		Latest
 		<time datetime={latest}>{day(latest)}</time>

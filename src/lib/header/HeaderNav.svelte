@@ -21,7 +21,7 @@
 		</Menu>
 	</li>
 
-	<li><a href="#graphics">Graphics</a></li>
+	<li><a href="/#graphics">Graphics</a></li>
 	<li>About</li>
 </ul>
 

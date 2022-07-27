@@ -1,4 +1,4 @@
-<section>
+<section class="debug">
 	<header class="md:self-start md:sticky-top">
 		<h2><slot name="title">{categories[category]}</slot></h2>
 	</header>

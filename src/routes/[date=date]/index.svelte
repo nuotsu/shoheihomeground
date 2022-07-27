@@ -1,4 +1,8 @@
-<Heading {date} />
+<Heading {date}>
+	{#if isLatest}
+		<p>Latest</p>
+	{/if}
+</Heading>
 
 {#each imagesByCategory as [category, photosets]}
 	<CategorySection {date} {category} {photosets} />
@@ -9,6 +13,8 @@
 	import CategorySection from '$lib/categories/CategorySection.svelte'
 
 	export let date, imagesByCategory
+
+	const isLatest = Object.keys(byDate)[0] === date
 </script>
 
 <script context="module">

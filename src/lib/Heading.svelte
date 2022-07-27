@@ -1,5 +1,5 @@
 <header>
-	<h1>
+	<h1 class="h1">
 		{#if title}
 			{title}
 		{:else}
@@ -20,13 +20,10 @@
 	header {
 		display: flex;
 		gap: 1rem;
+		align-items: end;
 		padding: 1rem;
 		background-color: #000;
 		color: #fff;
-	}
-
-	h1 {
-		font-weight: bold;
 	}
 </style>
 

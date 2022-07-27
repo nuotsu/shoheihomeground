@@ -2,7 +2,7 @@
 	<p>Photoset {photoset} ({images.length} photos)</p>
 </Heading>
 
-<section>
+<section class="debug">
 	{#each images as image}
 		<figure>
 			<a class="link" href={cdn(image.public_id)} target="_blank" rel="noopener">

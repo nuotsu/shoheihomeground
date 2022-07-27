@@ -18,13 +18,17 @@
 
 	::-webkit-details-marker { display: none; }
 
-	section {
+	.debug {
 		outline: 1px dashed;
 		margin: 1rem;
 	}
 }
 
 @layer components {
+	._h { font-weight: bold;}
+	.h0 { @apply _h text-5xl; }
+	.h1 { @apply _h text-3xl; }
+
 	.link {
 		@apply underline hover:decoration-2;
 	}

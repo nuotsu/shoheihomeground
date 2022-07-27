@@ -1,4 +1,4 @@
-<section id="categories">
+<section id="categories" class="debug">
 	<h2>Categories</h2>
 
 	<ul>
