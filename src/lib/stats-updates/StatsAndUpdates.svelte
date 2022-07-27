@@ -1,4 +1,4 @@
-<section>
+<section id="stats-updates">
 	<Stats/>
 	<Updates/>
 </section>

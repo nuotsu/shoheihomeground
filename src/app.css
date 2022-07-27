@@ -7,6 +7,17 @@
 		scroll-behavior: smooth;
 	}
 
+	:target {
+		scroll-margin-top: var(--header-height);
+	}
+
+	summary {
+		cursor: pointer;
+		display: block;
+	}
+
+	::-webkit-details-marker { display: none; }
+
 	section {
 		outline: 1px dashed;
 		margin: 1rem;

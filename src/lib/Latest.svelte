@@ -1,9 +1,10 @@
 <section>
-	<h1>
+	<h2>
 		Latest
 		<time datetime={latest}>{day(latest)}</time>
-	</h1>
-	<a class="link" href="/latest">View more</a>
+	</h2>
+
+	<a class="link" href="/latest">View latest</a>
 </section>
 
 <script>

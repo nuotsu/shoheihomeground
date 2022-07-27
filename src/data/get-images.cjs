@@ -10,7 +10,7 @@ cloudinary.config({
 })
 
 async function search(expression, results = [], cursor) {
-	const { total_count, resources, next_cursor } = await cloudinary.search
+	const { resources, next_cursor } = await cloudinary.search
 		.expression(expression)
 		.max_results(500)
 		.next_cursor(cursor)
@@ -22,8 +22,6 @@ async function search(expression, results = [], cursor) {
 	if (next_cursor) {
 		console.count('Batch')
 		results.push(await search(expression, results, next_cursor))
-	} else {
-		console.log(`Found ${ total_count } images`)
 	}
 
 	return results
@@ -64,8 +62,10 @@ async function fetchImages({ byDateFile, byCategoryFile, metadataFile, codeRegex
 	const byCategory = groupBy('category', images, i => groupBy('date', i, groupByPhotoset))
 	write(byCategoryFile, byCategory)
 
-	const { total_count } = await getMetadata()
+	const { total_count, rate_limit_remaining } = await getMetadata()
 	write(metadataFile, { total_count, total_days: Object.keys(byDate).length })
+
+	console.info({ total_count, rate_limit_remaining })
 }
 
 fetchImages({

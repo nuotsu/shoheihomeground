@@ -1,5 +1,5 @@
-<section>
-<header class="md:self-start md:sticky-top">
+<section id="categories">
+	<header class="md:self-start md:sticky-top">
 		<h2><slot name="title">{categories[category]}</slot></h2>
 	</header>
 

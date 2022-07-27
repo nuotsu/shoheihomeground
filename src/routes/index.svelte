@@ -2,12 +2,14 @@
 <StatsAndUpdates/>
 <Latest/>
 <CategoryList/>
+<Graphics/>
 
 <script>
 	import Hero from '$lib/Hero.svelte'
 	import StatsAndUpdates from '$lib/stats-updates/StatsAndUpdates.svelte'
 	import Latest from '$lib/Latest.svelte'
 	import CategoryList from '$lib/categories/CategoryList.svelte'
+	import Graphics from '$lib/Graphics.svelte'
 </script>
 
 <script context="module">
