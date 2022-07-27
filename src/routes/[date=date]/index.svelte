@@ -1,13 +1,11 @@
-<header>
-	<h1><time datetime={date}>{day(date)}</time></h1>
-</header>
+<Heading {date} />
 
 {#each imagesByCategory as [category, photosets]}
 	<CategorySection {date} {category} {photosets} />
 {/each}
 
 <script>
-	import { day } from '$utils'
+	import Heading from '$lib/Heading.svelte'
 	import CategorySection from '$lib/categories/CategorySection.svelte'
 
 	export let date, imagesByCategory

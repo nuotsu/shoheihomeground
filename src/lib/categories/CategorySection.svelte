@@ -1,15 +1,17 @@
-<section id="categories">
+<section>
 	<header class="md:self-start md:sticky-top">
 		<h2><slot name="title">{categories[category]}</slot></h2>
 	</header>
 
 	<ul>
 		{#each sortedPhotosets as photoset}
-			<li>
-				<a class="link" href="/{date}/{category}/{photoset}">
-					Photoset {photoset} ({photosets[photoset].images.length} photos)
-				</a>
-			</li>
+			{#if !!photosets[photoset]}
+				<li>
+					<a class="link" href="/{date}/{category}/{photoset}">
+						Photoset {photoset} ({photosets[photoset].images.length} photos)
+					</a>
+				</li>
+			{/if}
 		{/each}
 	</ul>
 </section>

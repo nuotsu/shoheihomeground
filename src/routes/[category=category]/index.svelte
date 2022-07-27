@@ -1,6 +1,4 @@
-<header>
-	<h1>{categories[category]}</h1>
-</header>
+<Heading title={categories[category]} />
 
 {#each imagesByDate as [date, photosets]}
 	<CategorySection {date} {category} {photosets}>
@@ -9,6 +7,7 @@
 {/each}
 
 <script>
+	import Heading from '../../lib/Heading.svelte'
 	import categories from '$lib/categories'
 	import CategorySection from '$lib/categories/CategorySection.svelte'
 	import { day } from '$utils'

@@ -1,4 +1,4 @@
-<section>
+<section id="categories">
 	<h2>Categories</h2>
 
 	<ul>
@@ -9,6 +9,13 @@
 		{/each}
 	</ul>
 </section>
+
+<style>
+	ul {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+	}
+</style>
 
 <script>
 	import categories from './index'

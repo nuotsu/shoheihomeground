@@ -1,31 +1,42 @@
-<div>
-	<a href="/#stats-updates">Stats & Updates</a>
+<ul>
+	<li><a href="/#stats-updates">Stats & Updates</a></li>
 
-	<Menu title="Latest">
-		<ul>
-			{#each dates as date}
-				<li><a href="/{date}">{day(date)}</a></li>
-			{/each}
-		</ul>
-	</Menu>
+	<li>
+		<Menu title="Latest">
+			<ul>
+				{#each dates as date}
+					<li><a href="/{date}">{day(date)}</a></li>
+				{/each}
+			</ul>
+		</Menu>
+	</li>
 
-	<Menu title="Categories">
-		<ul>
-			{#each Object.entries(categories) as [code, name]}
-				<li><a href="/{code}">{name}</a></li>
-			{/each}
-		</ul>
-	</Menu>
+	<li>
+		<Menu title="Categories">
+			<ul>
+				{#each Object.entries(categories) as [code, name]}
+					<li><a href="/{code}">{name}</a></li>
+				{/each}
+			</ul>
+		</Menu>
+	</li>
 
-	<a href="#graphics">Graphics</a>
+	<li><a href="#graphics">Graphics</a></li>
 
-	About
-</div>
+	<li>About</li>
+</ul>
 
 <style>
-	div {
+	ul {
+		flex-grow: 1;
 		display: flex;
-		gap: 1rem;
+		gap: 0 1rem;
+	}
+
+	@screen <md {
+		ul {
+			flex-direction: column;
+		}
 	}
 </style>
 

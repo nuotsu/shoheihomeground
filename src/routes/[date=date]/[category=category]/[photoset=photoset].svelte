@@ -1,10 +1,6 @@
-<header>
-	<h1>
-		{categories[category]}
-		<time datetime={date}>{day(date)}</time>
-	</h1>
+<Heading title={categories[category]} {date}>
 	<p>Photoset {photoset} ({images.length} photos)</p>
-</header>
+</Heading>
 
 <section>
 	{#each images as image}
@@ -17,8 +13,8 @@
 </section>
 
 <script>
+	import Heading from '$lib/Heading.svelte'
 	import categories from '$lib/categories'
-	import { day } from '$utils'
 	import { cdn } from '$lib/Image.svelte'
 
 	export let date, category, photoset, images

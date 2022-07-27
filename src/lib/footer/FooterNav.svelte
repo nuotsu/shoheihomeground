@@ -3,7 +3,7 @@
 		<p><a href="/latest">Latest</a></p>
 		<ul>
 			{#each dates as date}
-				<li><a href="/{date}">{day(date)}</a></li>
+				<li><a href="/{date}"><Date {date} /></a></li>
 			{/each}
 		</ul>
 	</li>
@@ -31,8 +31,8 @@
 
 <script>
 	import byDate from '$data/images-by-date.json'
-	import { day } from '$utils'
 	import categories from '$lib/categories'
+	import Date from '$lib/Date.svelte'
 
 	const dates = Object.keys(byDate).slice(0,5)
 </script>
