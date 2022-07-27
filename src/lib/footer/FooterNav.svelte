@@ -17,15 +17,21 @@
 		</ul>
 	</li>
 
-	<li><a href="/#graphics">Graphics</a></li>
-	<li>About</li>
+	<li><p><a href="/#graphics">Graphics</a></p></li>
+	<li><p>About</p></li>
 </ul>
 
 <style>
 	.root {
+		flex-grow: 1;
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: space-around;
 		gap: 1rem;
+	}
+
+	li > p {
+		font-weight: bold;
 	}
 </style>
 

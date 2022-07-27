@@ -1,15 +1,20 @@
-<Heading {date}>
-	{#if isLatest}
-		<p>Latest</p>
-	{/if}
-</Heading>
+<H1>
+	<Date {date} />
+
+	<p slot="sub">
+		{#if isLatest}
+			Latest
+		{/if}
+	</p>
+</H1>
 
 {#each imagesByCategory as [category, photosets]}
 	<CategorySection {date} {category} {photosets} />
 {/each}
 
 <script>
-	import Heading from '$lib/Heading.svelte'
+	import H1 from '$lib/H1.svelte'
+	import Date from '$lib/Date.svelte'
 	import CategorySection from '$lib/categories/CategorySection.svelte'
 
 	export let date, imagesByCategory

@@ -15,6 +15,7 @@
 		position: sticky;
 		top: 0;
 		z-index: 1;
+		padding: 1rem;
 
 		@apply bg-white;
 	}

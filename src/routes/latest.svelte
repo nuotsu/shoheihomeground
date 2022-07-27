@@ -1,11 +1,11 @@
-<Heading title="Latest" date={latest} />
+<H1 date={latest}>Latest</H1>
 
 {#each imagesByCategory as [category, photosets]}
 	<CategorySection date={latest} {category} {photosets} />
 {/each}
 
 <script>
-	import Heading from '$lib/Heading.svelte'
+	import H1 from '$lib/H1.svelte'
 	import byDate from '$data/images-by-date.json'
 	import CategorySection from '$lib/categories/CategorySection.svelte'
 

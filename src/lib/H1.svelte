@@ -1,17 +1,13 @@
 <header>
 	<h1 class="h1">
-		{#if title}
-			{title}
-		{:else}
-			<Date {date} />
-		{/if}
+		<slot></slot>
 	</h1>
 
-	{#if !!title && date}
+	{#if date}
 		<Date {date} />
 	{/if}
 
-	<slot></slot>
+	<slot name="sub"></slot>
 
 	<!-- TODO: breadcrumbs -->
 </header>
@@ -19,16 +15,28 @@
 <style>
 	header {
 		display: flex;
-		gap: 1rem;
-		align-items: end;
+		flex-wrap: wrap;
+		gap: 0 1rem;
 		padding: 1rem;
 		background-color: #000;
 		color: #fff;
+	}
+
+	@screen <sm {
+		header {
+			flex-direction: column;
+		}
+	}
+
+	@screen sm {
+		header {
+			align-items: end;
+		}
 	}
 </style>
 
 <script>
 	import Date from '$lib/Date.svelte'
 
-	export let title, date
+	export let date
 </script>

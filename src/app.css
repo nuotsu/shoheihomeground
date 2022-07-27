@@ -18,9 +18,8 @@
 
 	::-webkit-details-marker { display: none; }
 
-	.debug {
-		outline: 1px dashed;
-		margin: 1rem;
+	.section {
+		padding: 2rem 1em;
 	}
 }
 
@@ -28,9 +27,16 @@
 	._h { font-weight: bold;}
 	.h0 { @apply _h text-5xl; }
 	.h1 { @apply _h text-3xl; }
+	.h2 { @apply _h text-xl; }
 
 	.link {
 		@apply underline hover:decoration-2;
+	}
+
+	.action {
+		padding: 0.5em 1em;
+		border: 1px solid;
+		@apply with-icon;
 	}
 }
 
@@ -39,4 +45,22 @@
 		position: sticky;
 		top: var(--header-height);
 	}
+
+	.scroll-snap { scroll-snap-type: x mandatory; }
+	.scroll-snap > * { scroll-snap-align: center; }
+
+	.full-width {
+		width: 100vw;
+		margin-inline: calc(50% - 50vw);
+	}
+
+	.with-icon {
+		display: inline-flex;
+		gap: 0.25ch;
+		align-items: center;
+		justify-content: start;
+	}
+
+	.prose > * + * { margin-top: 1em; }
+	.prose > :empty { display: none; }
 }

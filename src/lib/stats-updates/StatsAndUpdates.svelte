@@ -1,4 +1,4 @@
-<section id="stats-updates" class="debug">
+<section id="stats-updates" class="section">
 	<Stats/>
 	<Updates/>
 </section>
@@ -6,8 +6,8 @@
 <style>
 	section {
 		display: grid;
-		gap: 1rem;
 		align-items: center;
+		gap: 1rem;
 	}
 
 	@screen md {

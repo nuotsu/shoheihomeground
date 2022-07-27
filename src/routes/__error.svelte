@@ -1,11 +1,12 @@
-<Heading title="404">
-	<p>Page not found...</p>
-</Heading>
+<H1>
+	404
+	<p slot="sub">Page not found...</p>
+</H1>
 
-<section class="debug">
+<section class="section">
 	<p>Go back <a class="link" href="/">home</a>.</p>
 </section>
 
 <script>
-	import Heading from '$lib/Heading.svelte'
+	import H1 from '$lib/H1.svelte'
 </script>

@@ -1,14 +1,22 @@
-<section>
-	<h1 class="h0">Shohei Home Ground</h1>
-	<p>High quality photographs of two-way two-time All Star</p>
+<section class="section">
+	<div class="prose">
+		<h1 class="h0">Shohei Home Ground</h1>
+		<p>High quality photographs of two-way two-time All Star</p>
+		<p>
+			<a class="action" href="#categories">
+				View photos
+				<Right/>
+			</a>
+		</p>
+	</div>
 
 	<dl>
 		<div>
-			<dt>{total_count.toLocaleString()}</dt>
+			<dt class="h1">{total_count.toLocaleString()}</dt>
 			<dd>photos</dd>
 		</div>
 		<div>
-			<dt>{total_days.toLocaleString()}</dt>
+			<dt class="h1">{total_days.toLocaleString()}</dt>
 			<dd>days</dd>
 		</div>
 	</dl>
@@ -16,9 +24,17 @@
 
 <style>
 	section {
-		padding: 1rem;
+		display: grid;
+		gap: 1rem;
+		align-items: center;
 		background-color: #000;
 		color: #fff;
+	}
+
+	@screen md {
+		section {
+			grid-template-columns: repeat(2, 1fr);
+		}
 	}
 
 	dl {
@@ -27,12 +43,9 @@
 		gap: 1rem;
 		text-align: center;
 	}
-
-	dt {
-		font-weight: bold;
-	}
 </style>
 
 <script>
+	import Right from '$icon/Right.svelte'
 	import { total_count, total_days } from '../data/images-metadata.json'
 </script>

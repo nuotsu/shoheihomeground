@@ -7,6 +7,7 @@ const config = {
 		adapter: adapter(),
 		alias: {
 			'$data': 'src/data',
+			'$icon': 'src/icon',
 			'$utils': 'src/utils',
 		},
 	},

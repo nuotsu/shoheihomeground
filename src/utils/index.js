@@ -9,3 +9,6 @@ export function day(date) {
 		year: 'numeric',
 	}).format(new Date(y, m-1, d))
 }
+
+export const sortBy = (arr, key) => arr.sort((a, b) =>
+	a[key] > b[key] ? -1 : 1)

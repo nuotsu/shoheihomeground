@@ -1,31 +1,54 @@
-<Heading title={categories[category]} {date}>
-	<p>Photoset {photoset} ({images.length} photos)</p>
-</Heading>
+<H1 {date}>
+	{categories[category]}
+	<p slot="sub">Photoset {photoset} ({images.length} photos)</p>
+</H1>
 
-<section class="debug">
+<section>
 	{#each images as image}
 		<figure>
 			<a class="link" href={cdn(image.public_id)} target="_blank" rel="noopener">
-				<img src="" alt={image.public_id}>
+				<Image {...image} w={600} />
 			</a>
 		</figure>
 	{/each}
 </section>
 
+<style>
+	section {
+		display: grid;
+		align-items: center;
+		gap: 2rem;
+		padding-block: 2rem;
+	}
+
+	@screen sm {
+		section {
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			padding-inline: 2rem;
+		}
+	}
+
+	figure {
+		display: grid;
+		place-content: center;
+	}
+</style>
+
 <script>
-	import Heading from '$lib/Heading.svelte'
+	import H1 from '$lib/H1.svelte'
 	import categories from '$lib/categories'
-	import { cdn } from '$lib/Image.svelte'
+	import Image, { cdn } from '$lib/Image.svelte'
 
 	export let date, category, photoset, images
 </script>
 
 <script context="module">
 	import byDate from '$data/images-by-date.json'
+	import { sortBy } from '$utils'
 
 	export async function load({ params }) {
 		const { date, category, photoset } = params
-		const { images } = byDate[date][category][photoset]
+		const images = sortBy(byDate[date][category][photoset].images, 'public_id')
 
 		if (!images) return {
 			status: 404,

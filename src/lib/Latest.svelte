@@ -1,34 +1,56 @@
-<section class="debug">
-	<h2>
+<section class="section">
+	<H2 link={{ url: '/latest' }}>
 		Latest
-		<time datetime={latest}>{day(latest)}</time>
-	</h2>
+		<time slot="sub" datetime={latest}>{day(latest)}</time>
+	</H2>
 
-	<a class="link" href="/latest">View latest</a>
-
-	<ul>
-		{#each set.slice(0,10) as image}
-			<li>
-				<a class="link" href={cdn(image.public_id)} target="_blank" rel="noopener">
-					{image.public_id}
+	<ul class="full-width scroll-snap">
+		{#each set.slice(0, 10) as {category, photoset, image}}
+			<li style:min-width="{size}px">
+				<a href="/{latest}/{category}/{photoset}">
+					<Image {...image} w={size * 1.5} />
 				</a>
 			</li>
 		{/each}
 	</ul>
 </section>
 
+<style>
+	ul {
+		display: flex;
+		gap: 1rem;
+		margin-top: 1rem;
+		padding: 0 1rem;
+		overflow-x: auto;
+	}
+</style>
+
 <script>
+	import H2 from '$lib/H2.svelte'
 	import byDate from '$data/images-by-date.json'
-	import { day } from '$utils'
-	import { cdn } from '$lib/Image.svelte'
+	import { day, sortBy } from '$utils'
+	import Image from '$lib/Image.svelte'
 
-	const latest = Object.keys(byDate)[0]
+	let size = 150
+	let latest = Object.keys(byDate)[0]
 
-	const values = Object.values(byDate['2022-06-29'])
-	const thumbnails = values.flatMap(v => Object.values(v))
-	const images = thumbnails.flatMap(v => v.images)
+	let entries = Object.entries(byDate[latest])
+	let thumbnails = entries
+		.flatMap(([category, photosets]) => Object.entries(photosets)
+			.map(([photoset, { thumbnail, images }]) =>
+				({ category, photoset, image: sortBy(images, 'public_id')[thumbnail] })
+			)
+		)
+	let images = entries
+		.flatMap(([category, photosets]) => Object.entries(photosets)
+			.flatMap(([photoset, { images }]) => Object.values(images)
+				.flatMap(image => ({ category, photoset, image }))
+			)
+		)
 
-	const set = thumbnails.length >= 10
-		? thumbnails.map(({ thumbnail, images }) => images[thumbnail])
+	console.log(images)
+
+	let set = thumbnails.length >= 10
+		? thumbnails
 		: images
 </script>

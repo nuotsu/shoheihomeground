@@ -25,6 +25,12 @@
 	].filter(Boolean).join(',')
 </script>
 
+<style>
+	img {
+		@apply bg-black/5;
+	}
+</style>
+
 <script context="module">
 	export function cdn(public_id, transform) {
 		return `https://res.cloudinary.com/ryofuj/${[transform, public_id].filter(Boolean).join('/')}`

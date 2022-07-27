@@ -1,6 +1,6 @@
-<section class="debug">
+<section class="section">
 	<header class="md:self-start md:sticky-top">
-		<h2><slot name="title">{categories[category]}</slot></h2>
+		<h2 class="h2"><slot name="title">{categories[category]}</slot></h2>
 	</header>
 
 	<ul>
@@ -19,13 +19,19 @@
 <style>
 	section {
 		display: grid;
-		gap: 0 1rem;
+		gap: 1rem;
 	}
 
 	@screen md {
 		section {
 			grid-template-columns: minmax(300px, 1fr) 3fr;
 		}
+	}
+
+	ul {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 1rem;
 	}
 </style>
 

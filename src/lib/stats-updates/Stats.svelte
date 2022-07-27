@@ -1,5 +1,5 @@
 <article>
-	<h2>Stats</h2>
+	<H2>Stats</H2>
 
 	{#each Object.entries(set) as [title, keys], index}
 		<table>
@@ -20,11 +20,13 @@
 
 <style>
 	table {
+		width: 100%;
 		text-align: center;
 	}
 </style>
 
 <script>
+	import H2 from '$lib/H2.svelte'
 	import { page } from '$app/stores'
 
 	const set = {
