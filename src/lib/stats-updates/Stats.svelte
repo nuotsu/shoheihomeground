@@ -1,8 +1,9 @@
 <article>
 	<h2>Stats</h2>
 
-	{#each set as keys, index}
+	{#each Object.entries(set) as [title, keys], index}
 		<table>
+			<caption>{title} stats</caption>
 			<tr>
 				{#each keys as stat}
 					<th>{stat.toUpperCase()}</th>
@@ -26,10 +27,10 @@
 <script>
 	import { page } from '$app/stores'
 
-	const set = [
-		['avg', 'obp', 'slg', 'r', 'd', 't', 'hr', 'rbi', 'sb'],
-		['era', 'so', 'w', 'l', 'ip', 'whip']
-	]
+	const set = {
+		'Hitting': ['avg', 'obp', 'slg', 'r', 'd', 't', 'hr', 'rbi', 'sb'],
+		'Pitching': ['era', 'so', 'w', 'l', 'ip', 'whip']
+	}
 
 	const stats = $page.stuff.stats[2022]['R']
 </script>

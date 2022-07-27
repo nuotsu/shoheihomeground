@@ -1,10 +1,12 @@
 <header bind:clientHeight>
 	<nav>
-		<div><a href="/">Shohei Home Ground</a></div>
+		<div style:grid-area="top">
+			<a href="/">Shohei Home Ground</a>
+		</div>
 
+		<Toggle/>
 		<HeaderNav/>
-
-		<Accounts/>
+		<Accounts area="acc" />
 	</nav>
 </header>
 
@@ -24,12 +26,28 @@
 
 	@screen md {
 		nav {
+			grid-template-areas: 'top nav acc';
 			grid-template-columns: auto 1fr auto;
+		}
+	}
+
+	@screen <md {
+		nav {
+			grid-template-areas:
+				'top toggle'
+				'nav nav'
+				'acc acc';
+			grid-template-columns: 1fr auto;
+		}
+
+		header :global(.closed) {
+			display: none;
 		}
 	}
 </style>
 
 <script>
+	import Toggle from './Toggle.svelte'
 	import HeaderNav from './HeaderNav.svelte'
 	import Accounts from '$lib/Accounts.svelte'
 	import { onMount } from 'svelte'
