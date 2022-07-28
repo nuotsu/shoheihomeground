@@ -1,3 +1,3 @@
 <a class="font-bold" href="/">
-	Shohei Home Ground
+	🏟 Shohei Home Ground
 </a>

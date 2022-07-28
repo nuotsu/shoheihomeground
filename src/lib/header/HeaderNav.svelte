@@ -13,7 +13,7 @@
 
 	<li>
 		<Menu title="Categories">
-			<ul>
+			<ul class="columns-2 gap-8">
 				{#each Object.entries(categories) as [code, name]}
 					<li><a href="/{code}">{name}</a></li>
 				{/each}
