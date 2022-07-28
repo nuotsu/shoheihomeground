@@ -1,23 +1,9 @@
-<section id="stats-updates" class="section">
-	<Stats/>
-	<Updates/>
+<section id="stats-updates" class="bg-black/5">
+	<div class="section grid md:grid-cols-2 items-center gap-4">
+		<Stats/>
+		<Updates/>
+	</div>
 </section>
-
-<style>
-	section {
-		display: grid;
-		align-items: center;
-		gap: 1rem;
-
-		@apply bg-black/5;
-	}
-
-	@screen md {
-		section {
-			grid-template-columns: repeat(2, 1fr);
-		}
-	}
-</style>
 
 <script>
 	import Stats from './Stats.svelte'

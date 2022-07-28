@@ -1,16 +1,10 @@
-<button on:click={() => $open = !$open}>
+<button class="md:hidden" on:click={() => $open = !$open}>
 	{$open ? 'Close': 'Open'}
 </button>
 
 <style>
 	button {
 		grid-area: toggle;
-	}
-
-	@screen md {
-		button {
-			display: none;
-		}
 	}
 </style>
 

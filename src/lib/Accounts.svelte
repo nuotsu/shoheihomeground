@@ -1,4 +1,4 @@
-<ul class="social" class:closed={!$open} style:grid-area={area}>
+<ul class="flex gap-4 justify-center" class:closed={!$open} style:grid-area={area}>
 	<li>
 		<a href="https://instagram.com/shoheihomeground" target="_blank" rel="noopener noreferrer">
 			<Instagram/>
@@ -12,12 +12,6 @@
 </ul>
 
 <style>
-	ul {
-		display: flex;
-		gap: 1rem;
-		justify-content: center;
-	}
-
 	a {
 		@apply text-2xl;
 	}

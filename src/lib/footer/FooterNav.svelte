@@ -1,4 +1,4 @@
-<ul class="root">
+<ul class="root <md:flex-col">
 	<li>
 		<p><a href="/latest">Latest</a></p>
 		<ul>
@@ -10,7 +10,7 @@
 
 	<li>
 		<p><a href="/#categories">Categories</a></p>
-		<ul class="categories">
+		<ul class="columns-2 gap-x-8">
 			{#each Object.entries(categories) as [code, name]}
 				<li><a href="/{code}">{name}</a></li>
 			{/each}
@@ -30,19 +30,8 @@
 		gap: 1rem;
 	}
 
-	@screen <md {
-		.root {
-			flex-direction: column;
-		}
-	}
-
 	li > p {
 		font-weight: bold;
-	}
-
-	.categories {
-		columns: 2;
-		gap: 0 2rem;
 	}
 </style>
 

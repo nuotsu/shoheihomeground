@@ -1,32 +1,24 @@
-<details {open}
+<details class="relative" {open}
 	on:mouseenter={() => open = true}
 	on:mouseleave={() => open = false}
 >
 	<summary>{title}</summary>
 
-	<div>
+	<div class="p-4">
 		<slot></slot>
 	</div>
 </details>
 
 <style>
-	details {
-		position: relative;
-	}
+	@screen md {
+		div {
+			position: absolute;
+			left: -1rem;
+			top: 100%;
 
-	div {
-		padding: 1rem;
+			@apply min-w-max bg-white;
+		}
 	}
-
-@screen md {
-	div {
-		position: absolute;
-		left: -1rem;
-		top: 100%;
-
-		@apply min-w-max bg-white;
-	}
-}
 
 	details[open] div {
 		animation: open 0.15s ease-in-out forwards;

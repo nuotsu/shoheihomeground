@@ -1,5 +1,5 @@
 <header bind:clientHeight>
-	<nav>
+	<nav class="max-w-screen-xl mx-auto">
 		<div style:grid-area="top">
 			<Logo/>
 		</div>
@@ -15,7 +15,6 @@
 		position: sticky;
 		top: 0;
 		z-index: 1;
-		padding: 1rem;
 
 		@apply bg-white;
 	}
@@ -23,6 +22,7 @@
 	nav {
 		display: grid;
 		gap: 0 1rem;
+		padding: 1rem;
 	}
 
 	@screen md {

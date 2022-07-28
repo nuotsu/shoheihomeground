@@ -4,7 +4,7 @@
 		<time slot="sub" datetime={latest}>{day(latest)}</time>
 	</H2>
 
-	<ul class="full-width scroll-snap">
+	<ul class="<lg:full-width <lg:px-4 scroll-snap">
 		{#each set.slice(0, 10) as {category, photoset, image}}
 			<li style:min-width="{size}px">
 				<a href="/{latest}/{category}/{photoset}">
@@ -20,7 +20,6 @@
 		display: flex;
 		gap: 1rem;
 		margin-top: 1rem;
-		padding: 0 1rem;
 		overflow-x: auto;
 	}
 </style>

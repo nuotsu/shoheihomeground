@@ -3,7 +3,7 @@
 	<p slot="sub">Photoset {photoset} ({images.length} photos)</p>
 </H1>
 
-<section>
+<section class="section">
 	{#each images as image}
 		<figure>
 			<a class="link" href={cdn(image.public_id)} target="_blank" rel="noopener">
@@ -18,13 +18,17 @@
 		display: grid;
 		align-items: center;
 		gap: 2rem;
-		padding-block: 2rem;
 	}
 
 	@screen sm {
 		section {
 			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-			padding-inline: 2rem;
+		}
+	}
+
+	@screen <sm {
+		section {
+			padding-inline: 0;
 		}
 	}
 

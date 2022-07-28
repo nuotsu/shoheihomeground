@@ -1,37 +1,24 @@
-<header>
-	<h1 class="h1">
-		<slot></slot>
-	</h1>
+<header class="bg-black text-white">
+	<div class="section max-w-screen-xl mx-auto pb-4 sm:items-end <sm:flex-col">
+		<h1 class="h1">
+			<slot></slot>
+		</h1>
 
-	{#if date}
-		<Date {date} />
-	{/if}
+		{#if date}
+			<Date {date} />
+		{/if}
 
-	<slot name="sub"></slot>
+		<slot name="sub"></slot>
 
-	<!-- TODO: breadcrumbs -->
+		<!-- TODO: breadcrumbs -->
+	</div>
 </header>
 
 <style>
-	header {
+	div {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0 1rem;
-		padding: 1rem;
-		background-color: #000;
-		color: #fff;
-	}
-
-	@screen <sm {
-		header {
-			flex-direction: column;
-		}
-	}
-
-	@screen sm {
-		header {
-			align-items: flex-end;
-		}
 	}
 </style>
 

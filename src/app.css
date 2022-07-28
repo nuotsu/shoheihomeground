@@ -17,10 +17,6 @@
 	}
 
 	::-webkit-details-marker { display: none; }
-
-	.section {
-		padding: 2rem 1em;
-	}
 }
 
 @layer components {
@@ -37,6 +33,13 @@
 		padding: 0.5em 1em;
 		border: 1px solid;
 		@apply with-icon;
+	}
+
+	.section {
+		padding: 2rem 1em;
+		margin-inline: auto;
+
+		@apply max-w-screen-xl;
 	}
 }
 

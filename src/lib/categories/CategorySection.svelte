@@ -1,4 +1,4 @@
-<section class="section">
+<section class="section grid gap-4">
 	<header class="md:self-start md:sticky-top">
 		<h2 class="h2"><slot name="title">{categories[category]}</slot></h2>
 	</header>
@@ -17,11 +17,6 @@
 </section>
 
 <style>
-	section {
-		display: grid;
-		gap: 1rem;
-	}
-
 	@screen md {
 		section {
 			grid-template-columns: minmax(300px, 1fr) 3fr;

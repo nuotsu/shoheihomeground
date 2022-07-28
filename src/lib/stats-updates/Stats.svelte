@@ -1,8 +1,8 @@
-<article>
+<article class="p-4 bg-white">
 	<H2>Stats</H2>
 
 	{#each Object.entries(set) as [title, keys], index}
-		<table>
+		<table class="w-full text-center">
 			<caption>{title} stats</caption>
 			<tr>
 				{#each keys as stat}
@@ -17,19 +17,6 @@
 		</table>
 	{/each}
 </article>
-
-<style>
-	article {
-		padding: 1rem;
-
-		@apply bg-white;
-	}
-
-	table {
-		width: 100%;
-		text-align: center;
-	}
-</style>
 
 <script>
 	import H2 from '$lib/H2.svelte'

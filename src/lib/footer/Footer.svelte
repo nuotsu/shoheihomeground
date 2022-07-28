@@ -1,6 +1,6 @@
-<footer>
+<footer class="section grid gap-4">
 	<nav>
-		<div>
+		<div class="grid gap-4 mx-auto self-start">
 			<Logo/>
 			<Accounts/>
 		</div>
@@ -8,32 +8,16 @@
 		<FooterNav/>
 	</nav>
 
-	<p>
+	<p class="text-center">
 		<small>Shohei Home Ground &copy; {new Date().getFullYear()}. All rights reserved.</small>
 	</p>
 </footer>
 
 <style>
-	footer {
-		display: grid;
-		gap: 1rem;
-		padding: 1rem;
-	}
-
 	nav {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 1rem;
-	}
-
-	div {
-		align-self: flex-start;
-		display: grid;
-		gap: 1rem;
-	}
-
-	p {
-		text-align: center;
 	}
 </style>
 
