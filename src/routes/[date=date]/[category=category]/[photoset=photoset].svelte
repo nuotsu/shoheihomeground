@@ -1,40 +1,23 @@
 <H1 {date}>
 	{categories[category]}
-	<p slot="sub">Photoset {photoset} ({images.length} photos)</p>
+	<p slot="sub">Photoset {photoset} — {images.length} photos</p>
 </H1>
 
-<section class="section">
+<section class="section grid items-center gap-8 <sm:px-0">
 	{#each images as image}
-		<figure>
+		<figure class="grid place-content-center">
 			<a class="link" href={cdn(image.public_id)} target="_blank" rel="noopener">
-				<Image {...image} w={600} />
+				<Image className="max-h-[90vh] min-h-[400px] w-auto" {...image} w={600} />
 			</a>
 		</figure>
 	{/each}
 </section>
 
 <style>
-	section {
-		display: grid;
-		align-items: center;
-		gap: 2rem;
-	}
-
 	@screen sm {
 		section {
 			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		}
-	}
-
-	@screen <sm {
-		section {
-			padding-inline: 0;
-		}
-	}
-
-	figure {
-		display: grid;
-		place-content: center;
 	}
 </style>
 

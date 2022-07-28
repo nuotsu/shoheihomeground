@@ -1,17 +1,19 @@
 <section class="section grid gap-4">
-	<header class="md:self-start md:sticky-top">
-		<h2 class="h2"><slot name="title">{categories[category]}</slot></h2>
+	<header class="md:self-start md:sticky-top prose">
+		<h2 class="h2">
+			<slot name="title">{categories[category]}</slot>
+		</h2>
+
+		<ul>
+			<li>{sortedPhotosets.length} photosets</li>
+			<li>{total} photos</li>
+		</ul>
 	</header>
 
-	<ul>
+	<ul class="photos">
 		{#each sortedPhotosets as photoset}
-			{#if !!photosets[photoset]}
-				<li>
-					<a class="link" href="/{date}/{category}/{photoset}">
-						Photoset {photoset} ({photosets[photoset].images.length} photos)
-					</a>
-				</li>
-			{/if}
+			{@const { images, thumbnail } = photosets[photoset]}
+			<Photoset {images} {thumbnail} {date} {category} {photoset} />
 		{/each}
 	</ul>
 </section>
@@ -23,17 +25,22 @@
 		}
 	}
 
-	ul {
+	.photos {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 		gap: 1rem;
 	}
 </style>
 
 <script>
 	import categories from '$lib/categories'
+	import Photoset from '$lib/Photoset.svelte'
 
 	export let date, category, photosets
 
-	let sortedPhotosets = Object.keys(photosets).sort()
+	$: sortedPhotosets = Object.keys(photosets)
+		.sort()
+		.filter(set => !!photosets[set])
+
+	$: total = Object.values(photosets).map(set => set.images.length).reduce((a, b) => a + b, 0)
 </script>

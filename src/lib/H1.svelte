@@ -1,5 +1,5 @@
 <header class="bg-black text-white">
-	<div class="section max-w-screen-xl mx-auto pb-4 sm:items-end <sm:flex-col">
+	<div class="section max-w-screen-xl mx-auto pt-12 pb-4 sm:items-end <sm:flex-col">
 		<h1 class="h1">
 			<slot></slot>
 		</h1>
