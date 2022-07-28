@@ -45,7 +45,7 @@
 </style>
 
 <script>
-	import Pipewriter from 'nuotsu.dev/snippets/pipewriter/Pipewriter.svelte'
+	import { Pipewriter } from 'nuotsu.dev'
 	import Right from '$icon/Right.svelte'
 	import { total_count, total_days } from '../data/images-metadata.json'
 </script>
