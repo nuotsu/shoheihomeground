@@ -1,4 +1,4 @@
-<header class="flex items-end <md:flex-wrap gap-x-4">
+<header class="flex flex-wrap items-end gap-x-4">
 	<h2 class="h2">
 		<slot></slot>
 	</h2>
@@ -6,7 +6,7 @@
 	<slot name="sub"></slot>
 
 	{#if link?.url}
-		<p class="ml-auto">
+		<p class="xs:ml-auto">
 			<a class="link with-icon" href={link.url}>
 				{link.label || 'View more'}
 				<Right/>

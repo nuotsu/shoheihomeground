@@ -1,13 +1,21 @@
 <H1>{categories[category]}</H1>
 
+<TOC>
+	{#each imagesByDate as [date]}
+		<li><a class="hover:underline" href="#{date}"><Date {date} /></a></li>
+	{/each}
+</TOC>
+
 {#each imagesByDate as [date, photosets]}
-	<CategorySection {date} {category} {photosets}>
+	<CategorySection id={date} {date} {category} {photosets}>
 		<time slot="title" datetime={date}>{day(date)}</time>
 	</CategorySection>
 {/each}
 
 <script>
 	import H1 from '$lib/H1.svelte'
+	import TOC from '$lib/TOC.svelte'
+	import Date from '$lib/Date.svelte'
 	import categories from '$lib/categories'
 	import CategorySection from '$lib/categories/CategorySection.svelte'
 	import { day } from '$utils'

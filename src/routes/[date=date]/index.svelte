@@ -1,19 +1,22 @@
 <H1>
 	<Date {date} />
-
-	<p slot="sub">
-		{#if isLatest}
-			Latest
-		{/if}
-	</p>
+	<p slot="sub">{#if isLatest}Latest{/if}</p>
 </H1>
 
+<TOC>
+	{#each imagesByCategory as [category]}
+		<li><a class="hover:underline" href="#{category}">{categories[category]}</a></li>
+	{/each}
+</TOC>
+
 {#each imagesByCategory as [category, photosets]}
-	<CategorySection {date} {category} {photosets} />
+	<CategorySection id={category} {date} {category} {photosets} />
 {/each}
 
 <script>
 	import H1 from '$lib/H1.svelte'
+	import TOC from '$lib/TOC.svelte'
+	import categories from '$lib/categories'
 	import Date from '$lib/Date.svelte'
 	import CategorySection from '$lib/categories/CategorySection.svelte'
 

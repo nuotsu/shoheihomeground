@@ -2,7 +2,7 @@
 	<H2>Stats</H2>
 
 	{#each Object.entries(set) as [title, keys], index}
-		<table class="w-full text-center">
+		<table class="w-full text-center mt-4">
 			<caption>{title} stats</caption>
 			<tr>
 				{#each keys as stat}

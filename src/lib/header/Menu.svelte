@@ -4,7 +4,7 @@
 >
 	<summary>{title}</summary>
 
-	<div class="p-4 glass">
+	<div class="p-4 <md:py-0 md:glass">
 		<slot></slot>
 	</div>
 </details>
@@ -17,6 +17,12 @@
 			top: 100%;
 
 			@apply min-w-max;
+		}
+	}
+
+	@screen <md {
+		details[open] summary {
+			font-weight: bold;
 		}
 	}
 

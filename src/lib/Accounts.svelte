@@ -1,11 +1,11 @@
 <ul class="flex gap-4 justify-center" class:closed={!$open} style:grid-area={area}>
 	<li>
-		<a href="https://instagram.com/shoheihomeground" target="_blank" rel="noopener noreferrer">
+		<a href="https://instagram.com/shoheihomeground" target="_blank" rel="noreferrer">
 			<Instagram/>
 		</a>
 	</li>
 	<li>
-		<a href="https://youtube.com/shoheihomeground" target="_blank" rel="noopener noreferrer">
+		<a href="https://youtube.com/shoheihomeground" target="_blank" rel="noreferrer">
 			<YouTube/>
 		</a>
 	</li>

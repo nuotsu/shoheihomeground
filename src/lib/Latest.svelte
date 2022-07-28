@@ -5,7 +5,7 @@
 	</H2>
 
 	<ul class="<lg:full-width <lg:px-4 scroll-snap">
-		{#each set.slice(0, 10) as {category, photoset, image}}
+		{#each set.slice(0, 8) as {category, photoset, image}}
 			<li style:min-width="{size}px">
 				<a href="/{latest}/{category}/{photoset}">
 					<Image {...image} w={size * 1.5} />
@@ -30,7 +30,7 @@
 	import { day, sortBy } from '$utils'
 	import Image from '$lib/Image.svelte'
 
-	let size = 150
+	let size = 200
 	let latest = Object.keys(byDate)[0]
 
 	let entries = Object.entries(byDate[latest])

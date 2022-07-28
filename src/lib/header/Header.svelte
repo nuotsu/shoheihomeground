@@ -1,5 +1,5 @@
-<header class="glass hover:drop-shadow-lg transition-all" bind:clientHeight>
-	<nav class="max-w-screen-xl mx-auto">
+<header class="glass sticky top-0 z-10 hover:drop-shadow-lg transition-all" bind:clientHeight>
+	<nav class="max-w-screen-xl mx-auto grid gap-x-4 p-4">
 		<div style:grid-area="top">
 			<Logo/>
 		</div>
@@ -11,18 +11,6 @@
 </header>
 
 <style>
-	header {
-		position: sticky;
-		top: 0;
-		z-index: 1;
-	}
-
-	nav {
-		display: grid;
-		gap: 0 1rem;
-		padding: 1rem;
-	}
-
 	@screen md {
 		nav {
 			grid-template-areas: 'top nav acc';

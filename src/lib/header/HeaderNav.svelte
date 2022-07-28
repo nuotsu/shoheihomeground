@@ -1,4 +1,4 @@
-<ul class="root" class:closed={!$open}>
+<ul class="root grow flex <md:flex-col gap-x-4 <md:gap-y-2" class:closed={!$open} style:grid-area="nav">
 	<li><a href="/#stats-updates">Stats & Updates</a></li>
 
 	<li>
@@ -26,16 +26,8 @@
 </ul>
 
 <style>
-	.root {
-		grid-area: nav;
-		flex-grow: 1;
-		display: flex;
-		gap: 0 1rem;
-	}
-
 	@screen <md {
 		.root {
-			flex-direction: column;
 			margin-block: 1rem;
 			max-height: calc(100vh - 10rem);
 			overflow-y: auto;

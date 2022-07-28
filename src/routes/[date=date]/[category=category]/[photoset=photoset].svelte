@@ -5,11 +5,14 @@
 
 <section class="section grid items-center gap-8 <sm:px-0">
 	{#each images as image}
-		<figure class="grid place-content-center">
-			<a class="link" href={cdn(image.public_id)} target="_blank" rel="noopener">
-				<Image className="max-h-[90vh] min-h-[400px] w-auto" {...image} w={600} />
-			</a>
-		</figure>
+		<a
+			class="link grid place-content-center"
+			href={cdn(image.public_id)} target="_blank" rel="noopener"
+		>
+			<figure>
+				<Image {...image} w={600} />
+			</figure>
+		</a>
 	{/each}
 </section>
 

@@ -1,5 +1,5 @@
 <section class="section grid gap-4">
-	<header class="md:self-start md:sticky-top prose">
+	<header {id} class="md:self-start md:sticky-top prose">
 		<h2 class="h2">
 			<slot name="title">{categories[category]}</slot>
 		</h2>
@@ -36,7 +36,7 @@
 	import categories from '$lib/categories'
 	import Photoset from '$lib/Photoset.svelte'
 
-	export let date, category, photosets
+	export let id, date, category, photosets
 
 	$: sortedPhotosets = Object.keys(photosets)
 		.sort()
