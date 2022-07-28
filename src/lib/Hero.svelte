@@ -3,6 +3,11 @@
 		<h1 class="h0">Shohei Home Ground</h1>
 		<p>High quality photographs taken at Angels Stadium.</p>
 		<p>
+			Shohei Ohtani: the greatest
+			<Pipewriter text={['pitcher', 'hitter', 'athlete']} />
+			of all time.
+		</p>
+		<p>
 			<a class="action" href="#categories">
 				View photos
 				<Right/>
@@ -46,6 +51,7 @@
 </style>
 
 <script>
+	import Pipewriter from 'nuotsu.dev/snippets/pipewriter/Pipewriter.svelte'
 	import Right from '$icon/Right.svelte'
 	import { total_count, total_days } from '../data/images-metadata.json'
 </script>

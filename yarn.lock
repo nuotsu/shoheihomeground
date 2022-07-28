@@ -1094,6 +1094,11 @@ npmlog@^5.0.1:
     gauge "^3.0.0"
     set-blocking "^2.0.0"
 
+nuotsu.dev@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/nuotsu.dev/-/nuotsu.dev-0.0.1.tgz#183c955aec667efd0e6db4568e71ce7aa654610f"
+  integrity sha512-3HWOxv4Els8yv4x1PG4/8sTXINbzoSech3UCOY3StdinlGD8ANBa+VNnyrHMIExxbhZBm6LRkRD+RrKYJNLw0Q==
+
 object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
