@@ -1,12 +1,12 @@
 <section class="section">
 	<div class="prose">
-		<h1 class="h0">Shohei Home Ground</h1>
-		<p>High quality photographs taken at Angels Stadium.</p>
-		<p>
-			Shohei Ohtani: the greatest
-			<Pipewriter text={['pitcher', 'hitter', 'athlete']} />
+		<h1 class="md:h0 h1">
+			Shohei Ohtani:<br>
+			Greatest <Pipewriter text={['pitcher', 'hitter', 'athlete']} />
+			<br>
 			of all time.
-		</p>
+		</h1>
+		<h2 class="h2">High quality photographs taken at Angels Stadium.</h2>
 		<p>
 			<a class="action" href="#categories">
 				View photos
