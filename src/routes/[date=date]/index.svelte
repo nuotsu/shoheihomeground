@@ -1,3 +1,5 @@
+<Head title={day(date)} />
+
 <H1>
 	<Date {date} />
 	<p slot="sub">{#if isLatest}Latest{/if}</p>
@@ -14,10 +16,11 @@
 {/each}
 
 <script>
+	import Head from '$lib/Head.svelte'
 	import H1 from '$lib/H1.svelte'
 	import TOC from '$lib/TOC.svelte'
 	import categories from '$lib/categories'
-	import Date from '$lib/Date.svelte'
+	import Date, { day } from '$lib/Date.svelte'
 	import CategorySection from '$lib/categories/CategorySection.svelte'
 
 	export let date, imagesByCategory

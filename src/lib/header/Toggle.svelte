@@ -1,5 +1,5 @@
 <button class="md:hidden" on:click={() => $open = !$open}>
-	{$open ? 'Close': 'Open'}
+	<small>{$open ? 'Close': 'Open'}</small>
 </button>
 
 <style>

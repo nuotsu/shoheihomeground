@@ -1,5 +1,7 @@
+<Head title="{title} — {day(date)} — Photoset {photoset}" />
+
 <H1 {date}>
-	{categories[category]}
+	{title}
 	<p slot="sub">Photoset {photoset} — {images.length} photos</p>
 </H1>
 
@@ -25,11 +27,15 @@
 </style>
 
 <script>
+	import Head from '$lib/Head.svelte'
 	import H1 from '$lib/H1.svelte'
 	import categories from '$lib/categories'
 	import Image, { cdn } from '$lib/Image.svelte'
+	import { day } from '$lib/Date.svelte'
 
 	export let date, category, photoset, images
+
+	let title = categories[category]
 </script>
 
 <script context="module">

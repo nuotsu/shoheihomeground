@@ -39,7 +39,7 @@
 	import { open } from './Toggle.svelte'
 	import Menu from './Menu.svelte'
 	import byDate from '$data/images-by-date.json'
-	import { day } from '$utils'
+	import { day } from '$lib/Date.svelte'
 	import categories from '$lib/categories'
 
 	const dates = Object.keys(byDate).slice(0,5)

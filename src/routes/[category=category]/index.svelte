@@ -1,4 +1,6 @@
-<H1>{categories[category]}</H1>
+<Head {title} />
+
+<H1>{title}</H1>
 
 <TOC>
 	{#each imagesByDate as [date]}
@@ -13,14 +15,16 @@
 {/each}
 
 <script>
+	import Head from '$lib/Head.svelte'
 	import H1 from '$lib/H1.svelte'
 	import TOC from '$lib/TOC.svelte'
-	import Date from '$lib/Date.svelte'
+	import Date, { day } from '$lib/Date.svelte'
 	import categories from '$lib/categories'
 	import CategorySection from '$lib/categories/CategorySection.svelte'
-	import { day } from '$utils'
 
 	export let category, imagesByDate
+
+	let title = categories[category]
 </script>
 
 <script context="module">
