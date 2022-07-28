@@ -14,13 +14,28 @@
 		position: relative;
 	}
 
-	@screen md {
-		div {
-			position: absolute;
-			left: 0;
-			top: 100%;
+	div {
+		padding: 1rem;
+	}
 
-			@apply min-w-max bg-white;
+@screen md {
+	div {
+		position: absolute;
+		left: -1rem;
+		top: 100%;
+
+		@apply min-w-max bg-white;
+	}
+}
+
+	details[open] div {
+		animation: open 0.15s ease-in-out forwards;
+	}
+
+	@keyframes open {
+		from {
+			opacity: 0;
+			transform: translateY(-1rem);
 		}
 	}
 </style>

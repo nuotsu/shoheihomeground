@@ -8,6 +8,8 @@
 		display: grid;
 		align-items: center;
 		gap: 1rem;
+
+		@apply bg-black/5;
 	}
 
 	@screen md {

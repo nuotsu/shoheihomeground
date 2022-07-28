@@ -36,6 +36,9 @@
 	@screen <md {
 		.root {
 			flex-direction: column;
+			margin-block: 1rem;
+			max-height: calc(100vh - 10rem);
+			overflow-y: auto;
 		}
 	}
 </style>

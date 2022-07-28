@@ -26,6 +26,12 @@
 		gap: 1rem;
 	}
 
+	div {
+		align-self: flex-start;
+		display: grid;
+		gap: 1rem;
+	}
+
 	p {
 		text-align: center;
 	}

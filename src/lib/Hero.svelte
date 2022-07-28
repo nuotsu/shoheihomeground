@@ -1,7 +1,7 @@
 <section class="section">
 	<div class="prose">
 		<h1 class="h0">Shohei Home Ground</h1>
-		<p>High quality photographs of two-way two-time All Star</p>
+		<p>High quality photographs taken at Angels Stadium.</p>
 		<p>
 			<a class="action" href="#categories">
 				View photos

@@ -19,6 +19,12 @@
 </article>
 
 <style>
+	article {
+		padding: 1rem;
+
+		@apply bg-white;
+	}
+
 	table {
 		width: 100%;
 		text-align: center;

@@ -1,4 +1,4 @@
-<section id="categories">
+<section id="categories" class="section">
 	<H2>Catgories</H2>
 
 	<ul>
@@ -12,7 +12,8 @@
 
 <style>
 	section {
-		padding: 1rem;
+		background-color: #000;
+		color: #fff;
 	}
 
 	ul {

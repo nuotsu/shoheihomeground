@@ -33,16 +33,16 @@
 	}
 
 	@screen <md {
+		header :global(.closed) {
+			display: none;
+		}
+
 		nav {
 			grid-template-areas:
 				'top toggle'
 				'nav nav'
 				'acc acc';
 			grid-template-columns: 1fr auto;
-		}
-
-		header :global(.closed) {
-			display: none;
 		}
 	}
 </style>

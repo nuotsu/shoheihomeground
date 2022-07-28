@@ -6,6 +6,14 @@
 	</ul>
 </article>
 
+<style>
+	article {
+		padding: 1rem;
+
+		@apply bg-white;
+	}
+</style>
+
 <script>
 	import H2 from '$lib/H2.svelte'
 	import Date from '$lib/Date.svelte'
