@@ -4,7 +4,7 @@
 >
 	<summary>{title}</summary>
 
-	<div class="p-4">
+	<div class="p-4 glass">
 		<slot></slot>
 	</div>
 </details>
@@ -16,7 +16,7 @@
 			left: -1rem;
 			top: 100%;
 
-			@apply min-w-max bg-white;
+			@apply min-w-max;
 		}
 	}
 

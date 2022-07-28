@@ -18,6 +18,11 @@
 	{/each}
 </article>
 
+<style>
+	th { font-weight: normal; }
+	td { font-weight: bold; }
+</style>
+
 <script>
 	import H2 from '$lib/H2.svelte'
 	import { page } from '$app/stores'

@@ -1,5 +1,5 @@
 <section class="bg-black text-white">
-	<div class="section md:grid-cols-2 md:py-8">
+	<div class="section md:grid-cols-2 md:py-12">
 		<div class="prose">
 			<h1 class="md:h0 h1">
 				Shohei Ohtani:<br>

@@ -1,4 +1,4 @@
-<header bind:clientHeight>
+<header class="glass hover:drop-shadow-lg transition-all" bind:clientHeight>
 	<nav class="max-w-screen-xl mx-auto">
 		<div style:grid-area="top">
 			<Logo/>
@@ -15,8 +15,6 @@
 		position: sticky;
 		top: 0;
 		z-index: 1;
-
-		@apply bg-white;
 	}
 
 	nav {

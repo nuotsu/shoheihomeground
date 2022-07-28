@@ -64,6 +64,10 @@
 		justify-content: flex-start;
 	}
 
+	.glass {
+		@apply bg-white/80 backdrop-blur;
+	}
+
 	.prose > * + * { margin-top: 1em; }
 	.prose > :empty { display: none; }
 }
