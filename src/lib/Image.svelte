@@ -27,12 +27,14 @@
 
 <style>
 	img {
-		@apply bg-black/5;
+		@apply bg-ink/5;
 	}
 </style>
 
 <script context="module">
+	import { PUBLIC_CLOUDINARY_NAME } from '$env/static/public'
+
 	export function cdn(public_id, transform) {
-		return `https://res.cloudinary.com/ryofuj/${[transform, public_id].filter(Boolean).join('/')}`
+		return `https://res.cloudinary.com/${ PUBLIC_CLOUDINARY_NAME }/${[transform, public_id].filter(Boolean).join('/')}`
 	}
 </script>

@@ -4,9 +4,9 @@ const fs = require('fs')
 require('dotenv').config()
 
 cloudinary.config({
-	cloud_name: process.env.NETLIFY_CLOUDINARY_NAME,
-	api_key: process.env.NETLIFY_CLOUDINARY_API_KEY,
-	api_secret: process.env.NETLIFY_CLOUDINARY_API_SECRET,
+	cloud_name: process.env.PUBLIC_CLOUDINARY_NAME,
+	api_key: process.env.PUBLIC_CLOUDINARY_API_KEY,
+	api_secret: process.env.PUBLIC_CLOUDINARY_API_SECRET,
 })
 
 async function search(expression, results = [], cursor) {
@@ -27,24 +27,26 @@ async function search(expression, results = [], cursor) {
 	return results
 }
 
-async function getMetadata() {
+async function getMetadata(expression) {
 	return await cloudinary.search
-		.expression('folder=shoheihomeground/* && resource_type=image')
+		.expression(expression)
 		.execute()
 		.catch(console.error)
 }
 
-async function fetchImages({ byDateFile, byCategoryFile, metadataFile, codeRegex }) {
-	const results = await search('folder=shoheihomeground/* && resource_type=image')
+async function fetchImages({ expression, byDateFile, byCategoryFile, metadataFile, codeRegex }) {
+	const results = await search(expression)
 
 	const images = results
 		.map(({ public_id, folder, width, height, aspect_ratio }) => {
 			if (!folder) return
 
 			const [date, code] = folder
-				?.replace(/^shoheihomeground\//, '')
+				?.replace(/^shoheihomeground\/images\//, '')
 				?.replace(`/${ public_id }`, '')
 				?.split('/')
+
+			console.log(code)
 
 			const { groups } = code.match(codeRegex)
 
@@ -69,10 +71,11 @@ async function fetchImages({ byDateFile, byCategoryFile, metadataFile, codeRegex
 }
 
 fetchImages({
+	expression: 'folder=shoheihomeground/images/* && resource_type=image',
 	byDateFile: 'src/data/images-by-date.json',
 	byCategoryFile: 'src/data/images-by-category.json',
 	metadataFile: 'src/data/images-metadata.json',
-	codeRegex: /^(?<category>[phowbdea_])(?<photoset>\d{2})-(?<tn>\d)+(-(?<includes>[\d,]+))?$/,
+	codeRegex: /^(?<category>[phowbdea_])(?<photoset>\d{2})-(?<tn>\d)+(-(?<includes>.+))?$/,
 })
 
 function groupBy(key, images, callback = img => img) {

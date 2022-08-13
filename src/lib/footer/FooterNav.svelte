@@ -3,7 +3,7 @@
 		<p><a href="/latest">Latest</a></p>
 		<ul>
 			{#each dates as date}
-				<li><a href="/{date}"><Date {date} /></a></li>
+				<li><a class="link-hover" href="/{date}"><Date {date} /></a></li>
 			{/each}
 		</ul>
 	</li>
@@ -12,7 +12,7 @@
 		<p><a href="/#categories">Categories</a></p>
 		<ul class="columns-2 gap-x-8">
 			{#each Object.entries(categories) as [code, name]}
-				<li><a href="/{code}">{name}</a></li>
+				<li><a class="link-hover" href="/{code}">{name}</a></li>
 			{/each}
 		</ul>
 	</li>

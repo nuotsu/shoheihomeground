@@ -1,8 +1,8 @@
-<section class="bg-black text-white">
+<section class="bg-ink text-white">
 	<div class="section md:grid-cols-2 md:py-12">
 		<div class="prose">
 			<h1 class="md:h0 h1">
-				Shohei Ohtani:<br>
+				<span class="text-gradient">Shohei Ohtani:</span><br>
 				Greatest <Pipewriter text={['pitcher', 'hitter', 'athlete']} />
 				<br>
 				of all time.

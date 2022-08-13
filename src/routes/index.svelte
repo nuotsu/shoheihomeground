@@ -1,17 +1,17 @@
 <Head title="High Quality Photographs" />
 
 <Hero/>
-<StatsAndUpdates/>
 <Latest/>
 <CategoryList/>
+<StatsAndUpdates/>
 <Graphics/>
 
 <script>
 	import Head from '$lib/Head.svelte'
 	import Hero from '$lib/Hero.svelte'
-	import StatsAndUpdates from '$lib/stats-updates/StatsAndUpdates.svelte'
 	import Latest from '$lib/Latest.svelte'
 	import CategoryList from '$lib/categories/CategoryList.svelte'
+	import StatsAndUpdates from '$lib/stats-updates/StatsAndUpdates.svelte'
 	import Graphics from '$lib/Graphics.svelte'
 </script>
 

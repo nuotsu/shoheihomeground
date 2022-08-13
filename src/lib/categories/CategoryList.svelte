@@ -1,11 +1,11 @@
-<section id="categories" class="bg-black text-white">
+<section id="categories" class="bg-ink text-white">
 	<div class="section">
 		<H2>Catgories</H2>
 
 		<ul class="mt-4">
 			{#each Object.entries(categories) as [code, name]}
 				<li>
-					<a class="link" href="/{code}">{name}</a>
+					<a href="/{code}">{name}</a>
 				</li>
 			{/each}
 		</ul>

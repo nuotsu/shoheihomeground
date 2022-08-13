@@ -11,6 +11,10 @@
 		scroll-margin-top: var(--header-height);
 	}
 
+	body {
+		@apply text-ink accent-accent;
+	}
+
 	summary {
 		cursor: pointer;
 		display: block;
@@ -26,13 +30,15 @@
 	.h2 { @apply _h text-2xl; }
 
 	.link {
-		@apply underline hover:decoration-2;
+		@apply underline hover:decoration-2 hover:decoration-accent;
+	}
+	.link-hover {
+		@apply hover:underline decoration-accent;
 	}
 
 	.action {
 		padding: 0.5em 1em;
-		border: 1px solid;
-		@apply with-icon;
+		@apply with-icon border hover:border-accent;
 	}
 
 	.section {
@@ -66,6 +72,12 @@
 
 	.glass {
 		@apply bg-white/80 backdrop-blur;
+	}
+
+	.text-gradient {
+		background-clip: text;
+		color: transparent;
+		@apply bg-gradient-to-br from-accent to-red-200;
 	}
 
 	.prose > * + * { margin-top: 1em; }
