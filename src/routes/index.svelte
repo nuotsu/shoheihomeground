@@ -1,6 +1,7 @@
 <Head title="High Quality Photographs" />
 
 <Hero/>
+<FilterSection/>
 <Latest/>
 <CategoryList/>
 <StatsAndUpdates/>
@@ -9,6 +10,7 @@
 <script>
 	import Head from '$lib/Head.svelte'
 	import Hero from '$lib/Hero.svelte'
+	import FilterSection from '$lib/filter/FilterSection.svelte'
 	import Latest from '$lib/Latest.svelte'
 	import CategoryList from '$lib/categories/CategoryList.svelte'
 	import StatsAndUpdates from '$lib/stats-updates/StatsAndUpdates.svelte'

@@ -40,7 +40,7 @@
 
 <script context="module">
 	import byDate from '$data/images-by-date.json'
-	import { sortBy } from '$utils'
+	import sortBy from '$utils/sortBy'
 
 	export async function load({ params }) {
 		const { date, category, photoset } = params

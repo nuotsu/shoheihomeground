@@ -28,7 +28,7 @@
 	import H2 from '$lib/H2.svelte'
 	import byDate from '$data/images-by-date.json'
 	import { day } from '$lib/Date.svelte'
-	import { sortBy } from '$utils'
+	import sortBy from '$utils/sortBy'
 	import Image from '$lib/Image.svelte'
 
 	let size = 200

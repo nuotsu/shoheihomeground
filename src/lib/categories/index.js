@@ -1,6 +1,6 @@
 export default {
 	p: 'Pitching',
-	h: 'Hitting',
+	h: 'Batting',
 	o: 'On-base',
 	w: 'Warm-ups',
 	b: 'Bullpen',

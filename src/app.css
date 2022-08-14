@@ -20,6 +20,10 @@
 		display: block;
 	}
 
+	label {
+		cursor: pointer;
+	}
+
 	::-webkit-details-marker { display: none; }
 }
 
@@ -30,10 +34,10 @@
 	.h2 { @apply _h text-2xl; }
 
 	.link {
-		@apply underline hover:decoration-2 hover:decoration-accent;
+		@apply underline hover:decoration-2;
 	}
 	.link-hover {
-		@apply hover:underline decoration-accent;
+		@apply hover:underline;
 	}
 
 	.action {
