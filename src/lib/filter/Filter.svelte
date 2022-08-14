@@ -8,8 +8,9 @@
 			<legend>By date</legend>
 
 			{#each Object.keys(byDate) as date}
-				<label class:disabled={!$available_dates.includes(date)}>
-					<input name="dates" value={date} type="checkbox" disabled={!$available_dates.includes(date)}>
+				{@const disabled = !$selected_dates.length && !$available_dates.includes(date)}
+				<label class:disabled>
+					<input name="dates" value={date} type="checkbox" {disabled}>
 					{date}
 				</label>
 			{/each}
@@ -19,8 +20,9 @@
 			<legend>By category</legend>
 
 			{#each Object.entries(categories) as [code, name]}
-				<label class:disabled={!$available_categories.includes(code)}>
-					<input name="categories" value={code} type="checkbox" disabled={!$available_categories.includes(code)}>
+				{@const disabled = !$selected_categories.length ? !$available_categories.includes(code) : !safelist.includes(code)}
+				<label class:disabled>
+					<input name="categories" value={code} type="checkbox" {disabled}>
 					{name}
 				</label>
 			{/each}
@@ -42,6 +44,8 @@
 	import byDate from '$data/images-by-date.json'
 	import categories from '$lib/categories'
 	import { available_dates, available_categories } from './Results.svelte'
+
+	const safelist = Object.values(byDate).flatMap(Object.keys)
 
 	function onChange({ target }) {
 		let formData = new FormData(target.form)
