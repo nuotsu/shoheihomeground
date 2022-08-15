@@ -1,4 +1,4 @@
-<Head title="{title} — {format(date)} — Photoset {photoset}" />
+<Head title="{title} — {format_v1(date)} — Photoset {photoset}" />
 
 <H1 {date}>
 	{title}
@@ -31,7 +31,7 @@
 	import H1 from '$lib/H1.svelte'
 	import categories from '$lib/categories'
 	import Image, { cdn } from '$lib/Image.svelte'
-	import { format } from '$lib/Date.svelte'
+	import { format_v1 } from '$lib/Date.svelte'
 
 	export let date, category, photoset, images
 

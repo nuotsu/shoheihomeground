@@ -22,7 +22,7 @@
 				<dd>photos</dd>
 			</div>
 			<div>
-				<dt class="h0">{total_days.toLocaleString()}</dt>
+				<dt class="h0">{photos.length.toLocaleString()}</dt>
 				<dd>days</dd>
 			</div>
 		</dl>
@@ -47,5 +47,11 @@
 <script>
 	import { Pipewriter } from 'nuotsu.dev'
 	import Right from '$icon/Right.svelte'
-	import { total_count, total_days } from '../data/images-metadata.json'
+	import { page } from '$app/stores'
+
+	const { photos } = $page.stuff.sanity
+
+	const total_count = photos
+		.flatMap(p => p.categories.flatMap(c => c.photosets?.map((s => s.photos?.length)) || 0))
+		.reduce((a, b) => a + b, 0)
 </script>

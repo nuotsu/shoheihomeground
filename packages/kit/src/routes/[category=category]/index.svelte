@@ -10,7 +10,7 @@
 
 {#each imagesByDate as [date, photosets]}
 	<CategorySection id={date} {date} {category} {photosets}>
-		<time slot="title" datetime={date}>{format(date)}</time>
+		<time slot="title" datetime={date}>{format_v1(date)}</time>
 	</CategorySection>
 {/each}
 
@@ -18,7 +18,7 @@
 	import Head from '$lib/Head.svelte'
 	import H1 from '$lib/H1.svelte'
 	import TOC from '$lib/TOC.svelte'
-	import Date, { format } from '$lib/Date.svelte'
+	import Date, { format_v1 } from '$lib/Date.svelte'
 	import categories from '$lib/categories'
 	import CategorySection from '$lib/categories/CategorySection.svelte'
 

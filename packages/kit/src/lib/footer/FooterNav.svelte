@@ -2,7 +2,7 @@
 	<li>
 		<p><a href="/latest">Latest</a></p>
 		<ul>
-			{#each dates as date}
+			{#each latestDates as date}
 				<li><a class="link-hover" href="/{date}"><Date {date} /></a></li>
 			{/each}
 		</ul>
@@ -11,7 +11,7 @@
 	<li>
 		<p><a href="/#categories">Categories</a></p>
 		<ul class="columns-2 gap-x-8">
-			{#each Object.entries(categories) as [code, name]}
+			{#each categories as { code, name }}
 				<li><a class="link-hover" href="/{code}">{name}</a></li>
 			{/each}
 		</ul>
@@ -36,9 +36,8 @@
 </style>
 
 <script>
-	import byDate from '$data/images-by-date.json'
-	import categories from '$lib/categories'
 	import Date from '$lib/Date.svelte'
+	import { page } from '$app/stores'
 
-	const dates = Object.keys(byDate).slice(0,5)
+	const { latestDates, categories } = $page.stuff.sanity
 </script>

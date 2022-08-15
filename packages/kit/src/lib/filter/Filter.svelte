@@ -8,7 +8,7 @@
 
 	<form class="flex gap-8 mt-4" on:change={onChange}>
 		<Fieldset title="By category">
-			{#each Object.entries(categories) as [code, name]}
+			{#each categories as { code, name }}
 				{@const disabled = !$available_categories.includes(code)}
 				<label class:disabled>
 					<input name="categories" value={code} type="checkbox" checked={false} {disabled}>
@@ -22,7 +22,7 @@
 				{@const disabled = !$available_dates.includes(date)}
 				<label class:disabled>
 					<input name="dates" value={date} type="checkbox" checked={false} {disabled}>
-					{format(date)}
+					{format_v1(date)}
 				</label>
 			{/each}
 		</Fieldset>
@@ -49,11 +49,13 @@
 
 <script>
 	import byDate from '$data/images-by-date.json'
-	import categories from '$lib/categories'
+	import { page } from '$app/stores'
 	import { available_dates, available_categories } from './Results.svelte'
 	import Right from '$icon/Right.svelte'
 	import Fieldset from './Fieldset.svelte'
-	import { format } from '$lib/Date.svelte'
+	import { format_v1 } from '$lib/Date.svelte'
+
+	const { categories } = $page.stuff.sanity
 
 	function onChange({ target }) {
 		let formData = new FormData(target.form)

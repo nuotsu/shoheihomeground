@@ -1,7 +1,7 @@
 <section class="section grid gap-4">
 	<header {id} class="md:self-start md:sticky-top prose">
 		<h2 class="h2">
-			<slot name="title">{categories[category]}</slot>
+			<slot name="title">categories[category]</slot>
 		</h2>
 
 		<ul>
@@ -33,10 +33,12 @@
 </style>
 
 <script>
-	import categories from '$lib/categories'
+	import { page } from '$app/stores'
 	import Photoset from '$lib/Photoset.svelte'
 
 	export let id, date, category, photosets
+
+	const { categories } = $page.stuff.sanity
 
 	$: sortedPhotosets = Object.keys(photosets)
 		.sort()

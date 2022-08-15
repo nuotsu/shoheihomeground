@@ -1,38 +1,38 @@
 {
-  "root": true,
-  "project": {
-    "name": "Shohei Home Ground"
-  },
-  "api": {
-    "projectId": "shaxy5pg",
-    "dataset": "production"
-  },
-  "plugins": [
-    "@sanity/base",
-    "@sanity/default-layout",
-    "@sanity/default-login",
-    "@sanity/desk-tool",
-    "@sanity/vision",
-    "dashboard-widget-netlify",
-    "@sanity/orderable-document-list"
-  ],
-  "env": {
-    "development": {
-      "plugins": []
-    }
-  },
-  "parts": [
-    {
-      "name": "part:@sanity/base/schema",
-      "path": "./schemas/schema"
-    },
-    {
-      "name": "part:@sanity/desk-tool/structure",
-      "path": "./desk/structure-config.js"
-    },
-    {
-      "implements": "part:@sanity/dashboard/config",
-      "path": "./desk/dashboard-config.js"
-    }
-  ]
+	"root": true,
+	"project": {
+		"name": "Shohei Home Ground"
+	},
+	"api": {
+		"projectId": "shaxy5pg",
+		"dataset": "production"
+	},
+	"plugins": [
+		"@sanity/base",
+		"@sanity/default-layout",
+		"@sanity/default-login",
+		"@sanity/desk-tool",
+		"@sanity/vision",
+		"dashboard-widget-netlify",
+		"@sanity/orderable-document-list"
+	],
+	"env": {
+		"development": {
+			"plugins": []
+		}
+	},
+	"parts": [
+		{
+			"name": "part:@sanity/base/schema",
+			"path": "./schemas/schema"
+		},
+		{
+			"name": "part:@sanity/desk-tool/structure",
+			"path": "./desk/structure-config.js"
+		},
+		{
+			"implements": "part:@sanity/dashboard/config",
+			"path": "./desk/dashboard-config.js"
+		}
+	]
 }

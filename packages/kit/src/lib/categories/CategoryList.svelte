@@ -3,7 +3,7 @@
 		<H2>Catgories</H2>
 
 		<ul class="mt-4">
-			{#each Object.entries(categories) as [code, name]}
+			{#each categories as { code, name }}
 				<li>
 					<a href="/{code}">{name}</a>
 				</li>
@@ -25,5 +25,7 @@
 
 <script>
 	import H2 from '$lib/H2.svelte'
-	import categories from './index'
+	import { page } from '$app/stores'
+
+	const { categories } = $page.stuff.sanity
 </script>

@@ -1,4 +1,4 @@
-<Head title={format(date)} />
+<Head title={format_v1(date)} />
 
 <H1>
 	<Date {date} />
@@ -20,7 +20,7 @@
 	import H1 from '$lib/H1.svelte'
 	import TOC from '$lib/TOC.svelte'
 	import categories from '$lib/categories'
-	import Date, { format } from '$lib/Date.svelte'
+	import Date, { format_v1 } from '$lib/Date.svelte'
 	import CategorySection from '$lib/categories/CategorySection.svelte'
 
 	export let date, imagesByCategory
