@@ -1,11 +1,11 @@
-<time datetime={date}>{day(date)}</time>
+<time datetime={date}>{format(date)}</time>
 
 <script>
 	export let date
 </script>
 
 <script context="module">
-	export function day(date) {
+	export function format(date) {
 		if (!date) return
 
 		const { y, m, d } = date.match(/(?<y>\d{2})-(?<m>\d{2})-(?<d>\d{2})/).groups

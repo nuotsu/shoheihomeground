@@ -46,8 +46,6 @@ async function fetchImages({ expression, byDateFile, byCategoryFile, metadataFil
 				?.replace(`/${ public_id }`, '')
 				?.split('/')
 
-			console.log(code)
-
 			const { groups } = code.match(codeRegex)
 
 			return ({

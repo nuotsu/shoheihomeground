@@ -1,7 +1,7 @@
 <section class="section">
 	<H2 link={{ url: '/latest' }}>
 		Latest
-		<time slot="sub" datetime={latest}>{day(latest)}</time>
+		<time slot="sub" datetime={latest}>{format(latest)}</time>
 	</H2>
 
 	<ul class="<lg:full-width <lg:px-4 scroll-snap">
@@ -27,7 +27,7 @@
 <script>
 	import H2 from '$lib/H2.svelte'
 	import byDate from '$data/images-by-date.json'
-	import { day } from '$lib/Date.svelte'
+	import { format } from '$lib/Date.svelte'
 	import sortBy from '$utils/sortBy'
 	import Image from '$lib/Image.svelte'
 

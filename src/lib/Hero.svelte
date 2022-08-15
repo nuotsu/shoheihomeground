@@ -9,8 +9,8 @@
 			</h1>
 			<h2 class="h2">High quality photographs taken at Angels Stadium.</h2>
 			<p class="<md:text-center">
-				<a class="action" href="#categories">
-					View photos
+				<a class="action" href="/all-photos">
+					View all photos
 					<Right/>
 				</a>
 			</p>
