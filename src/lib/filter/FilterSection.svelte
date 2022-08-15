@@ -1,4 +1,4 @@
-<section id="filter" class="section items-start <md:px-0">
+<section id="filter" class="section items-start">
 	<Filter/>
 	<Results/>
 </section>

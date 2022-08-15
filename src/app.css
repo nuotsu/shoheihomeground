@@ -85,6 +85,14 @@
 		@apply bg-gradient-to-br from-accent to-red-200;
 	}
 
+	.anim-fade {
+		opacity: 0;
+		animation: fade 0.5s ease-in-out calc(var(--delay, 0) * 0.01s) forwards;
+	}
+	@keyframes fade {
+		to { opacity: 1; }
+	}
+
 	.prose > * + * { margin-top: 1em; }
 	.prose > :empty { display: none; }
 }

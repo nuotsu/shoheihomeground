@@ -1,4 +1,4 @@
-<div class="mt-8">
+<div class="mt-8 <xl:full-width">
 	{#each allImages as { date, category, thumbnail, images }}
 		{@const hidden_dates = !!$selected_dates.length && !$selected_dates.includes(date)}
 		{@const hidden_categories = !!$selected_categories.length && !$selected_categories.includes(category)}
@@ -28,6 +28,14 @@
 				Object.values(photosets).map(photoset => ({ date, category, ...photoset }))
 			)
 		)
+
+	$: $available_dates = allImages
+		.filter(i => !$selected_categories.length || $selected_categories.includes(i.category))
+		.map(i => i.date)
+
+	$: $available_categories = allImages
+		.filter(i => !$selected_dates.length || $selected_dates.includes(i.date))
+		.map(i => i.category)
 </script>
 
 <script context="module">

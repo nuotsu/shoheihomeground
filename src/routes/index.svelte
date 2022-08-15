@@ -3,16 +3,16 @@
 <Hero/>
 <Latest/>
 <CategoryList/>
-<StatsAndUpdates/>
 <Graphics/>
+<StatsAndUpdates/>
 
 <script>
 	import Head from '$lib/Head.svelte'
 	import Hero from '$lib/Hero.svelte'
 	import Latest from '$lib/Latest.svelte'
 	import CategoryList from '$lib/categories/CategoryList.svelte'
-	import StatsAndUpdates from '$lib/stats-updates/StatsAndUpdates.svelte'
 	import Graphics from '$lib/Graphics.svelte'
+	import StatsAndUpdates from '$lib/stats-updates/StatsAndUpdates.svelte'
 </script>
 
 <script context="module">

@@ -4,7 +4,7 @@
 		<time slot="sub" datetime={latest}>{format(latest)}</time>
 	</H2>
 
-	<ul class="<lg:full-width <lg:px-4 scroll-snap">
+	<ul class="flex gap-4 items-center mt-4 overflow-x-auto <xl:full-width <xl:px-4 scroll-snap">
 		{#each set.slice(0, 8) as {category, photoset, image}}
 			<li style:min-width="{size}px">
 				<a href="/{latest}/{category}/{photoset}">
@@ -14,15 +14,6 @@
 		{/each}
 	</ul>
 </section>
-
-<style>
-	ul {
-		display: flex;
-		gap: 1rem;
-		margin-top: 1rem;
-		overflow-x: auto;
-	}
-</style>
 
 <script>
 	import H2 from '$lib/H2.svelte'

@@ -1,8 +1,6 @@
 <ul class="root grow flex <md:flex-col gap-x-4 <md:gap-y-2" class:closed={!$open} style:grid-area="nav">
 	<li><a href="/all-photos">All Photos</a></li>
 
-	<li><a href="/#stats-updates">Stats & Updates</a></li>
-
 	<li>
 		<Menu title="Latest">
 			<ul>
@@ -24,6 +22,7 @@
 	</li>
 
 	<li><a href="/#graphics">Graphics</a></li>
+	<li><a href="/#stats-updates">Stats & Updates</a></li>
 	<li>About</li>
 </ul>
 
