@@ -55,7 +55,7 @@
 	import Fieldset from './Fieldset.svelte'
 	import { format_v1 } from '$lib/Date.svelte'
 
-	const { categories } = $page.stuff.sanity
+	const { categories } = $page.data.sanity
 
 	function onChange({ target }) {
 		let formData = new FormData(target.form)

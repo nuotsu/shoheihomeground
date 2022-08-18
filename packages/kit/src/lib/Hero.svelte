@@ -49,7 +49,7 @@
 	import Right from '$icon/Right.svelte'
 	import { page } from '$app/stores'
 
-	const { photos } = $page.stuff.sanity
+	const { photos } = $page.data.sanity
 
 	const total_count = photos
 		.flatMap(p => p.categories.flatMap(c => c.photosets?.map((s => s.photos?.length)) || 0))

@@ -32,5 +32,5 @@
 		'Pitching': ['era', 'so', 'w', 'l', 'ip', 'whip']
 	}
 
-	const stats = $page.stuff.stats[2022]['R']
+	const stats = $page.data.stats[2022]['R']
 </script>

@@ -42,5 +42,5 @@
 	import Date from '$lib/Date.svelte'
 	import { page } from '$app/stores'
 
-	const { latestDates, categories } = $page.stuff.sanity
+	const { latestDates, categories } = $page.data.sanity
 </script>

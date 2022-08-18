@@ -38,7 +38,7 @@
 
 	export let id, date, category, photosets
 
-	const { categories } = $page.stuff.sanity
+	const { categories } = $page.data.sanity
 
 	$: sortedPhotosets = Object.keys(photosets)
 		.sort()

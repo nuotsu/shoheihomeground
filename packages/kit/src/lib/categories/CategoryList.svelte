@@ -27,5 +27,5 @@
 	import H2 from '$lib/H2.svelte'
 	import { page } from '$app/stores'
 
-	const { categories } = $page.stuff.sanity
+	const { categories } = $page.data.sanity
 </script>

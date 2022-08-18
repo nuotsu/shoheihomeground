@@ -23,7 +23,7 @@
 
 	const size = 200
 
-	const { photos: [latest] } = $page.stuff.sanity
+	const { photos: [latest] } = $page.data.sanity
 
 	console.log(latest)
 
