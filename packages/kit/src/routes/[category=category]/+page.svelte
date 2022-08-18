@@ -15,6 +15,8 @@
 {/each}
 
 <script>
+	throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
+
 	import Head from '$lib/Head.svelte'
 	import H1 from '$lib/H1.svelte'
 	import TOC from '$lib/TOC.svelte'
@@ -25,25 +27,4 @@
 	export let category, imagesByDate
 
 	let title = categories[category]
-</script>
-
-<script context="module">
-	import byCategory from '$data/images-by-category.json'
-
-	export async function load({ params }) {
-		const { category } = params
-		const data = byCategory[category]
-
-		if (!data) return {
-			status: 404,
-			error: 'No images for this category were found.',
-		}
-
-		return {
-			props: {
-				category,
-				imagesByDate: Object.entries(data),
-			}
-		}
-	}
 </script>

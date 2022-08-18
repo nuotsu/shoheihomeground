@@ -27,6 +27,8 @@
 </style>
 
 <script>
+	throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
+
 	import Head from '$lib/Head.svelte'
 	import H1 from '$lib/H1.svelte'
 	import categories from '$lib/categories'
@@ -36,26 +38,4 @@
 	export let date, category, photoset, images
 
 	let title = categories[category]
-</script>
-
-<script context="module">
-	import byDate from '$data/images-by-date.json'
-	import sortBy from '$utils/sortBy'
-
-	export async function load({ params }) {
-		const { date, category, photoset } = params
-		const images = sortBy(byDate[date][category][photoset].images, 'public_id')
-
-		if (!images) return {
-			status: 404,
-			error: 'No images for this category and date were found.',
-		}
-
-		return {
-			props: {
-				...params,
-				images,
-			}
-		}
-	}
 </script>

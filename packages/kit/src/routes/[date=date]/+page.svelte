@@ -16,6 +16,8 @@
 {/each}
 
 <script>
+	throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
+
 	import Head from '$lib/Head.svelte'
 	import H1 from '$lib/H1.svelte'
 	import TOC from '$lib/TOC.svelte'
@@ -26,25 +28,4 @@
 	export let date, imagesByCategory
 
 	$: isLatest = Object.keys(byDate)[0] === date
-</script>
-
-<script context="module">
-	import byDate from '$data/images-by-date.json'
-
-	export async function load({ params }) {
-		const { date } = params
-		const data = byDate[date]
-
-		if (!data) return {
-			status: 404,
-			error: 'No images for this date were found.',
-		}
-
-		return {
-			props: {
-				date,
-				imagesByCategory: Object.entries(data),
-			}
-		}
-	}
 </script>
