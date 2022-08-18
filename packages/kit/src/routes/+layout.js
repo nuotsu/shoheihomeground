@@ -1,7 +1,6 @@
 import client from '$utils/sanity'
 import groq from 'groq'
 
-/** @type {import('./$types').PageLoad} */
 export async function load() {
 	return {
 		sanity: await client.fetch(groq`{

@@ -1,20 +1,20 @@
-<li>
-	<a class="grid" href="/{date}/{category}/{photoset}">
+<article>
+	<a class="grid" href="/{date}/{category.code}/{set}">
 		<figure class="grid overflow-hidden" style:--col={previews.length - 1}>
 			{#each previews as image, i}
 				<button style:grid-column="{i+1} / span 1" />
-				<Image className="w-full" {...image} w={400} h={400} />
+				<Img className="w-full" {image} w={400} h={400} />
 			{/each}
 		</figure>
 
 		<div>
 			<p>
-				<strong>Photoset {photoset}</strong>
-				<small>{images.length} photos</small>
+				<strong>Photoset {set}</strong>
+				<small>{photos.length} photos</small>
 			</p>
 		</div>
 	</a>
-</li>
+</article>
 
 <style>
 	figure,
@@ -62,12 +62,12 @@
 </style>
 
 <script>
-	import Image from '$lib/Image.svelte'
+	import Img from '$lib/Img.svelte'
 
-	export let images, thumbnail, date, category, photoset
+	export let photos, t, date, category, set
 
 	$: previews = [
-		...images.slice(thumbnail),
-		...images.slice(0, thumbnail)
-	].slice(0, Math.min(images.length, 10)).reverse()
+		...photos.slice(t),
+		...photos.slice(0, t)
+	].slice(0, Math.min(photos.length, 10)).reverse()
 </script>
