@@ -3,6 +3,7 @@
 <H1>
 	<Date {date} />
 </H1>
+
 <PhotosByCategory {...data.photos} />
 
 <script>

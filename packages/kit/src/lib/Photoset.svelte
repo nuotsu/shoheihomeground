@@ -65,9 +65,7 @@
 	import Img from '$lib/Img.svelte'
 	import Set, { num } from './Set.svelte'
 
-	export let photos, t, date, category, set
-
-	const setNum = String(set + 1).padStart(2, '0')
+	export let date, category, photos, t, set
 
 	const previews = [
 		...photos.slice(t),

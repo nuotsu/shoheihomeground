@@ -1,7 +1,9 @@
 <Head title="{category.name} — {format(date)}" />
 
 <H1>
-	{category.name}
+	<a class="link-hover" href="/{category.code}">
+		{category.name}
+	</a>
 
 	<p slot="sub">
 		Photoset <code>{set}</code>
@@ -44,6 +46,4 @@
 	const { photos } = categories
 		.find(c => c.category.code === category.code)
 		.photosets[set - 1]
-
-	console.log(photos)
 </script>
