@@ -6,6 +6,7 @@ import { VscTag } from 'react-icons/vsc'
 export default () => S.list()
 	.title('Content')
 	.items([
-		list('Photos', 'photos'),
 		orderableList({ title: 'Categories', type: 'category', icon: VscTag }),
+		list('Photos', 'photos'),
+		list('Graphics', 'graphic'),
 	])

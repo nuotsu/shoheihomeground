@@ -1,9 +1,9 @@
-import { VscSave } from 'react-icons/vsc'
+import { IoIosImages } from 'react-icons/io'
 
 export const photos = {
 	name: 'photos',
 	title: 'Photos',
-	icon: VscSave,
+	icon: IoIosImages,
 	type: 'document',
 	fields: [
 		{
@@ -24,6 +24,24 @@ export const photos = {
 	preview: {
 		select: {
 			title: 'date',
+			categories: 'categories',
+		},
+		prepare: ({ categories, ...selection }) => {
+			const photos =
+				categories?.reduce((acc, { photosets }) =>
+					acc + photosets?.reduce((acc, { photos }) =>
+						acc + photos?.length || 0,
+						0),
+					0
+				)
+
+			return ({
+				subtitle: [
+					count(categories, 'categories', 'category'),
+					count(photos, 'photos')
+				].join(', '),
+				...selection
+			})
 		},
 	},
 }
@@ -51,7 +69,7 @@ export const photoCategory = {
 			media: 'photosets.0.photos.0',
 		},
 		prepare: ({ photosets, ...selection }) => ({
-			subtitle: count(photosets, 'photosets'),
+			subtitle: count(Object.keys(photosets), 'photosets'),
 			...selection,
 		})
 	},
@@ -86,7 +104,7 @@ export const photoset = {
 		},
 		prepare: ({ photos, featured, ...selection }) => {
 			return ({
-				title: count(photos, 'photos'),
+				title: count(Object.keys(photos), 'photos'),
 				subtitle: featured && 'Featured',
 				...selection,
 			})
@@ -94,6 +112,10 @@ export const photoset = {
 	},
 }
 
-function count(arr = {}, name = 'items') {
-	return `${ Object.keys(arr)?.length || 0 } ${name}`
+function count(arr, item = 'items', singular) {
+	const size = typeof arr === 'number'
+		? arr
+		: arr?.length || 0
+
+	return `${ size } ${ size !== 1 ? item : singular || item.slice(0,-1) }`
 }
