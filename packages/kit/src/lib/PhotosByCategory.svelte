@@ -5,7 +5,9 @@
 
 	<section class="section grid gap-4">
 		<header class="md:self-start md:sticky-top prose">
-			<h2 class="h2">{category.name}</h2>
+			<h2 class="h2">
+				<a href="/{date}/{category.code}">{category.name}</a>
+			</h2>
 			<ul>
 				<li>{sets} photoset{#if sets !== 1}s{/if}</li>
 				<li>{total} photos</li>

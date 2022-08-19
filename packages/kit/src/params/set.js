@@ -1,3 +1,3 @@
 export function match(param) {
-	return /^\d{2}$/.test(param)
+	return /^\d{1,2}$/.test(param)
 }

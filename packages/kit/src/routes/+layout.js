@@ -12,10 +12,7 @@ export async function load() {
 				}
 			},
 			'latestDates': *[_type == 'photos']|order(date desc)[0...5].date,
-			'categories': *[_type == 'category']|order(orderRank){
-				code,
-				name
-			},
+			'categories': *[_type == 'category']|order(orderRank),
 		}`),
 	}
 }
