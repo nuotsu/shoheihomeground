@@ -2,7 +2,13 @@
 	on:mouseenter={() => open = true}
 	on:mouseleave={() => open = false}
 >
-	<summary>{title}</summary>
+	<summary>
+		{#if link}
+			<a href={link}>{title}</a>
+		{:else}
+			{title}
+		{/if}
+	</summary>
 
 	<div class="p-4 <md:py-0 md:glass">
 		<slot></slot>
@@ -39,7 +45,7 @@
 </style>
 
 <script>
-	export let title
+	export let title, link
 
 	let open
 </script>

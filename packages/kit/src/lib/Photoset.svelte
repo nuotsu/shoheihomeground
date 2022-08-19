@@ -1,5 +1,5 @@
 <article>
-	<a class="grid" href="/{date}/{category.code}/{set}">
+	<a class="grid" href="/{date}/{category.code}/{num(set)}">
 		<figure class="grid overflow-hidden" style:--col={previews.length - 1}>
 			{#each previews as image, i}
 				<button style:grid-column="{i+1} / span 1" />
@@ -9,7 +9,7 @@
 
 		<div>
 			<p>
-				<strong>Photoset {set}</strong>
+				<strong>Photoset <Set {set} /></strong>
 				<small>{photos.length} photos</small>
 			</p>
 		</div>
@@ -63,11 +63,14 @@
 
 <script>
 	import Img from '$lib/Img.svelte'
+	import Set, { num } from './Set.svelte'
 
 	export let photos, t, date, category, set
 
-	$: previews = [
+	const setNum = String(set + 1).padStart(2, '0')
+
+	const previews = [
 		...photos.slice(t),
 		...photos.slice(0, t)
-	].slice(0, Math.min(photos.length, 10)).reverse()
+	].slice(0, Math.min(photos.length, 10))
 </script>

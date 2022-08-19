@@ -1,8 +1,8 @@
 <Head title="Page not found" />
 
 <H1>
-	404
-	<p slot="sub">Page not found...</p>
+	{$page.status}
+	<p slot="sub">{$page.error.message}...</p>
 </H1>
 
 <section class="section">
@@ -12,4 +12,5 @@
 <script>
 	import Head from '$lib/Head.svelte'
 	import H1 from '$lib/H1.svelte'
+	import { page } from '$app/stores'
 </script>

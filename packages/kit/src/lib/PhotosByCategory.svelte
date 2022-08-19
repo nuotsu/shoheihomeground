@@ -1,6 +1,7 @@
+<!-- TODO: sort by category -->
 {#each categories as { category, photosets }}
 	{@const sets = photosets.length}
-	{@const total = '{total}'}
+	{@const total = photosets.reduce((acc, { photos }) => acc + photos.length, 0)}
 
 	<section class="section grid gap-4">
 		<header class="md:self-start md:sticky-top prose">

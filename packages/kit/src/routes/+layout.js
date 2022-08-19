@@ -7,11 +7,11 @@ export async function load() {
 			'photos': *[_type == 'photos']|order(date desc){
 				date,
 				categories[]{
-					'category': category->{ code, name },
+					category->,
 					photosets
 				}
 			},
-			'latestDates': *[_type == 'photos'][0...5]|order(date desc).date,
+			'latestDates': *[_type == 'photos']|order(date desc)[0...5].date,
 			'categories': *[_type == 'category']|order(orderRank){
 				code,
 				name
