@@ -89,6 +89,9 @@
 	const { categories, photos } = $page.data.sanity
 	const dates = photos.map(p => p.date)
 
+	$selected_categories = ''
+	$selected_dates = ''
+
 	function onChange({ target }) {
 		const formData = new FormData(target.form)
 
