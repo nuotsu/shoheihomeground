@@ -1,14 +1,18 @@
 import sanityClient from '@sanity/client'
 import imageUrlBuilder from '@sanity/image-url'
 
-import { env } from '$env/dynamic/public'
+import {
+	PUBLIC_SANITY_ID,
+	PUBLIC_SANITY_DATASET,
+	PUBLIC_SANITY_TOKEN,
+} from '$env/static/public'
 
 const client = sanityClient({
-	projectId: env.PUBLIC_SANITY_ID,
-	dataset: env.PUBLIC_SANITY_DATASET,
+	projectId: PUBLIC_SANITY_ID,
+	dataset: PUBLIC_SANITY_DATASET,
 	apiVersion: '2022-08-14',
 	useCdn: true,
-	token: env.PUBLIC_SANITY_TOKEN,
+	token: PUBLIC_SANITY_TOKEN,
 })
 
 export default client
