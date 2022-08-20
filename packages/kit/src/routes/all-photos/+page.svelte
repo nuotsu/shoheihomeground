@@ -1,5 +1,11 @@
-<FilterSection/>
+<section class="section">
+	<FilterList/>
+	<Results {...data} />
+</section>
 
 <script>
-	import FilterSection from '$lib/filter/FilterSection.svelte'
+	import FilterList from './FilterList.svelte'
+	import Results from './Results.svelte'
+
+	export let data
 </script>

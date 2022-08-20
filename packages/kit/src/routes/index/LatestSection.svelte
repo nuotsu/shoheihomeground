@@ -5,9 +5,9 @@
 	</H2>
 
 	<ul class="flex gap-4 items-center mt-4 overflow-x-auto <xl:full-width <xl:px-4 scroll-snap">
-		{#each photos as { c, photos, thumbnail }}
+		{#each photos as { photos, thumbnail }}
 			<li style:min-width="{size}px">
-				<a href="/{date}/{c}">
+				<a href="/{date}">
 					<Img image={photos[thumbnail-1]} w={size * 1.5} />
 				</a>
 			</li>
@@ -26,11 +26,6 @@
 	const { date, categories } = $page.data.sanity.photos[0]
 
 	const photos = categories
-		.flatMap(({ category, photosets }) => photosets
-			.map(({ photos, thumbnail }) => ({
-				c: category.code,
-				photos,
-				thumbnail,
-			}))
-		).slice(0, 8)
+		.flatMap(c => c.photosets)
+		.slice(0, 8)
 </script>
