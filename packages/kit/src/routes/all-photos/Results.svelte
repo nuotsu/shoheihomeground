@@ -1,12 +1,6 @@
-<div class="<md:full-width mt-4">
-	{#each filtered as { date, c, photos, thumbnail, set, _key } (_key)}
-		{@const image = photos[thumbnail-1]}
-
-		{#if !!image?.asset}
-			<a href="/{date}/{c}/{num(set)}">
-				<Img image={photos[thumbnail-1]} w={300} h={300} />
-			</a>
-		{/if}
+<div class="<md:full-width mt-8">
+	{#each filtered as image (image._key)}
+		<PhotosetMini {...image} />
 	{/each}
 </div>
 
@@ -19,8 +13,7 @@
 </style>
 
 <script>
-	import Img from '$lib/Img.svelte'
-	import { num } from '$lib/Set.svelte'
+	import PhotosetMini from './PhotosetMini.svelte'
 
 	export let photos, points
 

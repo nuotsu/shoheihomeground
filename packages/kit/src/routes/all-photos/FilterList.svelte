@@ -6,7 +6,7 @@
 		</h2>
 	</summary>
 
-	<form class="flex flex-wrap gap-y-4 gap-x-12" on:change={onChange}>
+	<form class="flex flex-wrap gap-y-4 gap-x-12 mt-4" on:change={onChange}>
 		<fieldset>
 			<legend class="font-bold">By category</legend>
 			<div class="columns-2 gap-8">

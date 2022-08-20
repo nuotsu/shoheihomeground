@@ -13,7 +13,7 @@ export async function load() {
 				category->,
 				photosets[]{
 					...,
-					'c': ^.category->code,
+					'category': ^.category->,
 					'date': ^.^.date
 				}
 			}

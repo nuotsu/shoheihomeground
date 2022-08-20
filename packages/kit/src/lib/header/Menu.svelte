@@ -2,12 +2,14 @@
 	on:mouseenter={() => open = true}
 	on:mouseleave={() => open = false}
 >
-	<summary>
+	<summary class="with-icon">
 		{#if link}
 			<a href={link}>{title}</a>
 		{:else}
 			{title}
 		{/if}
+
+		<Right/>
 	</summary>
 
 	<div class="p-4 <md:py-0 md:glass">
@@ -16,6 +18,10 @@
 </details>
 
 <style>
+	summary :global(svg) {
+		rotate: 90deg;
+	}
+
 	@screen md {
 		div {
 			position: absolute;
@@ -45,6 +51,8 @@
 </style>
 
 <script>
+	import Right from '$icon/Right.svelte'
+
 	export let title, link
 
 	let open

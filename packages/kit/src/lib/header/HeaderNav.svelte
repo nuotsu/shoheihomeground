@@ -5,7 +5,7 @@
 		<Menu title="Latest" link="/latest">
 			<ul>
 				{#each latestDates as date}
-					<li><a class="link-hover" href="/{date}"><Date {date} /></a></li>
+					<li><a href="/{date}"><Date {date} /></a></li>
 				{/each}
 			</ul>
 		</Menu>
@@ -15,7 +15,7 @@
 		<Menu title="Categories">
 			<ul class="columns-2 gap-8">
 				{#each categories as { code, name }}
-					<li><a class="link-hover" href="/{code}">{name}</a></li>
+					<li><a href="/{code}">{name}</a></li>
 				{/each}
 			</ul>
 		</Menu>
@@ -33,6 +33,10 @@
 			max-height: calc(100vh - 10rem);
 			overflow-y: auto;
 		}
+	}
+
+	a {
+		@apply link-hover;
 	}
 </style>
 

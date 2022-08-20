@@ -1,13 +1,17 @@
-<time datetime={date}>{format(date)}</time>
+<time datetime={date}>{format(date, options)}</time>
 
 <script>
-	export let date
+	export let date, options = default_options
 </script>
 
 <script context="module">
-	export const format = (date, options = {
-		month: 'long',
+	const default_options = {
+		month: 'short',
 		day: 'numeric',
 		year: 'numeric',
-	}) => new Intl.DateTimeFormat('en', options).format(new Date(date + 'T00:00:00.000'))
+	}
+
+	export const format = (date, options = default_options) => new Intl
+		.DateTimeFormat('en', options)
+		.format(new Date(date + 'T00:00:00.000'))
 </script>
