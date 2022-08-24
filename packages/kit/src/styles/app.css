@@ -1,3 +1,5 @@
+@import './fonts.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,8 +13,12 @@
 		scroll-margin-top: var(--header-height);
 	}
 
+	::selection {
+		@apply bg-accent/30;
+	}
+
 	body {
-		@apply text-ink accent-accent;
+		@apply font-sans text-ink accent-accent;
 	}
 
 	summary {
@@ -41,13 +47,46 @@
 		@apply hover:underline;
 	}
 
+	.chiseled {
+		--corner: 0.5em;
+		clip-path: polygon(var(--corner) 0, 100% 0, 100% calc(100% - var(--corner)), calc(100% - var(--corner)) 100%, 0 100%, 0 var(--corner));
+	}
+
 	.action {
+		position: relative;
 		padding: 0.5em 1em;
-		@apply with-icon border hover:border-accent;
+
+		@apply with-icon border border-current chiseled;
+	}
+	.action::after,
+	.action::before  {
+		--size: calc(var(--corner) / 2);
+		content: '';
+		position: absolute;
+		border: var(--size) solid transparent;
+	}
+	.action::before {
+		left: 0;
+		top: 0;
+		border-left: var(--size) solid;
+		border-top: var(--size) solid;
+	}
+	.action::after {
+		right: 0;
+		bottom: 0;
+		border-right: var(--size) solid;
+		border-bottom: var(--size) solid;
+	}
+
+	.highlight-hover > * {
+		transition: filter 0.1s ease-in-out;
+	}
+	.highlight-hover:hover > * {
+		filter: saturate(1.2) brightness(1.2);
 	}
 
 	.section {
-		padding: 2rem 1em;
+		padding: 2rem 1rem;
 		margin-inline: auto;
 
 		@apply max-w-screen-xl;
@@ -76,13 +115,17 @@
 	}
 
 	.glass {
-		@apply bg-white/80 backdrop-blur;
+		@apply bg-white/80 backdrop-blur backdrop-saturate-[1.8];
 	}
 
 	.text-gradient {
 		background-clip: text;
 		color: transparent;
 		@apply bg-gradient-to-br from-accent to-red-200;
+	}
+
+	.text-shadow {
+		text-shadow: 0 0.5em 1em theme(colors.ink);
 	}
 
 	.anim-fade {

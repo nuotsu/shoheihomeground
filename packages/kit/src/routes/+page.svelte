@@ -8,7 +8,7 @@
 
 <script>
 	import Head from '$lib/Head.svelte'
-	import Hero from './index/Hero.svelte'
+	import Hero from './index/hero/Hero.svelte'
 	import LatestSection from './index/LatestSection.svelte'
 	import CategoryList from './index/CategoryList.svelte'
 	import Graphics from './index/Graphics.svelte'

@@ -6,8 +6,8 @@
 
 	<ul class="flex gap-4 items-center mt-4 overflow-x-auto <xl:full-width <xl:px-4 scroll-snap">
 		{#each photos as { photos, thumbnail }}
-			<li style:min-width="{size}px">
-				<a href="/{date}">
+			<li class="chiseled" style:min-width="{size}px">
+				<a class="highlight-hover" href="/{date}">
 					<Img image={photos[thumbnail-1]} w={size * 1.5} />
 				</a>
 			</li>

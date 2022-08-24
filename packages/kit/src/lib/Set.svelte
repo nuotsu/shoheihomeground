@@ -1,4 +1,4 @@
-<code>{num(set)}</code>
+{num(set)}
 
 <script>
 	export let set

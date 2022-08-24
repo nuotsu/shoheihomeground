@@ -23,7 +23,7 @@
 
 	<li><a href="/#graphics">Graphics</a></li>
 	<li><a href="/#stats-updates">Stats & Updates</a></li>
-	<li>About</li>
+	<li><a href="/about">About</a></li>
 </ul>
 
 <style>
@@ -33,6 +33,10 @@
 			max-height: calc(100vh - 10rem);
 			overflow-y: auto;
 		}
+	}
+
+	.root > li > a {
+		@apply font-bold;
 	}
 
 	a {

@@ -2,7 +2,7 @@
 	on:mouseenter={() => open = true}
 	on:mouseleave={() => open = false}
 >
-	<summary class="with-icon">
+	<summary class="font-bold with-icon">
 		{#if link}
 			<a href={link}>{title}</a>
 		{:else}

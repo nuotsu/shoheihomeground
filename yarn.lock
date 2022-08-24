@@ -7793,10 +7793,10 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha512-4jbtZXNAsfZbAHiiqjLPBiCl16dES1zI4Hpzzxw61Tk+loF+sBDBKx1ICKKKwIqQ7M0mFn1TmkN7euSncWgHiQ==
 
-nuotsu.dev@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/nuotsu.dev/-/nuotsu.dev-0.0.4.tgz#7d6aed456b076c1176940a9caad4ddf9f01fdca4"
-  integrity sha512-bUxvN5/VM67AanCUrE+NcGh0H+ucRaoqDpr0OG81vSBZWCn5I897TLvPDj+ZhVolwr6kelQ1fjG3ROVOWvWA3A==
+nuotsu.dev@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/nuotsu.dev/-/nuotsu.dev-0.0.5.tgz#3341564243aebf76a01f1cf8bc825c438bbde831"
+  integrity sha512-FB8xL2J/TUlpHUSALlsM3vaGuT2mKQlMeWVwGpuYVbUExJ82L6ChCIPy042x6MElkH+/ienOzZGYZ+ydytHogg==
 
 nwsapi@^2.0.9:
   version "2.2.1"

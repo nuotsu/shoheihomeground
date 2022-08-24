@@ -10,7 +10,7 @@ import {
 const client = sanityClient({
 	projectId: PUBLIC_SANITY_ID,
 	dataset: PUBLIC_SANITY_DATASET,
-	apiVersion: '2022-08-14',
+	apiVersion: '2022-08-01',
 	useCdn: true,
 	token: PUBLIC_SANITY_TOKEN,
 })

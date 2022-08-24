@@ -1,4 +1,4 @@
-<article class="p-4 bg-white">
+<article class="p-4 bg-white chiseled">
 	<H2>Updates</H2>
 
 	<ul class="mt-4">

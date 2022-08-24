@@ -7,6 +7,9 @@ module.exports = {
 				ink: '#0d1841',
 				accent: '#e72626',
 			},
+			fontFamily: {
+				sans: `'Chakra Petch', sans-serif`,
+			},
 			screens: {
 				'xs': { min: '480px' },
 				'<xs': { max: '479px' },
