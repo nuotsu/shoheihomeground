@@ -1,9 +1,9 @@
-import { IoIosImages } from 'react-icons/io'
+import Icon from '../../components/Icon'
 
 export const photos = {
 	name: 'photos',
 	title: 'Photos',
-	icon: IoIosImages,
+	icon: Icon('💾'),
 	type: 'document',
 	fields: [
 		{
@@ -27,19 +27,22 @@ export const photos = {
 			categories: 'categories',
 		},
 		prepare: ({ categories, ...selection }) => {
-			const photos =
-				categories?.reduce((acc, { photosets }) =>
-					acc + photosets?.reduce((acc, { photos }) =>
-						acc + photos?.length || 0,
-						0),
-					0
-				)
+			const photos = categories?.reduce((acc, { photosets }) =>
+				acc + photosets?.reduce((acc, { photos }) =>
+					acc + photos?.length || 0,
+					0),
+				0
+			)
+
+			const featured = categories
+				.flatMap(({ photosets }) => photosets.filter(p => p.featured))
 
 			return ({
 				subtitle: [
-					count(categories, 'categories', 'category'),
-					count(photos, 'photos')
-				].join(', '),
+					count(categories, '🏷', '🏷'),
+					count(photos, '📸', '📸'),
+					count(featured, '🎖', '🎖'),
+				].join(' / '),
 				...selection
 			})
 		},
@@ -112,10 +115,13 @@ export const photoset = {
 	},
 }
 
-function count(arr, item = 'items', singular) {
+function count(arr, item = 'items', singular, join) {
 	const size = typeof arr === 'number'
 		? arr
 		: arr?.length || 0
 
-	return `${ size } ${ size !== 1 ? item : singular || item.slice(0,-1) }`
+	return [
+		size,
+		size !== 1 ? item : singular || item.slice(0,-1)
+	].join(' ')
 }

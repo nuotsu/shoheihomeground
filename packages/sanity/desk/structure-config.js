@@ -1,12 +1,12 @@
 import S from '@sanity/desk-tool/structure-builder'
 import { list } from './helpers'
 import { orderableDocumentListDeskItem as orderableList } from '@sanity/orderable-document-list'
-import { VscTag } from 'react-icons/vsc'
+import Icon from '../components/Icon'
 
 export default () => S.list()
 	.title('Content')
 	.items([
-		orderableList({ title: 'Categories', type: 'category', icon: VscTag }),
+		orderableList({ title: 'Categories', type: 'category', icon: Icon('🏷') }),
 		list('Photos', 'photos'),
 		list('Graphics', 'graphic'),
 	])

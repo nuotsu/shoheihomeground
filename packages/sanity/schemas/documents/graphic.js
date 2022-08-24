@@ -1,9 +1,9 @@
-import { VscFileMedia } from 'react-icons/vsc'
+import Icon from '../../components/Icon'
 
 export default {
 	name: 'graphic',
 	title: 'Graphic',
-	icon: VscFileMedia,
+	icon: Icon('🗯'),
 	type: 'document',
 	fields: [
 		{
