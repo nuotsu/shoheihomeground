@@ -1,14 +1,22 @@
-<article>
+<article class="text-white">
 	<a class="grid" href="/{date}/{category.code}/{num(set)}">
-		<figure class="grid overflow-hidden" style:--col={previews.length - 1}>
-			{#each previews as image, i}
-				<button style:grid-column="{i+1} / span 1" />
+		<figure class="grid overflow-hidden" style:--col={photos.length}>
+			{#each photos as image, i}
+				{#if photos.length > 1}
+					<button style:grid-column="{i+1} / span 1" />
+				{/if}
 				<Img className="w-full" {image} w={400} h={400} />
 			{/each}
 		</figure>
 
 		<div>
-			<p>
+			{#if featured}
+				<p class="text-right">
+					<small>&starf; Featured</small>
+				</p>
+			{/if}
+
+			<p class="flex items-end mt-auto">
 				<strong>Photoset <Set {set} /></strong>
 				<small>{photos.length} photos</small>
 			</p>
@@ -40,19 +48,11 @@
 	div {
 		pointer-events: none;
 		position: relative;
-		display: grid;
-		height: 100%;
-		align-items: end;
-		padding: 0 1rem 0.5rem;
-		text-align: right;
-		text-shadow: 0 0.25ch 1ch #000;
-
-		@apply text-white;
-	}
-
-	p {
 		display: flex;
-		align-items: flex-end;
+		flex-direction: column;
+		height: 100%;
+		padding: 0.5rem 1rem;
+		text-shadow: 0 0.25ch 1ch #000;
 	}
 
 	small {
@@ -65,10 +65,5 @@
 	import Img from '$lib/Img.svelte'
 	import Set, { num } from './Set.svelte'
 
-	export let date, category, photos, t, set
-
-	const previews = [
-		...photos.slice(t),
-		...photos.slice(0, t)
-	].slice(0, Math.min(photos.length, 10))
+	export let date, category, photos, t, featured, set
 </script>

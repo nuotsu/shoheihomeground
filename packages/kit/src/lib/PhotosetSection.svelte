@@ -11,8 +11,8 @@
 	</header>
 
 	<div class="photos">
-		{#each photosets as { photos, thumbnail }, set}
-			<Photoset {date} {category} {photos} t={thumbnail-1} {set} />
+		{#each photosets as { thumbnail, ...props }, set}
+			<Photoset {date} {category} t={thumbnail-1} {set} {...props} />
 		{/each}
 	</div>
 </section>

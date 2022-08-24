@@ -5,16 +5,17 @@
 @tailwind utilities;
 
 @layer base {
-	html {
-		scroll-behavior: smooth;
-	}
-
-	:target {
-		scroll-margin-top: var(--header-height);
+	:root {
+		--chisel: 0.5em;
+		--chisel-2: calc(100% - var(--chisel));
 	}
 
 	::selection {
 		@apply bg-accent/30;
+	}
+
+	html {
+		scroll-behavior: smooth;
 	}
 
 	body {
@@ -32,6 +33,10 @@
 	}
 
 	::-webkit-details-marker { display: none; }
+
+	:target {
+		scroll-margin-top: var(--header-height);
+	}
 }
 
 @layer components {
@@ -47,10 +52,8 @@
 		@apply hover:underline;
 	}
 
-	.chiseled {
-		--corner: 0.5em;
-		clip-path: polygon(var(--corner) 0, 100% 0, 100% calc(100% - var(--corner)), calc(100% - var(--corner)) 100%, 0 100%, 0 var(--corner));
-	}
+	.chiseled { clip-path: polygon(var(--chisel) 0, 100% 0, 100% var(--chisel-2), var(--chisel-2) 100%, 0 100%, 0 var(--chisel)); }
+	.chiseled-b { clip-path: polygon(0 0, 100% 0, 100% var(--chisel-2), var(--chisel-2) 100%, var(--chisel) 100%, 0 var(--chisel-2)); }
 
 	.action {
 		position: relative;
@@ -60,7 +63,7 @@
 	}
 	.action::after,
 	.action::before  {
-		--size: calc(var(--corner) / 2);
+		--size: calc(var(--chisel) / 2);
 		content: '';
 		position: absolute;
 		border: var(--size) solid transparent;

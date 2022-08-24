@@ -12,7 +12,7 @@
 		<Right/>
 	</summary>
 
-	<div class="p-4 <md:py-0 md:glass">
+	<div class="p-4 <md:py-0 md:glass md:chiseled-b">
 		<slot></slot>
 	</div>
 </details>
