@@ -10,7 +10,7 @@
 		</ul>
 	</header>
 
-	<div class="photos">
+	<div class="photos <sm:full-width">
 		{#each photosets as { thumbnail, ...props }, set}
 			<Photoset {date} {category} t={thumbnail-1} {set} {...props} />
 		{/each}
@@ -32,7 +32,7 @@
 
 	@screen <sm {
 		.photos {
-			@apply grid-cols-2 gap-[1px] full-width;
+			@apply grid-cols-2 gap-[1px];
 		}
 	}
 </style>
