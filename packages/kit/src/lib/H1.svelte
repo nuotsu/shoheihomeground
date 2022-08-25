@@ -1,4 +1,4 @@
-<header class="bg-ink text-white">
+<header class="bg-ink text-white dots moving">
 	<div class="section max-w-screen-xl mx-auto pt-12 pb-4 sm:items-end <sm:flex-col">
 		<h1 class="h1">
 			<slot></slot>

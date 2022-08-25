@@ -29,6 +29,12 @@
 		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 		gap: 1rem;
 	}
+
+	@screen <sm {
+		.photos {
+			@apply grid-cols-2 gap-[1px] full-width;
+		}
+	}
 </style>
 
 <script>

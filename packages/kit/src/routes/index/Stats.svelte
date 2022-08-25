@@ -1,23 +1,33 @@
-<article class="grid gap-2 p-4 bg-ink text-white min-w-0 chiseled">
+<article class="grid gap-2 p-4 bg-ink text-white dots moving min-w-0 chiseled">
 	<H2>Stats</H2>
 
 	{#each Object.entries(set) as [title, keys], index}
 		<article class="min-w-0 text-center">
 			<h3 class="">{title} stats</h3>
 
-			<div class="overflow-x-auto">
-				<table class="w-full">
-					<tr>
-						{#each keys as stat}
-							<th>{stat.toUpperCase()}</th>
-						{/each}
-					</tr>
-					<tr>
-						{#each keys as stat}
-							<td>{stats[index][stat]}</td>
-						{/each}
-					</tr>
-				</table>
+			<div class="relative">
+				<div class="overflow-x-auto">
+					<table class="w-full">
+						<tr>
+							{#each keys as stat}
+								<th>
+									{#if stat === 'd'}
+										2B
+									{:else if stat === 't'}
+										3B
+									{:else}
+										{stat.toUpperCase()}
+									{/if}
+								</th>
+							{/each}
+						</tr>
+						<tr>
+							{#each keys as stat}
+								<td>{stats[index][stat]}</td>
+							{/each}
+						</tr>
+					</table>
+				</div>
 			</div>
 		</article>
 	{/each}
@@ -29,6 +39,26 @@
 
 	th, td {
 		padding-left: 1ch;
+	}
+
+	.relative::before,
+	.relative::after {
+		content: '';
+		pointer-events: none;
+		position: absolute;
+		inset: 0;
+		width: 1rem;
+
+		@apply from-ink to-transparent;
+	}
+
+	.relative::before {
+		right: auto;
+		@apply bg-gradient-to-r;
+	}
+	.relative::after {
+		left: auto;
+		@apply bg-gradient-to-l;
 	}
 </style>
 

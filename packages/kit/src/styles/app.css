@@ -58,8 +58,9 @@
 	.action {
 		position: relative;
 		padding: 0.5em 1em;
+		box-shadow: 0 1em 1em #fff;
 
-		@apply with-icon border border-current chiseled;
+		@apply with-icon border border-current chiseled hover:bg-white/10;
 	}
 	.action::after,
 	.action::before  {
@@ -119,6 +120,20 @@
 
 	.glass {
 		@apply bg-white/80 backdrop-blur backdrop-saturate-[1.8];
+	}
+
+	.dots {
+		--size: 0.9rem;
+		background-image: radial-gradient(var(--dots, #fff2) 1px, transparent 1px);
+		background-size: var(--size) var(--size);
+	}
+	.dots.moving {
+		animation: moving 1s linear infinite;
+	}
+
+	@keyframes moving {
+		0% { background-position: 0 0; }
+		100% { background-position: var(--size) var(--size); }
 	}
 
 	.text-gradient {

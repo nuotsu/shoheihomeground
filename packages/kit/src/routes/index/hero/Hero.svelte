@@ -1,4 +1,4 @@
-<section class="bg-ink text-white overflow-hidden">
+<section class="bg-ink text-white dots moving overflow-hidden">
 	<div class="max-w-screen-xl mx-auto grid items-center">
 		<HeroCopy/>
 		<HeroStats {photos} />

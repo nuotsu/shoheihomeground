@@ -1,8 +1,8 @@
-<section id="categories" class="bg-ink text-white">
+<section id="categories" class="bg-ink text-white dots moving">
 	<div class="section">
 		<H2>Catgories</H2>
 
-		<ul class="grid gap-4 md:grid-cols-3 <md:gap-2 mt-4">
+		<ul class="grid gap-4 grid-cols-2 md:grid-cols-3 <md:gap-2 mt-4">
 			{#each categories as { code, name }}
 				<li>
 					<a class="chiseled" href="/{code}">{name}</a>
@@ -13,12 +13,6 @@
 </section>
 
 <style>
-	@screen <md {
-		ul {
-			grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-		}
-	}
-
 	a {
 		display: block;
 		padding: 1rem;

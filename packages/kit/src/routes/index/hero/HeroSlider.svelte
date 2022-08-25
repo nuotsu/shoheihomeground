@@ -1,6 +1,6 @@
 <div class="grid pointer-events-none">
 	{#each heroPhotos as image, i}
-		<figure class="relative" class:active={active === i}>
+		<figure class="<md:chiseled text-[25vw]" class:active={active === i}>
 			<Img {image} w={1000} h={800} />
 		</figure>
 	{/each}
@@ -28,24 +28,8 @@
 	}
 
 	@screen md {
-		figure::before,
-		figure::after {
-			content: '';
-			position: absolute;
-			inset: 0;
-			width: 10%;
-			transform: skewX(var(--skew, -5.5deg));
-			@apply bg-ink;
-		}
-
-		figure::before {
-			right: auto;
-			translate: -50% 0;
-		}
-
-		figure::after {
-			left: auto;
-			translate: 50% 0;
+		figure {
+			clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
 		}
 	}
 

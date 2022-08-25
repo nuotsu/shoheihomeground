@@ -5,7 +5,7 @@
 				{#if photos.length > 1}
 					<button style:grid-column="{i+1} / span 1" />
 				{/if}
-				<Img className="w-full" {image} w={400} h={400} />
+				<Img {image} w={400} h={400} />
 			{/each}
 		</figure>
 
@@ -16,8 +16,8 @@
 				</p>
 			{/if}
 
-			<p class="flex items-end mt-auto">
-				<strong>Photoset <Set {set} /></strong>
+			<p class="flex flex-wrap items-end mt-auto">
+				<strong class="grow">Photoset <Set {set} /></strong>
 				<small>{photos.length} photos</small>
 			</p>
 		</div>
@@ -35,6 +35,10 @@
 
 	figure {
 		grid-template-columns: repeat(var(--col, 1), 1fr);
+	}
+
+	figure :global(img) {
+		width: 100%;
 	}
 
 	button {
@@ -57,7 +61,6 @@
 
 	small {
 		display: block;
-		margin-left: auto;
 	}
 </style>
 
