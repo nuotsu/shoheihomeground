@@ -3,15 +3,36 @@ export default {
 	title: 'Site',
 	type: 'document',
 	__experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
-	groups: [
-		{ title: 'Homepage', name: 'homepg' },
-	],
 	fields: [
 		{
 			name: 'heroPhotos',
 			type: 'array',
 			of: [{ type: 'image' }],
-			group: 'homepg',
+		},
+		{
+			name: 'ad',
+			title: 'Ad banner',
+			type: 'object',
+			options: { collapsible: true, collapsed: true },
+			fields: [
+				{
+					name: 'imgDesktop',
+					type: 'image',
+				},
+				{
+					name: 'imgMobile',
+					type: 'image',
+				},
+				{
+					name: 'title',
+					type: 'string',
+				},
+				{
+					name: 'url',
+					title: 'URL',
+					type: 'url',
+				},
+			],
 		},
 	],
 	preview: {

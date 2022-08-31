@@ -1,5 +1,5 @@
 {#if !!image?.asset}
-	<a class="highlight-hover" href="/{date}/{category.code}/{num(set)}">
+	<a class="highlight" href="/{date}/{category.code}/{num(set)}">
 		<figure>
 			<Img {image} w={300} h={300} />
 

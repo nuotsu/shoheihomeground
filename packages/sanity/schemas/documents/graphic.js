@@ -7,8 +7,24 @@ export default {
 	type: 'document',
 	fields: [
 		{
+			name: 'description',
+			type: 'text',
+			rows: 3,
+		},
+		{
+			name: 'date',
+			type: 'date',
+		},
+		{
 			name: 'image',
 			type: 'image',
 		},
 	],
+	preview: {
+		select: {
+			title: 'description',
+			subtitle: 'date',
+			media: 'image',
+		},
+	},
 }

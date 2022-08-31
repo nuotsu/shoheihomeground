@@ -5,6 +5,7 @@
 <CategoryList/>
 <Graphics/>
 <StatsAndUpdates/>
+<OhtaniFunAd/>
 
 <script>
 	import Head from '$lib/Head.svelte'
@@ -13,4 +14,5 @@
 	import CategoryList from './index/CategoryList.svelte'
 	import Graphics from './index/Graphics.svelte'
 	import StatsAndUpdates from './index/StatsAndUpdates.svelte'
+	import OhtaniFunAd from '$lib/OhtaniFunAd.svelte'
 </script>

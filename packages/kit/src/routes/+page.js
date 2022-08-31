@@ -4,11 +4,7 @@ import getStats from '$data/get-stats'
 
 export async function load({ fetch }) {
 	return {
-		hero: await client.fetch(groq`
-			*[_type == 'site'][0]{
-				heroPhotos
-			}
-		`),
+		site: await client.fetch(groq`*[_type == 'site'][0]`),
 		stats: await getStats(fetch),
 	}
 }
