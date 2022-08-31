@@ -13,6 +13,11 @@ export default {
 			type: 'string',
 		},
 		{
+			name: 'jpn',
+			title: 'Japanese',
+			type: 'string',
+		},
+		{
 			name: 'code',
 			type: 'string',
 		},

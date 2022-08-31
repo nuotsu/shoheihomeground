@@ -3,9 +3,13 @@
 		<H2>Catgories</H2>
 
 		<ul class="grid gap-4 grid-cols-2 md:grid-cols-3 <md:gap-2 mt-4">
-			{#each categories as { code, name }}
+			{#each categories as { code, name, jpn }}
 				<li>
-					<a class="chiseled" href="/{code}">{name}</a>
+					<a class="!flex flex-wrap items-center gap-x-4 chiseled" href="/{code}">
+						<span class="<sm:grow">{name}</span>
+						<hr class="grow">
+						<span class="text-sm <md:ml-auto">{jpn}</span>
+					</a>
 				</li>
 			{/each}
 		</ul>
@@ -18,6 +22,14 @@
 		padding: 1rem;
 
 		@apply text-xl bg-white/10 hover:bg-white/20;
+	}
+
+	hr {
+		border: 0;
+		border-bottom: 1px solid;
+		opacity: 0.2;
+
+		@apply <sm:hidden;
 	}
 </style>
 

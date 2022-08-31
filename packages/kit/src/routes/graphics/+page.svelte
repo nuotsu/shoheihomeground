@@ -39,7 +39,6 @@
 	import H1 from '$lib/H1.svelte'
 	import Img from '$lib/Img.svelte'
 	import Date from '$lib/Date.svelte'
-	import { urlFor } from '$utils/sanity'
 	import { page } from '$app/stores'
 
 	const { graphics } = $page.data.sanity

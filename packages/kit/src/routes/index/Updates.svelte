@@ -1,7 +1,7 @@
 <article class="p-4 bg-white chiseled">
 	<H2>Updates</H2>
 
-	<ul class="mt-4">
+	<ul class="mt-4 max-h-[8em] <md:max-h-[12em] overflow-y-auto">
 		{#each updates as { date, type, content, link }}
 			<li>
 				<a class="grid gap-x-4" href={resolveLink({ date, type, link })}>
@@ -22,7 +22,7 @@
 
 <style>
 	li + li {
-		@apply border-t border-ink/50;
+		@apply mt-1 pt-1 border-t border-ink/10;
 	}
 
 	@screen md {
