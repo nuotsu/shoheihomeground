@@ -3,17 +3,11 @@
 		<a class="highlight" href={ad.url} target="_blank">
 			<picture class="chiseled">
 				<source srcset={urlFor(ad.imgMobile).auto('format').url()} media="(max-width: 768px)" />
-				<img src={urlFor(ad.imgDesktop).auto('format').url()} alt={ad.title}>
+				<img class="block" src={urlFor(ad.imgDesktop).auto('format').url()} alt={ad.title}>
 			</picture>
 		</a>
 	</div>
 </aside>
-
-<style>
-	img {
-		display: block;
-	}
-</style>
 
 <script>
 	import { page } from '$app/stores'

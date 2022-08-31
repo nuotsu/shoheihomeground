@@ -68,5 +68,5 @@
 	import Img from '$lib/Img.svelte'
 	import Set, { num } from './Set.svelte'
 
-	export let date, category, photos, t, featured, set
+	export let date, category, photos, featured, set
 </script>
