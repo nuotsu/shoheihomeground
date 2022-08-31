@@ -21,7 +21,7 @@
 		</Menu>
 	</li>
 
-	<li><a href="/#graphics">Graphics</a></li>
+	<li><a href="/graphics">Graphics</a></li>
 	<li><a href="/#stats-updates">Stats & Updates</a></li>
 	<li><a href="/about">About</a></li>
 </ul>

@@ -13,7 +13,7 @@ export async function load() {
 			},
 			'latestDates': *[_type == 'photos' && !(_id in path('drafts.**'))]|order(date desc)[0...5].date,
 			'categories': *[_type == 'category']|order(orderRank),
-			'graphics': *[_type == 'graphic']|order(date desc)[0..9],
+			'graphics': *[_type == 'graphic']|order(date desc),
 		}`),
 	}
 }

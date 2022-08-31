@@ -2,7 +2,7 @@
 	<H2 link={{ url: '/graphics' }}>Graphics</H2>
 
 	<ul class="carousel mt-4 <xl:full-width <xl:px-4">
-		{#each graphics as graphic}
+		{#each graphics.slice(0, 10) as graphic}
 			<li class="chiseled min-w-[150px]">
 				<a
 					class="highlight"
@@ -19,8 +19,8 @@
 <script>
 	import H2 from '$lib/H2.svelte'
 	import Img from '$lib/Img.svelte'
-	import { page } from '$app/stores'
 	import { urlFor } from '$utils/sanity'
+	import { page } from '$app/stores'
 
 	const { graphics } = $page.data.sanity
 </script>

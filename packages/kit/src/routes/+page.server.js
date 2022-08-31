@@ -2,7 +2,6 @@ import client from '$utils/sanity'
 import groq from 'groq'
 import getStats from '$data/get-stats'
 
-/** @type {import('./$types').PageServerLoad} */
 export async function load() {
 	return {
 		site: await client.fetch(groq`*[_type == 'site'][0]`),
