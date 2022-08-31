@@ -27,4 +27,16 @@ export default {
 			media: 'image',
 		},
 	},
+	orderings: [
+		{
+			title: 'Description',
+			name: 'description',
+			by: [{field: 'description', direction: 'asc'}],
+		},
+		{
+			title: 'Date',
+			name: 'date',
+			by: [{field: 'date', direction: 'desc'}],
+		},
+	]
 }

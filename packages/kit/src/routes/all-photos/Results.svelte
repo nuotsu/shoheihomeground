@@ -1,5 +1,9 @@
-<div class="<md:full-width mt-8">
-	{#each filtered as image (image._key)}
+<p class="mt-8 text-center text-ink/50">
+	Showing top {Math.min(filtered.length, max)} results
+</p>
+
+<div class="<md:full-width mt-4">
+	{#each filtered.slice(0, max) as image (image._key)}
 		<PhotosetMini {...image} />
 	{/each}
 </div>
@@ -16,6 +20,8 @@
 	import PhotosetMini from './PhotosetMini.svelte'
 
 	export let photos, points
+
+	const max = 100
 
 	$: filtered = photos
 		.filter(({ date }) => !$selected_dates.length || $selected_dates.includes(date))

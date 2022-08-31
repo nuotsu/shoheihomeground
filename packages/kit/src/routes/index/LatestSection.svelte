@@ -4,7 +4,7 @@
 		<time slot="sub" datetime={date}>{format(date)}</time>
 	</H2>
 
-	<ul class="flex gap-4 items-center mt-4 overflow-x-auto <xl:full-width <xl:px-4 scroll-snap">
+	<ul class="carousel mt-4 <xl:full-width <xl:px-4">
 		{#each photos as { photos, thumbnail }}
 			<li class="chiseled" style:min-width="{size}px">
 				<a class="highlight" href="/{date}">

@@ -111,6 +111,15 @@
 		margin-inline: calc(50% - 50vw);
 	}
 
+	.carousel {
+		display: flex;
+		gap: 1rem;
+		align-items: center;
+		overflow-x: auto;
+
+		@apply scroll-snap;
+	}
+
 	.with-icon {
 		display: inline-flex;
 		gap: 0.25ch;
