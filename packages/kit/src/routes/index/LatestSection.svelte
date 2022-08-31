@@ -5,8 +5,12 @@
 	</H2>
 
 	<ul class="carousel mt-4 <xl:full-width <xl:px-4">
-		{#each photos as { photos, thumbnail }}
-			<li class="chiseled" style:min-width="{size}px">
+		{#each photos as { photos, thumbnail }, i}
+			<li
+				class="chiseled anim-fade"
+				style:min-width="{size}px"
+				style:--delay={i / 25}
+			>
 				<a class="highlight" href="/{date}">
 					<Img image={photos[thumbnail-1]} w={size * 1.5} />
 				</a>

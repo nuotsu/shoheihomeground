@@ -3,8 +3,8 @@
 <H1>Graphics</H1>
 
 <section class="section grid gap-y-8 gap-x-12 items-center <md:px-0">
-	{#each graphics as graphic}
-		<figure class="flex flex-col text-center">
+	{#each graphics as graphic, i}
+		<figure class="flex flex-col text-center anim-fade" style:--delay={i / 20}>
 			<a
 				class="chiseled highlight m-auto"
 				href={urlFor(graphic.image).auto('format').url()}
@@ -17,7 +17,7 @@
 				<p class="font-bold">{graphic.description}</p>
 
 				{#if graphic.date}
-					<p><Date date={graphic.date} /></p>
+					<p class="text-sm"><Date date={graphic.date} /></p>
 				{/if}
 			</figcaption>
 		</figure>

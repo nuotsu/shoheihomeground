@@ -2,8 +2,8 @@
 	<H2 link={{ url: '/graphics' }}>Graphics</H2>
 
 	<ul class="carousel mt-4 <xl:full-width <xl:px-4">
-		{#each graphics.slice(0, 10) as graphic}
-			<li class="chiseled min-w-[150px]">
+		{#each graphics.slice(0, 10) as graphic, i}
+			<li class="chiseled min-w-[150px] anim-fade" style:--delay={i / 25}>
 				<a
 					class="highlight"
 					href={urlFor(graphic.image).auto('format').url()}
