@@ -2,11 +2,52 @@
 	<H2>Updates</H2>
 
 	<ul class="mt-4">
-		<li><a class="link" href="/2022-07-19">Added photos from <Date date="2022-07-19" />.</a></li>
+		{#each updates as { date, type, content, link }}
+			<li>
+				<a class="grid gap-x-4" href={resolveLink({ date, type, link })}>
+					<time datetime={date}>{date}</time>
+
+					{#if type._type == 'photos'}
+						<p>Added photos for <strong><Date {date} /></strong>.</p>
+					{:else if type._type == 'graphic'}
+						<p>Added graphic: <strong>{type.title}</strong>.</p>
+					{:else}
+						<p>{content}</p>
+					{/if}
+				</a>
+			</li>
+		{/each}
 	</ul>
 </article>
+
+<style>
+	li + li {
+		@apply border-t border-ink/50;
+	}
+
+	@screen md {
+		a {
+			grid-template-columns: 8ch 1fr;
+		}
+	}
+
+	a:hover p {
+		text-decoration: underline;
+	}
+</style>
 
 <script>
 	import H2 from '$lib/H2.svelte'
 	import Date from '$lib/Date.svelte'
+	import { page } from '$app/stores'
+
+	const { updates } = $page.data.sanity
+
+	function resolveLink({ date, type, link }) {
+		return (
+			type._type == 'photos' ? `/${ date }` :
+			type._type == 'graphic' ? '/graphics' :
+			link
+		)
+	}
 </script>

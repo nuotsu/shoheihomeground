@@ -2,7 +2,7 @@
 	<li><a href="/all-photos">All Photos</a></li>
 
 	<li>
-		<Menu title="Latest" link="/latest">
+		<Menu title="Recent Photos" link="/latest">
 			<ul>
 				{#each latestDates as date}
 					<li><a href="/{date}"><Date {date} /></a></li>

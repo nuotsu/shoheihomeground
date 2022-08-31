@@ -1,4 +1,5 @@
 import Icon from '../../components/Icon'
+import formatDate from '../../components/formatDate'
 
 export default {
 	name: 'graphic',
@@ -6,6 +7,10 @@ export default {
 	icon: Icon('🗯'),
 	type: 'document',
 	fields: [
+		{
+			name: 'title',
+			type: 'string',
+		},
 		{
 			name: 'description',
 			type: 'text',
@@ -22,10 +27,14 @@ export default {
 	],
 	preview: {
 		select: {
-			title: 'description',
-			subtitle: 'date',
+			title: 'title',
+			date: 'date',
 			media: 'image',
 		},
+		prepare: ({ date, ...selection }) => ({
+			subtitle: formatDate(date),
+			...selection,
+		}),
 	},
 	orderings: [
 		{
@@ -38,5 +47,5 @@ export default {
 			name: 'date',
 			by: [{field: 'date', direction: 'desc'}],
 		},
-	]
+	],
 }

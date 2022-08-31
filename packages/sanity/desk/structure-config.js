@@ -7,6 +7,7 @@ export default () => S.list()
 	.title('Content')
 	.items([
 		singleton('Site', 'site').icon(Icon('💻')),
+		list('Updates', 'update'),
 
 		S.divider(),
 

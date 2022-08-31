@@ -5,7 +5,7 @@
 				{#if photos.length > 1}
 					<button style:grid-column="{i+1} / span 1" />
 				{/if}
-				<Img {image} w={400} h={400} />
+				<Img {image} w={400} h={400} loading="eager" />
 			{/each}
 		</figure>
 

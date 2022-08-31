@@ -3,21 +3,23 @@
 <H1>Graphics</H1>
 
 <section class="section grid gap-y-8 gap-x-12 items-center <md:px-0">
-	{#each graphics as graphic, i}
+	{#each graphics as { title, description, image, date }, i}
 		<figure class="flex flex-col text-center anim-fade" style:--delay={i / 20}>
-			<a
-				class="chiseled highlight m-auto"
-				href={urlFor(graphic.image).auto('format').url()}
-				target="_blank"
-			>
-				<Img image={graphic.image} h={600} />
-			</a>
+			<div class="chiseled">
+				<Img {image} h={600} />
+			</div>
 
 			<figcaption class="mt-4 px-4">
-				<p class="font-bold">{graphic.description}</p>
+				{#if title}
+					<h2 class="font-bold">{title}</h2>
+				{/if}
 
-				{#if graphic.date}
-					<p class="text-sm"><Date date={graphic.date} /></p>
+				{#if description}
+					<p>{description}</p>
+				{/if}
+
+				{#if date}
+					<p class="text-sm"><Date {date} /></p>
 				{/if}
 			</figcaption>
 		</figure>

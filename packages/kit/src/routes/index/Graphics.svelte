@@ -4,13 +4,7 @@
 	<ul class="carousel mt-4 <xl:full-width <xl:px-4">
 		{#each graphics.slice(0, 10) as graphic, i}
 			<li class="chiseled min-w-[150px] anim-fade" style:--delay={i / 25}>
-				<a
-					class="highlight"
-					href={urlFor(graphic.image).auto('format').url()}
-					target="_blank"
-				>
-					<Img image={graphic.image} h={300} />
-				</a>
+				<Img image={graphic.image} h={300} />
 			</li>
 		{/each}
 	</ul>

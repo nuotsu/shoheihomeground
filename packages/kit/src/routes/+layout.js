@@ -12,6 +12,10 @@ export async function load() {
 				}
 			},
 			'latestDates': *[_type == 'photos' && !(_id in path('drafts.**'))]|order(date desc)[0...5].date,
+			'updates': *[_type == 'update' && !(_id in path('drafts.**'))]|order(date desc){
+				...,
+				type->
+			},
 			'categories': *[_type == 'category']|order(orderRank),
 			'graphics': *[_type == 'graphic']|order(date desc),
 		}`),

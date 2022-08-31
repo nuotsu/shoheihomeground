@@ -1,14 +1,14 @@
 <img {src} {alt}
 	width={w || Math.round(width / height * h) || width}
 	height={h || Math.round(height / width * w) || height}
-	loading="lazy"
+	{loading}
 />
 
 <script>
 	import { urlFor } from '$utils/sanity'
 	import { getImageDimensions } from '@sanity/asset-utils'
 
-	export let image, w, h, alt = ''
+	export let image, w, h, alt = '', loading = 'lazy'
 
 	const src = image.asset && urlFor(image.asset)
 		.size(w, h)

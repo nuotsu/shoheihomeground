@@ -1,4 +1,5 @@
 import Icon from '../../components/Icon'
+import formatDate from '../../components/formatDate'
 
 export const photos = {
 	name: 'photos',
@@ -23,10 +24,10 @@ export const photos = {
 	],
 	preview: {
 		select: {
-			title: 'date',
+			date: 'date',
 			categories: 'categories',
 		},
-		prepare: ({ categories, ...selection }) => {
+		prepare: ({ date, categories, ...selection }) => {
 			const photos = categories?.reduce((acc, { photosets }) =>
 				acc + photosets?.reduce((acc, { photos }) =>
 					acc + photos?.length || 0,
@@ -38,6 +39,7 @@ export const photos = {
 				.flatMap(({ photosets }) => photosets.filter(p => p.featured))
 
 			return ({
+				title: formatDate(date),
 				subtitle: [
 					count(categories, '🏷', '🏷'),
 					count(photos, '📸', '📸'),
