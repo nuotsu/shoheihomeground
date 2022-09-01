@@ -5,7 +5,7 @@
 <section class="section grid gap-y-8 gap-x-12 items-center <md:px-0 overflow-hidden">
 	{#each graphics as { _id, title, description, image, date }, i}
 		<figure id={_id} class="flex flex-col text-center anim-fade" style:--delay={i / 20}>
-			<div>
+			<div class="chiseled">
 				<Img {image} h={600} />
 			</div>
 
@@ -33,14 +33,12 @@
 		}
 	}
 
-	figure :global(img) {
+	figure .chiseled {
 		display: block;
 		margin: auto;
-
-		@apply chiseled;
 	}
 
-	figure:target :global(img) {
+	figure:target .chiseled {
 		animation: target 1.4s ease-in-out;
 	}
 
