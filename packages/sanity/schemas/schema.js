@@ -8,6 +8,9 @@ import category from './documents/category'
 import { photos, photoCategory, photoset } from './documents/photos'
 import graphic from './documents/graphic'
 
+// objects
+import videoYoutube from './objects/video.youtube'
+
 export default createSchema({
 	name: 'default',
 	types: schemaTypes.concat([
@@ -17,5 +20,8 @@ export default createSchema({
 		category,
 		photos, photoCategory, photoset,
 		graphic,
+
+		// objects
+		videoYoutube,
 	]),
 })

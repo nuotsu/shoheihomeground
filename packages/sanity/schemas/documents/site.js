@@ -5,7 +5,8 @@ export default {
 	__experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
 	groups: [
 		{ title: 'Global', name: 'global', default: true },
-		{ title: 'Homepage', name: 'home' },
+		{ title: 'Home', name: 'home' },
+		{ title: 'About', name: 'about' },
 	],
 	fields: [
 		{
@@ -50,6 +51,12 @@ export default {
 					type: 'url',
 				},
 			],
+		},
+		{
+			name: 'featuredVideos',
+			type: 'array',
+			of: [{ type: 'video.youtube' }],
+			group: 'about',
 		},
 	],
 	preview: {

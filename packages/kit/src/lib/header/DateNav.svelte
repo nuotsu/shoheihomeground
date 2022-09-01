@@ -32,6 +32,17 @@
 		place-content: center;
 	}
 
+	dd {
+		animation: appear 0.2s ease-in-out;
+	}
+
+	@keyframes appear {
+		from {
+			opacity: 0;
+			translate: -0.5rem 0;
+		}
+	}
+
 	.prev {
 		scale: -1 1;
 	}
