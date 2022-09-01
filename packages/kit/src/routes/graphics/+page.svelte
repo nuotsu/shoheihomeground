@@ -2,10 +2,10 @@
 
 <H1>Graphics</H1>
 
-<section class="section grid gap-y-8 gap-x-12 items-center <md:px-0">
-	{#each graphics as { title, description, image, date }, i}
-		<figure class="flex flex-col text-center anim-fade" style:--delay={i / 20}>
-			<div class="chiseled">
+<section class="section grid gap-y-8 gap-x-12 items-center <md:px-0 overflow-hidden">
+	{#each graphics as { _id, title, description, image, date }, i}
+		<figure id={_id} class="flex flex-col text-center anim-fade" style:--delay={i / 20}>
+			<div>
 				<Img {image} h={600} />
 			</div>
 
@@ -30,6 +30,29 @@
 	@screen md {
 		section {
 			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		}
+	}
+
+	figure :global(img) {
+		display: block;
+		margin: auto;
+
+		@apply chiseled;
+	}
+
+	figure:target :global(img) {
+		animation: target 1.4s ease-in-out;
+	}
+
+	@keyframes target {
+		40%, 60% {
+			scale: 1.02;
+			filter: saturate(1.2) brightness(1.2);
+		}
+
+		30%, 50% {
+			scale: 1;
+			filter: saturate(1) brightness(1);
 		}
 	}
 </style>

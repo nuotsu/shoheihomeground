@@ -12,7 +12,7 @@ export async function load() {
 					photosets
 				}
 			},
-			'latestDates': *[_type == 'photos' && !(_id in path('drafts.**'))]|order(date desc)[0...5].date,
+			'dates': *[_type == 'photos' && !(_id in path('drafts.**'))]|order(date desc).date,
 			'updates': *[_type == 'update' && !(_id in path('drafts.**'))]|order(date desc){
 				...,
 				type->

@@ -1,11 +1,17 @@
 <p class="mt-8 text-center text-ink/50">
-	Showing top {Math.min(filtered.length, max)} results
+	Showing top {Math.min(filtered.length, $max)} results
 </p>
 
 <div class="<md:full-width mt-4">
-	{#each filtered.slice(0, max) as image (image._key)}
+	{#each filtered.slice(0, $max) as image (image._key)}
 		<PhotosetMini {...image} />
 	{/each}
+
+	{#if $max < filtered.length}
+		<button class="hover:bg-ink/5 aspect-square" on:click={() => $max += (MAX_INC + 1)}>
+			View more +
+		</button>
+	{/if}
 </div>
 
 <style>
@@ -20,8 +26,6 @@
 	import PhotosetMini from './PhotosetMini.svelte'
 
 	export let photos, points
-
-	const max = 100
 
 	$: filtered = photos
 		.filter(({ date }) => !$selected_dates.length || $selected_dates.includes(date))
@@ -53,4 +57,7 @@
 
 	export const available_categories = writable([])
 	export const available_dates = writable([])
+
+	export const MAX_INC = 31
+	export const max = writable(MAX_INC)
 </script>

@@ -84,6 +84,7 @@
 	import {
 		selected_categories, selected_dates,
 		available_categories, available_dates,
+		max, MAX_INC
 	} from './Results.svelte'
 	import { onMount } from 'svelte'
 
@@ -103,6 +104,8 @@
 
 		sessionStorage.setItem('selected_categories', $selected_categories)
 		sessionStorage.setItem('selected_dates', $selected_dates)
+
+		$max = MAX_INC
 	}
 
 

@@ -49,6 +49,13 @@ export const photos = {
 			})
 		},
 	},
+	orderings: [
+		{
+			title: 'Date',
+			name: 'date',
+			by: [{field: 'date', direction: 'desc'}],
+		},
+	],
 }
 
 export const photoCategory = {

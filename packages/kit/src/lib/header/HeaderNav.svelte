@@ -3,11 +3,7 @@
 
 	<li>
 		<Menu title="Recent Photos" link="/latest">
-			<ul>
-				{#each latestDates as date}
-					<li><a href="/{date}"><Date {date} /></a></li>
-				{/each}
-			</ul>
+			<DateNav/>
 		</Menu>
 	</li>
 
@@ -21,7 +17,15 @@
 		</Menu>
 	</li>
 
-	<li><a href="/graphics">Graphics</a></li>
+	<li>
+		<Menu title="Graphics" link="/graphics">
+			<ul>
+				{#each graphics.slice(0, 5) as graphic}
+					<li><a href="/graphics#{graphic._id}">{graphic.title}</a></li>
+				{/each}
+			</ul>
+		</Menu>
+	</li>
 	<li><a href="/#stats-updates">Stats & Updates</a></li>
 	<li><a href="/about">About</a></li>
 </ul>
@@ -47,8 +51,8 @@
 <script>
 	import { open } from './Toggle.svelte'
 	import Menu from './Menu.svelte'
-	import Date from '$lib/Date.svelte'
+	import DateNav from './DateNav.svelte'
 	import { page } from '$app/stores'
 
-	const { latestDates, categories } = $page.data.sanity
+	const { categories, graphics } = $page.data.sanity
 </script>

@@ -39,6 +39,12 @@
 	.open::after { rotate: -45deg; }
 </style>
 
+<script>
+	import { afterNavigate } from '$app/navigation'
+
+	afterNavigate(() => $open = false)
+</script>
+
 <script context="module">
 	import { writable } from 'svelte/store'
 
