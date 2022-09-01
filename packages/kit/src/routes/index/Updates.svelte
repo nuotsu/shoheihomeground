@@ -1,11 +1,11 @@
 <article class="p-4 bg-white chiseled">
 	<H2>Updates</H2>
 
-	<ul class="mt-4 max-h-[8em] <md:max-h-[12em] overflow-y-auto">
+	<ul class="mt-4 max-h-[9.5em] <md:max-h-[12em] overflow-y-auto">
 		{#each updates as { date, type, content, link }}
 			<li>
 				<a class="grid gap-x-4" href={resolveLink({ date, type, link })}>
-					<time datetime={date}>{date}</time>
+					<time class="text-sm text-ink/40 md:leading-[1.5rem]" datetime={date}>{date}</time>
 
 					{#if type._type == 'photos'}
 						<p>Added photos for <strong><Date {date} /></strong>.</p>

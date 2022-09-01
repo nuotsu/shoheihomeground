@@ -89,6 +89,9 @@ export const photoset = {
 			name: 'photos',
 			type: 'array',
 			of: [{ type: 'image' }],
+			validation: Rule => Rule.required().min(1).custom(image => {
+				return !image.some(({ asset }) => !asset._ref) || 'Error with image upload'
+			})
 		},
 		{
 			name: 'thumbnail',
@@ -117,7 +120,7 @@ export const photoset = {
 	},
 }
 
-function count(arr, item = 'items', singular, join) {
+function count(arr, item = 'items', singular) {
 	const size = typeof arr === 'number'
 		? arr
 		: arr?.length || 0

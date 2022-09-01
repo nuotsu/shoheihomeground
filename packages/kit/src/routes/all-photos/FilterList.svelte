@@ -6,7 +6,7 @@
 		</h2>
 	</summary>
 
-	<form class="flex flex-wrap gap-y-4 gap-x-12 mt-4" on:change={onChange}>
+	<form bind:this={form} class="flex flex-wrap gap-y-4 gap-x-12 mt-4" on:change={onChange}>
 		<fieldset>
 			<legend class="font-bold">By category</legend>
 			<div class="columns-2 gap-8">
@@ -85,6 +85,7 @@
 		selected_categories, selected_dates,
 		available_categories, available_dates,
 	} from './Results.svelte'
+	import { onMount } from 'svelte'
 
 	const { categories, photos } = $page.data.sanity
 	const dates = photos.map(p => p.date)
@@ -92,10 +93,33 @@
 	$selected_categories = ''
 	$selected_dates = ''
 
-	function onChange({ target }) {
-		const formData = new FormData(target.form)
+	let form
+
+	function onChange() {
+		const formData = new FormData(form)
 
 		$selected_categories = formData.getAll('categories')
 		$selected_dates = formData.getAll('dates')
+
+		sessionStorage.setItem('selected_categories', $selected_categories)
+		sessionStorage.setItem('selected_dates', $selected_dates)
 	}
+
+
+	onMount(() => {
+		const stored_categories = sessionStorage.getItem('selected_categories')?.split(',') || []
+		const stored_dates = sessionStorage.getItem('selected_dates')?.split(',') || []
+
+		stored_categories.forEach(category => {
+			const input = form.querySelector(`input[value="${ category }"]`)
+			if (input) input.checked = true
+		})
+
+		stored_dates.forEach(date => {
+			const input = form.querySelector(`input[value="${ date }"]`)
+			if (input) input.checked = true
+		})
+
+		onChange()
+	})
 </script>
