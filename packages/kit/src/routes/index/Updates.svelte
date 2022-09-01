@@ -46,7 +46,7 @@
 	function resolveLink({ date, type, link }) {
 		return (
 			type._type == 'photos' ? `/${ date }` :
-			type._type == 'graphic' ? '/graphics' :
+			type._type == 'graphic' ? `/graphics#${ type._id }` :
 			link
 		)
 	}

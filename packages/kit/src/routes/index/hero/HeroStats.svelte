@@ -1,15 +1,21 @@
-<dl class="relative z-[1] flex flex-wrap gap-x-12 gap-y-4 m-auto py-8 text-center justify-center text-shadow">
+<dl class="relative z-[1] flex flex-wrap gap-x-12 <md:gap-x-6 gap-y-4 m-auto py-8 text-center justify-center text-shadow">
 	<div>
-		<dt class="font-bold text-7xl">{total_count.toLocaleString()}</dt>
+		<dt class="font-bold text-7xl">
+			<SlotMachine text={total_count.toLocaleString()} />
+		</dt>
 		<dd class="h2 uppercase">photos</dd>
 	</div>
 	<div>
-		<dt class="font-bold text-7xl">{photos.length.toLocaleString()}</dt>
+		<dt class="font-bold text-7xl">
+			<SlotMachine text={photos.length.toLocaleString()} />
+		</dt>
 		<dd class="h2 uppercase">days</dd>
 	</div>
 </dl>
 
 <script>
+	import SlotMachine from '$lib/SlotMachine.svelte'
+
 	export let photos
 
 	const total_count = photos
