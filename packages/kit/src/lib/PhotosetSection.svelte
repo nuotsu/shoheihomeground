@@ -11,7 +11,7 @@
 	</header>
 
 	<div class="photos <sm:full-width">
-		{#each photosets as { thumbnail, ...props }, set}
+		{#each photosets as { thumbnail, ...props }, set (props._key)}
 			<Photoset {date} {category} t={thumbnail-1} {set} {...props} />
 		{/each}
 	</div>
@@ -42,6 +42,6 @@
 
 	export let date, category, photosets
 
-	const sets = photosets.length
-	const total = photosets.reduce((acc, { photos }) => acc + photos.length, 0)
+	$: sets = photosets.length
+	$: total = photosets.reduce((acc, { photos }) => acc + photos.length, 0)
 </script>

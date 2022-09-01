@@ -13,7 +13,9 @@
 	import PhotosByCategory from '$lib/PhotosByCategory.svelte'
 	import { page } from '$app/stores'
 
-	const { date } = $page.params
+	$: ({ date } = $page.params)
 
 	export let data
+
+	$: data
 </script>

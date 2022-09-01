@@ -19,10 +19,10 @@
 
 	export let data
 
-	const { category } = data
-	const { photos } = $page.data.sanity
+	$: ({ category } = data)
+	$: ({ photos } = $page.data.sanity)
 
-	const filtered = photos
+	$: filtered = photos
 		.filter(p => p.categories.map(c => c.category.code).includes(category.code))
 		.map(({ date, categories }) => ({
 			date,
