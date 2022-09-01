@@ -4,6 +4,7 @@ import groq from 'groq'
 export async function load() {
 	return {
 		sanity: await client.fetch(groq`{
+			'site': *[_type == 'site'][0],
 			'photos': *[_type == 'photos' && !(_id in path('drafts.**'))]|order(date desc){
 				date,
 				categories[]{

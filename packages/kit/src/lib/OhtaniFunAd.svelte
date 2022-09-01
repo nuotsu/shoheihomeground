@@ -13,5 +13,5 @@
 	import { page } from '$app/stores'
 	import { urlFor } from '$utils/sanity'
 
-	const { ad } = $page.data.site
+	const { ad } = $page.data.sanity.site
 </script>
