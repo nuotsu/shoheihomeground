@@ -17,7 +17,11 @@
 <article class="section md:py-20 grid gap-8 items-center <md:px-0">
 	{#each photos as photo}
 		<figure class="m-auto">
-			<a class="inline-block highlight chiseled" href={urlFor(photo).url()}>
+			<a
+				class="inline-block highlight chiseled"
+				href={urlFor(photo).url()}
+				target="_blank"
+			>
 				<Img image={photo} w={600} />
 			</a>
 		</figure>

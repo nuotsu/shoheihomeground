@@ -5,10 +5,10 @@
 		<ul class="grid gap-4 grid-cols-2 md:grid-cols-3 <md:gap-2 mt-4">
 			{#each categories as { code, name, jpn }}
 				<li>
-					<a class="!flex flex-wrap items-center gap-x-4 chiseled" href="/{code}">
+					<a class="!flex flex-wrap <sm:flex-col items-center gap-x-4 chiseled" href="/{code}">
 						<span class="<sm:grow">{name}</span>
 						<hr class="grow">
-						<span class="text-sm <md:ml-auto">{jpn}</span>
+						<span class="text-sm">{jpn}</span>
 					</a>
 				</li>
 			{/each}

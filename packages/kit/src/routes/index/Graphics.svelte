@@ -2,9 +2,11 @@
 	<H2 link={{ url: '/graphics' }}>Graphics</H2>
 
 	<ul class="carousel mt-4 <xl:full-width <xl:px-4">
-		{#each graphics.slice(0, 10) as graphic, i}
+		{#each graphics.slice(0, 10) as { _id, image }, i}
 			<li class="chiseled min-w-[150px] anim-fade" style:--delay={i / 25}>
-				<Img image={graphic.image} h={300} />
+				<a class="highlight" href="/graphics?id={_id}">
+					<Img {image} h={300} />
+				</a>
 			</li>
 		{/each}
 	</ul>

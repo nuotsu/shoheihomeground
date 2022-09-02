@@ -20,8 +20,8 @@
 	<li>
 		<Menu title="Graphics" link="/graphics">
 			<ul>
-				{#each graphics.slice(0, 5) as graphic}
-					<li><a href="/graphics#{graphic._id}">{graphic.title}</a></li>
+				{#each graphics.slice(0, 5) as { _id, title }}
+					<li><a href="/graphics?id={_id}">{title}</a></li>
 				{/each}
 			</ul>
 		</Menu>
