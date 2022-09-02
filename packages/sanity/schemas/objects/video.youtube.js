@@ -14,7 +14,7 @@ export default {
 			name: 'url',
 			title: 'Video URL',
 			type: 'url',
-			placeholder: 'https://www.youtube.com/watch?v=...',
+			placeholder: 'https://www.youtube.com/embed/...',
 		},
 	],
 	preview: {

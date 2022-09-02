@@ -4,7 +4,7 @@ import formatDate from '../../components/formatDate'
 export default {
 	name: 'update',
 	title: 'Update',
-	icon: Icon('📰'),
+	icon: Icon('🔔'),
 	type: 'document',
 	fields: [
 		{

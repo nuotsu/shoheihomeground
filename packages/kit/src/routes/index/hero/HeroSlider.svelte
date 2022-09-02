@@ -42,7 +42,7 @@
 	import Img from '$lib/Img.svelte'
 	import { page } from '$app/stores'
 
-	const { heroPhotos } = $page.data.sanity.site
+	const { heroPhotos } = $page.data.pg
 
 	let active = 0
 

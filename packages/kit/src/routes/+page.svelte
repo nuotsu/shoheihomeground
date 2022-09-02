@@ -1,4 +1,4 @@
-<Head title="High Quality Photographs" />
+<Head {...pg.seo} />
 
 <Hero/>
 <LatestSection/>
@@ -15,4 +15,8 @@
 	import Graphics from './index/Graphics.svelte'
 	import StatsAndUpdates from './index/StatsAndUpdates.svelte'
 	import OhtaniFunAd from '$lib/OhtaniFunAd.svelte'
+
+	export let data
+
+	const { pg } = data
 </script>

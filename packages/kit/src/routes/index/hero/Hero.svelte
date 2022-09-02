@@ -38,5 +38,7 @@
 	import HeroStats from './HeroStats.svelte'
 	import { page } from '$app/stores'
 
+	export let pg
+
 	const { photos } = $page.data.sanity
 </script>

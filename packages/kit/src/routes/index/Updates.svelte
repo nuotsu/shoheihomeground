@@ -41,7 +41,7 @@
 	import Date from '$lib/Date.svelte'
 	import { page } from '$app/stores'
 
-	const { updates } = $page.data.sanity
+	const { updates } = $page.data
 
 	function resolveLink({ date, type, link }) {
 		return (
