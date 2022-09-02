@@ -12,7 +12,7 @@
 		</p>
 	</header>
 
-	<ul class="grid grid-cols-2 gap-12 mt-8">
+	<ul class="grid md:grid-cols-2 gap-12 mt-8">
 		{#each pg.videos as { title, url }}
 			<li class="grid gap-2">
 				<iframe class="aspect-video w-full chiseled" src={url} {title} />
