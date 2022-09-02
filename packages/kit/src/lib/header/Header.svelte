@@ -1,7 +1,7 @@
 <header class="glass sticky top-0 z-10 hover:drop-shadow-lg transition-all" bind:clientHeight>
 	<nav class="relative max-w-screen-xl mx-auto grid md:gap-x-4 items-center py-2 px-4">
 		<div class="<md:text-center" style:grid-area="top">
-			<Logo icon className="<md:h-[2em]" />
+			<Logo small className="<md:h-[2em]" />
 		</div>
 
 		<Toggle/>

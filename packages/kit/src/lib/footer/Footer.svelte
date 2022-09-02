@@ -1,4 +1,4 @@
-<footer class="section grid gap-4">
+<footer class="section grid gap-8">
 	<nav>
 		<div class="grid gap-4 mx-auto self-start">
 			<Logo/>

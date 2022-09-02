@@ -1,4 +1,7 @@
-<Head title="Graphics" />
+<Head
+	title="Graphics"
+	description="A collection of graphics created for various occasions."
+/>
 
 <H1>Graphics</H1>
 

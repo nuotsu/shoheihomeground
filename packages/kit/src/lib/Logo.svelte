@@ -1,5 +1,5 @@
 <a class="inline-block h-[3em] {className}" href="/">
-	{#if icon}
+	{#if small}
 		<img
 			src="/logo-icon.png"
 			alt="Shohei Home Ground logo"
@@ -23,5 +23,5 @@
 </style>
 
 <script>
-	export let icon, className
+	export let small, className
 </script>
