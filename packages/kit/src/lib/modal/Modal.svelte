@@ -9,7 +9,7 @@
 
 	<aside class="glass" transition:fly={{ x: 100 }}>
 		<p class="sticky top-0">
-			<button on:click={() => $open = false}>
+			<button on:click={() => $open = false} title="Close modal">
 				&times;
 			</button>
 		</p>

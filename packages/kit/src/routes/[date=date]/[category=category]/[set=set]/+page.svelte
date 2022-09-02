@@ -6,7 +6,7 @@
 	</a>
 
 	<p slot="sub">
-		Photoset <code>{set}</code>
+		Photoset {set}
 		—
 		<a class="link-hover" href="/{date}">
 			<Date {date} />
@@ -16,21 +16,26 @@
 
 <article class="section md:py-20 grid gap-8 items-center <md:px-0">
 	{#each photos as photo}
+		{@const alt = [category.name, format(date), `Photoset ${set}`].join(', ')}
+
 		<figure class="m-auto">
-			<a
+			<button
 				class="inline-block highlight chiseled"
-				href={urlFor(photo).url()}
-				target="_blank"
+				on:click={() => openModal({ photo, category, set, date, alt })}
 			>
-				<Img image={photo} w={600} />
-			</a>
+				<Img image={photo} w={300} {alt} />
+			</button>
 		</figure>
 	{/each}
 </article>
 
+<Modal>
+	<ModalPhoto {...selected_photo} />
+</Modal>
+
 <style>
 	article {
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 	}
 </style>
 
@@ -39,7 +44,8 @@
 	import H1 from '$lib/H1.svelte'
 	import Date, { format } from '$lib/Date.svelte'
 	import Img from '$lib/Img.svelte'
-	import { urlFor } from '$utils/sanity'
+	import Modal, { open } from '$lib/modal/Modal.svelte'
+	import ModalPhoto from '$lib/modal/ModalPhoto.svelte'
 	import { page } from '$app/stores'
 
 	export let data
@@ -50,4 +56,11 @@
 	const { photos } = categories
 		.find(c => c.category.code === category.code)
 		.photosets[set - 1]
+
+	let selected_photo = null
+
+	function openModal(props) {
+		$open = true
+		selected_photo = props
+	}
 </script>

@@ -1,7 +1,7 @@
 <figure class="flex flex-col text-center anim-fade" style:--delay={index / 20}>
 	<button
 		class="chiseled highlight"
-		on:click={() => selectGraphic()}
+		on:click={openModal}
 	>
 		<Img {image} h={400} />
 	</button>
@@ -32,7 +32,7 @@
 
 	export let title, description, image, date, index
 
-	function selectGraphic() {
+	function openModal() {
 		$open = true
 		$selected_graphic = {
 			image,

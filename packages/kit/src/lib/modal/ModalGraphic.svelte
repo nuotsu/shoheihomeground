@@ -1,7 +1,7 @@
 <div class="root">
 	<figure>
 		<div>
-			<Img {image} />
+			<Img {image} w={1000} />
 		</div>
 
 		<figcaption class="grid gap-2 mt-4">
