@@ -4,6 +4,12 @@
 	{loading}
 />
 
+<style>
+	img {
+		font-size: 0;
+	}
+</style>
+
 <script>
 	import { urlFor } from '$utils/sanity'
 	import { getImageDimensions } from '@sanity/asset-utils'

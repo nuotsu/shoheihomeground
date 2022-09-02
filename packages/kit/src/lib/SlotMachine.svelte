@@ -2,7 +2,11 @@
 	<div class="grid">
 		<div hidden={!intersecting}>
 			{#each digits as digit, i}
-				<span class="inline-block" style:--delay={digits.length - i}>
+				<span
+					style:--step-delay="{stepDelay}s"
+					style:--init-delay="{initDelay * stepDelay}s"
+					style:--delay={digits.length - i}
+				>
 					{digit}
 				</span>
 			{/each}
@@ -19,9 +23,10 @@
 	}
 
 	span {
+		display: inline-block;
 		opacity: 0;
 		translate: 0 0.25em;
-		animation: in 0.15s ease-in-out calc(var(--delay, 0) * 0.15s) forwards;
+		animation: in 0.2s ease-in-out calc((var(--init-delay) + var(--step-delay)) + (var(--delay) * var(--step-delay))) forwards;
 	}
 
 	@keyframes in {
@@ -35,7 +40,7 @@
 <script>
 	import IntersectionObserver from '$lib/IntersectionObserver.svelte'
 
-	export let text
+	export let text, stepDelay = 0.08, initDelay = 0
 
 	const digits = String(text).split('')
 </script>

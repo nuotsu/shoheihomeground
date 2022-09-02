@@ -1,7 +1,10 @@
 <dl class="relative z-[1] flex flex-wrap gap-x-12 <md:gap-x-6 gap-y-4 m-auto py-8 text-center justify-center text-shadow">
 	<div>
 		<dt class="font-bold text-7xl">
-			<SlotMachine text={total_count.toLocaleString()} />
+			<SlotMachine
+				text={total_count.toLocaleString()}
+				initDelay={String(photos.length.toLocaleString()).length}
+			/>
 		</dt>
 		<dd class="h2 uppercase">photos</dd>
 	</div>
