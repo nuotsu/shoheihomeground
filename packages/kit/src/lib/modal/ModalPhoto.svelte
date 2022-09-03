@@ -1,5 +1,5 @@
 <figure class="grid gap-4">
-	<Img image={photo} w={1000} {alt} />
+	<Img image={photo} w={800} {alt} />
 
 	<div class="flex flex-wrap justify-between gap-4">
 		<dl>
