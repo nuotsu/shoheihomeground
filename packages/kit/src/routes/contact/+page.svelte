@@ -11,10 +11,7 @@
 		<p class="mt-2">Feel free to contact about inquiries, photograph requests, or ask a question!</p>
 	</header>
 
-	<form name="contact" method="post" data-netlify="true" netlify-honeypot="bot-field">
-		<input name="form-name" value="contact" type="hidden" />
-		<input name="bot-field" type="hidden" />
-
+	<Form name="contact">
 		<label for="name">Name*</label>
 		<input class="chiseled" id="name" name="name" placeholder="Shohei Ohtani" type="text" autocomplete="name" required />
 
@@ -37,11 +34,11 @@
 		<p class="col-span-full text-center">
 			<button class="action w-full" type="submit">Submit</button>
 		</p>
-	</form>
+	</Form>
 </section>
 
 <style>
-	form {
+	section :global(form) {
 		display: grid;
 		grid-template-columns: auto 1fr;
 		gap: 1rem;
@@ -65,6 +62,5 @@
 <script>
 	import Head from '$lib/Head.svelte'
 	import H1 from '$lib/H1.svelte'
-
-	export const prerender = true
+	import Form from '$lib/form/Form.svelte'
 </script>
