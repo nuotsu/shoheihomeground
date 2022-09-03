@@ -1,5 +1,5 @@
 <figure class="grid gap-4">
-	<Img image={photo} w={800} {alt} />
+	<Img image={photo} w={800} />
 
 	<div class="flex flex-wrap justify-between gap-4">
 		<dl>
@@ -12,9 +12,15 @@
 			<dt>Photoset</dt>
 			<dd>{set}</dd>
 		</dl>
-
-		<p><Share image={photo} /></p>
 	</div>
+
+	<p class="grid gap-4">
+		<a class="action" href={urlFor(photo).url()} target="_blank">
+			Download
+		</a>
+
+		<ShareOrCopy text="{$page.url.href}?key={photo._key}" />
+	</p>
 </figure>
 
 <style>
@@ -46,7 +52,9 @@
 <script>
 	import Img from '$lib/Img.svelte'
 	import Date from '$lib/Date.svelte'
-	import Share from '$lib/Share.svelte'
+	import { urlFor } from '$utils/sanity'
+	import ShareOrCopy from '$lib/ShareOrCopy.svelte'
+	import { page } from '$app/stores'
 
-	export let photo, category, set, date, alt
+	export let photo, category, set, date
 </script>

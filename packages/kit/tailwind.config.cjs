@@ -10,6 +10,7 @@ module.exports = {
 			},
 			fontFamily: {
 				sans: `'Chakra Petch', sans-serif`,
+				digital: `Silkscreen, monospace`,
 			},
 			screens: {
 				'xs': { min: '480px' },

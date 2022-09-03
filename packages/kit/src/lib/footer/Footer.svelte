@@ -1,3 +1,5 @@
+<Marquee/>
+
 <footer class="section grid gap-8">
 	<nav>
 		<div class="grid gap-4 mx-auto self-start">
@@ -22,6 +24,7 @@
 </style>
 
 <script>
+	import Marquee from '$lib/Marquee.svelte'
 	import Logo from '$lib/Logo.svelte'
 	import Accounts from '$lib/Accounts.svelte'
 	import FooterNav from './FooterNav.svelte'

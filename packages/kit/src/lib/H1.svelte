@@ -9,10 +9,10 @@
 		{/if}
 
 		<slot name="sub"></slot>
-
-		<!-- TODO: breadcrumbs -->
 	</div>
 </header>
+
+<Marquee/>
 
 <style>
 	div {
@@ -24,6 +24,7 @@
 
 <script>
 	import Date from '$lib/Date.svelte'
+	import Marquee from './Marquee.svelte'
 
 	export let date
 </script>

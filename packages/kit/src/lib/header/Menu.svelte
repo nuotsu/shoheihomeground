@@ -12,7 +12,7 @@
 		<span class="shrink-0"><Right/></span>
 	</summary>
 
-	<div class="p-4 <md:py-0 md:glass md:chiseled-b">
+	<div class="p-4 <md:py-0 md:glass md:chiseled-b md:text-left">
 		<slot></slot>
 	</div>
 </details>

@@ -14,8 +14,6 @@
 			{#if date}
 				<p class="text-sm"><Date {date} /></p>
 			{/if}
-
-			<p><Share {image} /></p>
 		</figcaption>
 	</figure>
 </div>
@@ -38,7 +36,6 @@
 <script>
 	import Img from '$lib/Img.svelte'
 	import Date from '$lib/Date.svelte'
-	import Share from '$lib/Share.svelte'
 
 	export let image, title, description, date
 </script>
