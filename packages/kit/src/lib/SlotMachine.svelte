@@ -1,4 +1,4 @@
-<IntersectionObserver let:intersecting>
+<IntersectionObserver let:intersecting once>
 	<div class="grid">
 		<div hidden={!intersecting}>
 			{#each digits as digit, i}

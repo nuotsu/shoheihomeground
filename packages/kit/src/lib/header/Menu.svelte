@@ -2,14 +2,14 @@
 	on:mouseenter={() => open = true}
 	on:mouseleave={() => open = false}
 >
-	<summary class="font-bold with-icon">
+	<summary class="font-bold with-icon text-center">
 		{#if link}
 			<a href={link}>{title}</a>
 		{:else}
 			{title}
 		{/if}
 
-		<Right/>
+		<span class="shrink-0"><Right/></span>
 	</summary>
 
 	<div class="p-4 <md:py-0 md:glass md:chiseled-b">

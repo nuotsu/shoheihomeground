@@ -1,4 +1,4 @@
-<ul class="root grow flex gap-4" class:closed={!$open} style:grid-area="nav">
+<ul class="root grow flex justify-end gap-4" class:closed={!$open} style:grid-area="nav">
 	<li><a href="/all-photos">All Photos</a></li>
 
 	<li>
@@ -28,6 +28,7 @@
 	</li>
 	<li><a href="/#stats-updates">Stats & Updates</a></li>
 	<li><a href="/about">About</a></li>
+	<li><a href="/contact">Contact</a></li>
 </ul>
 
 <style>
@@ -43,7 +44,12 @@
 		}
 	}
 
+	.root > li {
+		text-align: center;
+	}
+
 	.root > li > a {
+		text-align: center;
 		@apply font-bold;
 	}
 

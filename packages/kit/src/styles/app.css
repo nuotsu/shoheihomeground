@@ -19,7 +19,7 @@
 	}
 
 	body {
-		@apply font-sans text-ink accent-accent;
+		@apply font-sans text-ink accent-accent caret-accent;
 	}
 
 	summary {
@@ -168,7 +168,7 @@
 		display: inline-flex;
 		gap: 0.25ch;
 		align-items: center;
-		justify-content: flex-start;
+		justify-content: center;
 	}
 
 	.glass {

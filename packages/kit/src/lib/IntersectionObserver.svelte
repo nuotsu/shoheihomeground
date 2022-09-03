@@ -5,10 +5,10 @@
 <script>
 	import { onMount } from 'svelte'
 
+	export let once = false
+
 	let elem
 	let intersecting = false
-
-	export let once = false
 
 	onMount(() => {
 		if (typeof IntersectionObserver === 'undefined') return
