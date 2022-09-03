@@ -15,6 +15,11 @@ export default {
 			of: [{ type: 'video.youtube' }],
 		},
 		{
+			name: 'instagram',
+			type: 'array',
+			of: [{ type: 'instagram' }],
+		},
+		{
 			name: 'seo',
 			title: 'SEO',
 			type: 'seo',

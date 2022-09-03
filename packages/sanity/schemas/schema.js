@@ -12,6 +12,7 @@ import { photos, photoCategory, photoset } from './documents/photos'
 import graphic from './documents/graphic'
 
 // objects
+import instagram from './objects/instagram'
 import seo from './objects/seo'
 import videoYoutube from './objects/video.youtube'
 
@@ -29,6 +30,7 @@ export default createSchema({
 		graphic,
 
 		// objects
+		instagram,
 		seo,
 		videoYoutube,
 	]),

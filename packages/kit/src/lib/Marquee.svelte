@@ -1,7 +1,7 @@
 <Marquee duration="120s">
 	<p class="font-digital">
 		{#each new Array(10) as _}
-			<span>{site.title} ⚾️ {site.title} 🏟 </span>
+			<span>{site.title} ⚾️ {site.title} 🏟</span>
 		{/each}
 	</p>
 </Marquee>

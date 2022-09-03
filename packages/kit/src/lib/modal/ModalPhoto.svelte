@@ -1,18 +1,16 @@
 <figure class="grid gap-4">
 	<Img image={photo} w={800} />
 
-	<div class="flex flex-wrap justify-between gap-4">
-		<dl>
-			<dt>Category</dt>
-			<dd>{category.name}</dd>
+	<dl>
+		<dt>Category</dt>
+		<dd>{category.name}</dd>
 
-			<dt>Date</dt>
-			<dd><Date {date} /></dd>
+		<dt>Date</dt>
+		<dd><Date {date} /></dd>
 
-			<dt>Photoset</dt>
-			<dd>{set}</dd>
-		</dl>
-	</div>
+		<dt>Photoset</dt>
+		<dd>{set}</dd>
+	</dl>
 
 	<p class="grid gap-4">
 		<a class="action" href={urlFor(photo).url()} target="_blank">
@@ -35,9 +33,10 @@
 
 	dl {
 		display: grid;
-		grid-template-columns: auto 1fr;
-		gap: 0 0.5em;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 0 1rem;
 		max-width: max-content;
+		margin-inline: auto;
 	}
 
 	dt { text-align: right; }
