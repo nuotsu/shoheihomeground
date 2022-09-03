@@ -1,5 +1,5 @@
 <header class="flex flex-wrap items-end gap-x-4">
-	<h2 class="h2">
+	<h2 class="h2" class:live-badge={live}>
 		<slot></slot>
 	</h2>
 
@@ -18,5 +18,5 @@
 <script>
 	import Right from '$icon/Right.svelte'
 
-	export let link
+	export let link, live
 </script>

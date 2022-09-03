@@ -13,9 +13,15 @@
 	</header>
 
 	<ul class="grid md:grid-cols-2 gap-12 mt-8">
-		{#each pg.videos as { title, url }}
+		{#each pg.videos as { title, url, orientation }}
+			{@const vertical = orientation === 'vertical'}
+
 			<li class="grid gap-2">
-				<iframe class="aspect-video w-full chiseled" src={url} {title} />
+				<iframe
+					class="chiseled {vertical ? 'aspect-[9/16] h-[450px] mx-auto' : 'aspect-video w-full'}"
+					src={url}
+					{title}
+				/>
 				<h2 class="h2">{title}</h2>
 			</li>
 		{/each}

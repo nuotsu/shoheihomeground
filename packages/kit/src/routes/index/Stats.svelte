@@ -1,14 +1,12 @@
 <article class="grid gap-2 p-4 bg-ink text-white dots moving min-w-0 chiseled">
-	<H2>
-		<div class="live-badge">Shohei Stats</div>
-	</H2>
+	<H2 live>Shohei Stats</H2>
 
 	{#each Object.entries(set) as [title, keys], index}
 		<article class="min-w-0 text-center">
 			<h3 class="">{title} stats</h3>
 
 			<div class="relative">
-				<div class="overflow-x-auto">
+				<div class="overflow-x-auto max-w-max mx-auto">
 					<table class="w-full">
 						<tr>
 							{#each keys as stat}
@@ -40,7 +38,7 @@
 	td { font-weight: bold; }
 
 	th, td {
-		padding-left: 1ch;
+		padding-inline: 1ch;
 	}
 
 	.relative::before,

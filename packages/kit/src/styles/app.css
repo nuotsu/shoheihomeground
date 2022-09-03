@@ -91,6 +91,12 @@
 		@apply action hover:bg-white/10;
 	}
 
+	.select {
+		padding-inline: 0.25em;
+
+		@apply chiseled bg-ink/10;
+	}
+
 	.chiseled { clip-path: polygon(var(--chisel) 0, 100% 0, 100% var(--chisel-2), var(--chisel-2) 100%, 0 100%, 0 var(--chisel)); }
 	.chiseled-b { clip-path: polygon(0 0, 100% 0, 100% var(--chisel-2), var(--chisel-2) 100%, var(--chisel) 100%, 0 var(--chisel-2)); }
 
@@ -99,6 +105,18 @@
 	}
 	.highlight:hover > * {
 		filter: saturate(1.2) brightness(1.2);
+	}
+
+	.new-badge {
+		font-size: 0.4em;
+		font-style: normal;
+		font-weight: bold;
+		letter-spacing: 0.1ch;
+		text-transform: uppercase;
+		padding-inline: 1ch;
+		vertical-align: middle;
+
+		@apply bg-accent text-white chiseled;
 	}
 
 	.live-badge {

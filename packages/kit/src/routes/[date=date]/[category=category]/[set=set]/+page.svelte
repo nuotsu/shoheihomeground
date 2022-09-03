@@ -23,7 +23,7 @@
 				class="inline-block highlight chiseled"
 				on:click={() => openModal({ photo, category, set, date, alt })}
 			>
-				<Img image={photo} w={300} {alt} />
+				<Img image={photo} w={500} {alt} />
 			</button>
 		</figure>
 	{/each}

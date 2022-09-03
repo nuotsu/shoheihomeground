@@ -7,5 +7,5 @@
 
 <script>
 	import Stats from './Stats.svelte'
-	import Updates from './Updates.svelte'
+	import Updates from './updates/Updates.svelte'
 </script>

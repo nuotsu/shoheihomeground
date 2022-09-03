@@ -3,7 +3,7 @@
 		class="chiseled highlight"
 		on:click={openModal}
 	>
-		<Img {image} h={600} />
+		<Img {image} h={500} />
 	</button>
 
 	<figcaption class="mt-4 px-4">

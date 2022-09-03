@@ -16,6 +16,14 @@ export default {
 			type: 'url',
 			placeholder: 'https://www.youtube.com/embed/...',
 		},
+		{
+			name: 'orientation',
+			type: 'string',
+			options: {
+				list: ['horizontal', 'vertical'],
+			},
+			initialValue: 'horizontal',
+		},
 	],
 	preview: {
 		select: {
