@@ -14,7 +14,7 @@
 	</h2>
 
 	<p class="md:text-2xl <md:text-xl md:!mt-12">
-		<a class="action" href="/all-photos">
+		<a class="action-2" href="/all-photos">
 			View all photos
 			<Right/>
 		</a>
@@ -22,7 +22,6 @@
 </div>
 
 <script>
-	import SlotMachine from '$lib/SlotMachine.svelte'
 	import { Pipewriter } from 'nuotsu.dev'
 	import Right from '$icon/Right.svelte'
 </script>

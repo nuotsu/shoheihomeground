@@ -65,7 +65,7 @@
 		padding: 0.5em 1em;
 		box-shadow: 0 1em 1em #fff;
 
-		@apply with-icon border border-current chiseled hover:bg-white/10;
+		@apply with-icon border border-current chiseled hover:bg-ink/10 transition-colors;
 	}
 	.action::after,
 	.action::before  {
@@ -85,6 +85,10 @@
 		bottom: 0;
 		border-right: var(--size) solid;
 		border-bottom: var(--size) solid;
+	}
+
+	.action-2 {
+		@apply action hover:bg-white/10;
 	}
 
 	.chiseled { clip-path: polygon(var(--chisel) 0, 100% 0, 100% var(--chisel-2), var(--chisel-2) 100%, 0 100%, 0 var(--chisel)); }

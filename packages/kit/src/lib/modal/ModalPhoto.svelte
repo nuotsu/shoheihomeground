@@ -1,16 +1,20 @@
 <figure class="grid gap-4">
 	<Img image={photo} w={1000} {alt} />
 
-	<dl>
-		<dt>Category</dt>
-		<dd>{category.name}</dd>
+	<div class="flex flex-wrap justify-between gap-4">
+		<dl>
+			<dt>Category</dt>
+			<dd>{category.name}</dd>
 
-		<dt>Date</dt>
-		<dd><Date {date} /></dd>
+			<dt>Date</dt>
+			<dd><Date {date} /></dd>
 
-		<dt>Photoset</dt>
-		<dd>{set}</dd>
-	</dl>
+			<dt>Photoset</dt>
+			<dd>{set}</dd>
+		</dl>
+
+		<p><Share image={photo} /></p>
+	</div>
 </figure>
 
 <style>
@@ -28,7 +32,6 @@
 		grid-template-columns: auto 1fr;
 		gap: 0 0.5em;
 		max-width: max-content;
-		margin: 0 auto;
 	}
 
 	dt {
@@ -42,7 +45,8 @@
 
 <script>
 	import Img from '$lib/Img.svelte'
-	import Date, { format } from '$lib/Date.svelte'
+	import Date from '$lib/Date.svelte'
+	import Share from '$lib/Share.svelte'
 
 	export let photo, category, set, date, alt
 </script>
