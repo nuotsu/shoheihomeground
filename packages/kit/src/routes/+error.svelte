@@ -7,7 +7,7 @@
 
 <section class="section text-center">
 	<h2 class="h1">
-		Return to <a class="link" href="/">home base</a>.
+		Return to <a class="link inline-block" href="/">home base</a>.
 	</h2>
 
 	<p class="mt-4">

@@ -1,3 +1,3 @@
 export function match(param) {
-	return /^[phowbdea_]$/.test(param)
+	return /^[phowbdag_]$/.test(param)
 }
