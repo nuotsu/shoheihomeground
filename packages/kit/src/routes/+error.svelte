@@ -5,8 +5,14 @@
 	<p slot="sub">{$page.error.message}...</p>
 </H1>
 
-<section class="section">
-	<p>Return <a class="link" href="/">home</a>.</p>
+<section class="section text-center">
+	<h2 class="h1">
+		Return to <a class="link" href="/">home base</a>.
+	</h2>
+
+	<p class="mt-4">
+		Or, the <a class="link" href="/d">dugout</a> is always open for a chat.
+	</p>
 </section>
 
 <script>
