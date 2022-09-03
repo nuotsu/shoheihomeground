@@ -1,5 +1,5 @@
 {#each byMonth as [month, dates], index}
-	<dl class="min-w-[10ch] <md:text-center" hidden={active !== index}>
+	<dl class="min-w-[12ch] <md:text-center" hidden={active !== index}>
 		<dt class="flex gap-2 items-center justify-between mb-2">
 			<button class="prev" on:click={prev} disabled={active === 0}>
 				<Right />

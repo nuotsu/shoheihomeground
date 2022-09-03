@@ -1,4 +1,4 @@
-<ul class="root grow flex <md:flex-col gap-x-4 <md:gap-y-2" class:closed={!$open} style:grid-area="nav">
+<ul class="root grow flex gap-4" class:closed={!$open} style:grid-area="nav">
 	<li><a href="/all-photos">All Photos</a></li>
 
 	<li>
@@ -33,9 +33,13 @@
 <style>
 	@screen <md {
 		.root {
-			margin-block: 1rem;
-			max-height: calc(100vh - 10rem);
+			flex-direction: column;
+			margin-block: 1rem auto;
+			max-height: calc(100vh - 7rem);
 			overflow-y: auto;
+			overscroll-behavior: contain;
+
+			@apply text-lg;
 		}
 	}
 

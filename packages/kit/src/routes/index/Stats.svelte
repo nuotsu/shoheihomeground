@@ -1,5 +1,7 @@
 <article class="grid gap-2 p-4 bg-ink text-white dots moving min-w-0 chiseled">
-	<H2>Stats</H2>
+	<H2>
+		<div class="live-badge">Stats</div>
+	</H2>
 
 	{#each Object.entries(set) as [title, keys], index}
 		<article class="min-w-0 text-center">

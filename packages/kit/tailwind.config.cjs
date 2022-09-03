@@ -6,6 +6,7 @@ module.exports = {
 			colors: {
 				ink: '#0d1841',
 				accent: '#e72626',
+				'accent-2': '#79f4e4',
 			},
 			fontFamily: {
 				sans: `'Chakra Petch', sans-serif`,

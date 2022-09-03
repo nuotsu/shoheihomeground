@@ -1,4 +1,4 @@
-<header class="glass sticky top-0 z-10 hover:drop-shadow-lg transition-all" bind:clientHeight>
+<header class="glass sticky top-0 z-10 hover:drop-shadow-lg transition-all" class:open={$open} bind:clientHeight>
 	<nav class="relative max-w-screen-xl mx-auto grid md:gap-x-4 items-center py-2 px-4">
 		<div class="<md:text-center" style:grid-area="top">
 			<Logo small className="<md:h-[2em]" />
@@ -29,13 +29,24 @@
 				'nav nav'
 				'acc acc';
 			grid-template-columns: 1fr auto;
+			grid-template-rows: auto 1fr auto;
+		}
+
+		.open {
+			position: fixed;
+			inset: 0;
+		}
+
+		.open nav {
+			height: 100%;
+			padding-bottom: calc(env(safe-area-inset-bottom) + 1rem);
 		}
 	}
 </style>
 
 <script>
 	import Logo from '$lib/Logo.svelte'
-	import Toggle from './Toggle.svelte'
+	import Toggle, { open } from './Toggle.svelte'
 	import HeaderNav from './HeaderNav.svelte'
 	import Accounts from '$lib/Accounts.svelte'
 	import { onMount } from 'svelte'

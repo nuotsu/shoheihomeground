@@ -34,10 +34,15 @@ export default {
 	preview: {
 		select: {
 			date: 'date',
+			type: 'type.title',
+			content: 'content',
 		},
-		prepare: ({ date }) => ({
-			title: formatDate(date),
-		}),
+		prepare: ({ date, type, content }) => {
+			return ({
+				title: formatDate(date),
+				subtitle: type || content,
+			})
+		},
 	},
 	orderings: [
 		{

@@ -1,5 +1,7 @@
 <article class="p-4 bg-white chiseled">
-	<H2>Updates</H2>
+	<H2>
+		<div class="live-badge">Updates</div>
+	</H2>
 
 	<ul class="mt-4 max-h-[9.5em] <md:max-h-[12em] overflow-y-auto">
 		{#each updates as { date, type, content, link }}
