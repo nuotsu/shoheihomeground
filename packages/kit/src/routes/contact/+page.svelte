@@ -63,4 +63,6 @@
 	import Head from '$lib/Head.svelte'
 	import H1 from '$lib/H1.svelte'
 	import Form from '$lib/form/Form.svelte'
+
+	export const prerender = true
 </script>
