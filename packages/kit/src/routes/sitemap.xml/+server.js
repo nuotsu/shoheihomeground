@@ -18,7 +18,7 @@ export async function GET() {
 
 	const pages = [
 		page('/', 1.0),
-		page('/all-photos', 0.9),
+		page('/browse', 0.9),
 		page('/graphics', 0.9),
 		page('/latest', 0.9),
 		page('/about', 0.9),

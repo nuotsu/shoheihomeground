@@ -2,9 +2,10 @@
 	<li>
 		<p><a href="/latest">Latest</a></p>
 		<ul>
-			{#each dates.slice(0, 5) as date}
+			{#each dates.slice(0, 4) as date}
 				<li><a href="/{date}"><Date {date} /></a></li>
 			{/each}
+			<li><a href="/browse">Browse all photos</a></li>
 		</ul>
 	</li>
 
@@ -27,9 +28,8 @@
 	</li>
 
 	<li>
-		<p><a href="/about">About</a></p>
+		<p><a href="/about" rel="external">About</a></p>
 		<ul>
-			<li><a href="/about#contact">Contact</a></li>
 			<li><a href="https://instagram.com/shoheihomeground" target="_blank">Instagram</a></li>
 			<li><a href="https://youtube.com/shoheihomeground" target="_blank">YouTube</a></li>
 			<li><a href="https://ohtani.fun" target="_blank">ohtani.fun</a></li>
@@ -50,7 +50,7 @@
 		font-weight: bold;
 	}
 
-	li > a {
+	li a {
 		@apply link-hover;
 	}
 </style>

@@ -6,7 +6,7 @@
 	<slot name="sub"></slot>
 
 	{#if link?.url}
-		<p class="xs:ml-auto">
+		<p class="ml-auto">
 			<a class="link with-icon" href={link.url}>
 				{link.label || 'View more'}
 				<Right/>

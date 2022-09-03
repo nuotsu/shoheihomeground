@@ -9,6 +9,21 @@ export default {
 			type: 'string',
 		},
 		{
+			name: 'logo',
+			type: 'object',
+			options: { columns: 2 },
+			fields: [
+				{
+					name: 'small',
+					type: 'image',
+				},
+				{
+					name: 'large',
+					type: 'image',
+				},
+			],
+		},
+		{
 			name: 'ogimage',
 			title: 'Social image',
 			type: 'image',

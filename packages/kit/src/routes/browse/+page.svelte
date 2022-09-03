@@ -1,9 +1,9 @@
 <Head
-	title="All Photos"
-	description="A collection of all photos. Filter by category and date."
+	title="Browse"
+	description="Browse through all photos of Shohei Ohtani. Filter by category and date."
 />
 
-<H1>All Photos</H1>
+<H1>Browse all photos</H1>
 
 <section class="section">
 	<FilterList/>

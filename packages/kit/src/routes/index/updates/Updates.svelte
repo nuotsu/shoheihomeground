@@ -1,7 +1,7 @@
 <article class="p-4 bg-white chiseled">
-	<header class="flex flex-wrap items-center justify-between gap-x-4">
+	<header class="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
 		<h2 class="h2 live-badge">
-			Updates
+			Website updates
 		</h2>
 
 		<UpdateFilter />

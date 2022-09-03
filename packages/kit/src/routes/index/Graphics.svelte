@@ -1,5 +1,7 @@
 <section id="graphics" class="section">
-	<H2 link={{ url: '/graphics' }}>Graphics</H2>
+	<H2 link={{ url: '/graphics' }}>
+		<a class="link-hover" href="/graphics">Graphics</a>
+	</H2>
 
 	<ul class="carousel mt-4 <xl:full-width <xl:px-4">
 		{#each graphics.slice(0, 10) as { _id, image }, i}

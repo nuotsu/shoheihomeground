@@ -14,7 +14,7 @@
 	</h2>
 
 	<p class="md:text-2xl <md:text-xl md:!mt-12">
-		<a class="action-2" href="/all-photos">
+		<a class="action-2" href="/browse">
 			View all photos
 			<Right/>
 		</a>

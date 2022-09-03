@@ -1,27 +1,31 @@
 <a class="inline-block h-[3em] {className}" href="/">
 	{#if small}
-		<img
-			src="/logo-icon.png"
+		<Img
+			image={logo.small}
 			alt="Shohei Home Ground logo"
-			width="240" height="240"
+			w={240} h={240}
 		/>
 
 	{:else}
-		<img
-			src="/logo.png"
+		<Img
+			image={logo.large}
 			alt="Shohei Home Ground logo"
-			width="600" height="130"
 		/>
 	{/if}
 </a>
 
 <style>
-	img {
+	a :global(img) {
 		width: auto;
 		height: 100%;
 	}
 </style>
 
 <script>
+	import Img from './Img.svelte'
+	import { page } from '$app/stores'
+
 	export let small, className
+
+	const { logo } = $page.data.sanity.site
 </script>

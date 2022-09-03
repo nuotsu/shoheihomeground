@@ -1,7 +1,12 @@
 <section class="section">
 	<H2 link={{ url: '/latest' }}>
-		Latest
-		<Date slot="sub" {date} />
+		<a class="link-hover" href="/latest">
+			Latest
+		</a>
+
+		<a class="link-hover" href="/{date}" slot="sub">
+			<Date {date} />
+		</a>
 	</H2>
 
 	<ul class="carousel mt-4 <xl:full-width <xl:px-4">
