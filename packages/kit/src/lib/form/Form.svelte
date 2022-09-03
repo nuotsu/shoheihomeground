@@ -22,6 +22,10 @@
 {/if}
 
 <script>
+	import { page } from '$app/stores'
+
+	console.log($page)
+
 	export let name
 
 	let submitted = false
@@ -29,7 +33,7 @@
 	function onSubmit({ target }) {
 		let formData = new FormData(target)
 
-		fetch('/', {
+		fetch($page.url.pathname, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'

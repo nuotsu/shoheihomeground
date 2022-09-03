@@ -1,13 +1,6 @@
-<Head
-	title="Contact"
-	description="Contact for photo inquiries to be taken at Angels Stadium."
-/>
-
-<H1>Contact</H1>
-
 <section class="section">
 	<header class="text-center">
-		<h2 class="h1">Contact form</h2>
+		<h2 class="h1">Contact</h2>
 		<p class="mt-2">Feel free to contact about inquiries, photograph requests, or ask a question!</p>
 	</header>
 
