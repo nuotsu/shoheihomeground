@@ -14,6 +14,14 @@
 			{#if date}
 				<p class="text-sm"><Date {date} /></p>
 			{/if}
+
+			<p class="grid gap-4 mt-4">
+				<a class="action" href={urlFor(image).url()} target="_blank">
+					Download
+				</a>
+
+				<ShareOrCopy text="{origin + pathname}?id={_id}" />
+			</p>
 		</figcaption>
 	</figure>
 </div>
@@ -31,11 +39,20 @@
 
 		@apply shadow-xl;
 	}
+
+	p {
+		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	}
 </style>
 
 <script>
 	import Img from '$lib/Img.svelte'
 	import Date from '$lib/Date.svelte'
+	import ShareOrCopy from '$lib/ShareOrCopy.svelte'
+	import { urlFor } from '$utils/sanity'
+	import { page } from '$app/stores'
 
-	export let image, title, description, date
+	export let _id, image, title, description, date
+
+	const { origin, pathname } = $page.url
 </script>

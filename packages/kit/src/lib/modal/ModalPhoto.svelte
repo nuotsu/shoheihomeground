@@ -19,7 +19,7 @@
 			Download
 		</a>
 
-		<ShareOrCopy text="{$page.url.href}?key={photo._key}" />
+		<ShareOrCopy text="{origin + pathname}?key={photo._key}" />
 	</p>
 </figure>
 
@@ -40,12 +40,12 @@
 		max-width: max-content;
 	}
 
-	dt {
-		text-align: right;
-	}
+	dt { text-align: right; }
 
-	dd {
-		font-weight: bold;
+	dd { font-weight: bold; }
+
+	p {
+		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 	}
 </style>
 
@@ -57,4 +57,6 @@
 	import { page } from '$app/stores'
 
 	export let photo, category, set, date
+
+	const { origin, pathname } = $page.url
 </script>
