@@ -1,6 +1,6 @@
 <ul class="root <md:flex-col">
 	<li>
-		<p><a href="/latest">Latest</a></p>
+		<p>Recents</p>
 		<ul>
 			{#each dates.slice(0, 4) as date}
 				<li><a href="/{date}"><Date {date} /></a></li>

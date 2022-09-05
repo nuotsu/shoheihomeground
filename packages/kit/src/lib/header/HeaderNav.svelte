@@ -1,8 +1,8 @@
-<ul class="root grow flex justify-end gap-4" class:closed={!$open} style:grid-area="nav">
+<ul class="root grow flex flex-wrap justify-end gap-y-2 gap-x-4" class:closed={!$open} style:grid-area="nav">
 	<li><a href="/browse">Browse</a></li>
 
 	<li>
-		<Menu title="Recent Photos" link="/latest">
+		<Menu title="Recents">
 			<DateNav/>
 		</Menu>
 	</li>
@@ -44,7 +44,7 @@
 	}
 
 	.root > li {
-		text-align: center;
+		@apply md:text-center;
 	}
 
 	.root > li > a {

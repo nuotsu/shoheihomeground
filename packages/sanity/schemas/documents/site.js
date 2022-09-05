@@ -14,11 +14,11 @@ export default {
 			options: { columns: 2 },
 			fields: [
 				{
-					name: 'small',
+					name: 'large',
 					type: 'image',
 				},
 				{
-					name: 'large',
+					name: 'small',
 					type: 'image',
 				},
 			],
