@@ -1,7 +1,7 @@
 {#if !!image?.asset}
 	<a class="highlight" href="/{date}/{category.code}/{num(set)}">
 		<figure>
-			<Img {image} w={300} h={300} />
+			<Img {image} w={200} h={200} />
 
 			<figcaption class="glass">
 				<Date {date} options={{ month: 'short', day: 'numeric' }} />

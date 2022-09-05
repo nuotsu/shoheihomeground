@@ -1,31 +1,24 @@
-<div>
-	<a href="/">
-		<picture>
-			<source
-				srcset={urlFor(small).url()}
-				media="(max-width: 767px)"
-			/>
+<a href="/">
+	<picture>
+		<source
+			srcset={urlFor(small).url()}
+			media="(max-width: 767px)"
+		/>
 
-			<img
-				src={urlFor(large).url()}
-				alt="{site.title} logo"
-				{...desktop}
-			/>
-		</picture>
-	</a>
-</div>
+		<img
+			src={urlFor(large).url()}
+			alt="{site.title} logo"
+			{...desktop}
+		/>
+	</picture>
+</a>
 
 <style>
-	div {
-		grid-area: top;
-		display: grid;
-		place-content: center;
-
-		@apply <md:text-center;
-	}
-
 	a {
 		display: block;
+		margin-right: auto;
+
+		@apply <md:ml-auto;
 	}
 
 	picture :global(img) {
@@ -41,8 +34,6 @@
 	import { urlFor } from '$utils/sanity'
 	import { getImageDimensions } from '@sanity/asset-utils'
 	import { page } from '$app/stores'
-
-	console.log($page.data.sanity.site)
 
 	const { site } = $page.data.sanity
 	const { small, large } = site.logo

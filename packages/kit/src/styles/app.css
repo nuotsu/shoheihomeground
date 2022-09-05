@@ -135,6 +135,8 @@
 		@apply bg-accent-2;
 	}
 
+	.live-badge.red::before { @apply bg-accent; }
+
 	@keyframes pulse {
 		25%, 75% { opacity: 1; }
 		50% { opacity: 0.1; }

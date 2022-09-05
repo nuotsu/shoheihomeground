@@ -72,7 +72,7 @@
 
 	.dates {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(16ch, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(12ch, 1fr));
 		gap: 0 2rem;
 	}
 </style>
