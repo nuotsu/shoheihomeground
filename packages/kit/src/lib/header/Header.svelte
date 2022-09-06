@@ -1,5 +1,5 @@
 <header class="glass sticky top-0 z-10 hover:drop-shadow-lg transition-all" class:open={$open} bind:clientHeight>
-	<nav class="relative max-w-screen-xl mx-auto grid md:gap-x-4 items-center px-4 <md:py-2">
+	<nav class="relative max-w-screen-xl mx-auto grid md:gap-x-4 items-center px-4">
 		<Logo/>
 		<Toggle/>
 		<HeaderNav/>
@@ -11,7 +11,7 @@
 	@screen md {
 		nav {
 			grid-template-areas: 'top nav acc';
-			grid-template-columns: minmax(275px, auto) auto auto;
+			grid-template-columns: auto 1fr auto;
 		}
 	}
 

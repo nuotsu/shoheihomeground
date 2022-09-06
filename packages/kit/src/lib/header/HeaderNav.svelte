@@ -1,4 +1,4 @@
-<ul class="root grow flex flex-wrap justify-end gap-y-2 gap-x-4" class:closed={!$open} style:grid-area="nav">
+<ul class="root grow flex flex-wraps justify-end gap-y-2 gap-x-4" class:closed={!$open} style:grid-area="nav">
 	<li><a href="/browse">Browse</a></li>
 
 	<li>
@@ -27,7 +27,7 @@
 		</Menu>
 	</li>
 	<li><a href="/#stats-updates">Stats & Updates</a></li>
-	<li><a href="/about" rel="external">About</a></li>
+	<li><a href="/about">About</a></li>
 </ul>
 
 <style>

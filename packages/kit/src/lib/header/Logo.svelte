@@ -2,7 +2,7 @@
 	<picture>
 		<source
 			srcset={urlFor(small).url()}
-			media="(max-width: 767px)"
+			media="(max-width: 1080px)"
 		/>
 
 		<img
@@ -25,8 +25,17 @@
 		max-height: 4em;
 		width: auto;
 		overflow: hidden;
+	}
 
-		@apply <md:rounded-full <md:max-h-[3em];
+	@media (max-width: 1080px) {
+		a {
+			padding-block: 0.5rem;
+		}
+
+		picture :global(img) {
+			max-height: 3em;
+			@apply rounded-full;
+		}
 	}
 </style>
 

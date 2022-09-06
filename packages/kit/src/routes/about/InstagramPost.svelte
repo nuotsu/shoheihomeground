@@ -1,4 +1,5 @@
 {#if id}
+<div>
 	<blockquote
 		class="instagram-media"
 		data-instgrm-captioned
@@ -74,6 +75,7 @@
 			</p>
 		</div>
 	</blockquote>
+</div>
 {/if}
 
 <script>

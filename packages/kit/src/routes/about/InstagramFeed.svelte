@@ -8,7 +8,7 @@
 		</p>
 	</header>
 
-	<div class="grid md:grid-cols-3 gap-4 mt-8 <lg:hidden">
+	<div bind:this={elem} class="grid md:grid-cols-3 gap-4 mt-8 <lg:hidden">
 		{#each instagram as post}
 			<InstagramPost {...post} />
 		{/each}
@@ -18,6 +18,20 @@
 <script>
 	import InstagramPost from './InstagramPost.svelte'
 	import { page } from '$app/stores'
+	import { onMount } from 'svelte'
 
 	const { instagram } = $page.data.pg
+
+	let elem
+
+	onMount(() => {
+		const script = document.createElement('script')
+		script.src = '//www.instagram.com/embed.js'
+		script.defer = true
+		elem.appendChild(script)
+
+		return () => {
+			elem.removeChild(script)
+		}
+	})
 </script>

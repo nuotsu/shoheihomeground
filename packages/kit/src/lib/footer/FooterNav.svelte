@@ -28,7 +28,7 @@
 	</li>
 
 	<li>
-		<p><a href="/about" rel="external">About</a></p>
+		<p><a href="/about">About</a></p>
 		<ul>
 			<li><a href="https://instagram.com/shoheihomeground" target="_blank">Instagram</a></li>
 			<li><a href="https://youtube.com/shoheihomeground" target="_blank">YouTube</a></li>
