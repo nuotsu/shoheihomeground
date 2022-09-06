@@ -8,7 +8,6 @@
 <style>
 	a :global(img) {
 		width: auto;
-		height: 100%;
 	}
 </style>
 
