@@ -103,6 +103,7 @@ export const photoset = {
 		{
 			name: 'thumbnail',
 			type: 'number',
+			description: 'First photo = 1, second = 2, ...',
 			validation: Rule => Rule.min(1),
 			initialValue: 1,
 		},

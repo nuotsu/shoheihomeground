@@ -5,11 +5,14 @@
 				{#if photos.length > 1}
 					<button style:grid-column="{i+1} / span 1" />
 				{/if}
-				<Img {image} w={400} h={400} loading="eager" />
+
+				<div class="photo" class:thumbnail={i === t}>
+					<Img {image} w={400} h={400} loading="eager" />
+				</div>
 			{/each}
 		</figure>
 
-		<div>
+		<div class="txt">
 			{#if featured}
 				<p class="text-right">
 					<small>&starf; Featured</small>
@@ -26,9 +29,9 @@
 
 <style>
 	figure,
-	figure :global(img),
 	button,
-	div {
+	.photo,
+	.txt {
 		grid-column: 1 / -1;
 		grid-row: 1 / -1;
 	}
@@ -37,8 +40,12 @@
 		grid-template-columns: repeat(var(--col, 1), 1fr);
 	}
 
-	figure :global(img) {
+	.photo :global(img) {
 		width: 100%;
+	}
+
+	figure:not(:hover) .photo.thumbnail {
+		z-index: 1;
 	}
 
 	button {
@@ -47,11 +54,12 @@
 		grid-row: 1 / -1;
 	}
 
-	button:hover + :global(img) { position: relative; }
+	button:hover + .photo { position: relative; }
 
-	div {
+	.txt {
 		pointer-events: none;
 		position: relative;
+		z-index: 1;
 		display: flex;
 		flex-direction: column;
 		height: 100%;
@@ -68,5 +76,5 @@
 	import Img from '$lib/Img.svelte'
 	import Set, { num } from './Set.svelte'
 
-	export let date, category, photos, featured, set
+	export let date, category, photos, featured, set, t
 </script>
