@@ -5,7 +5,7 @@
 		<p lang="ja">日本語でのお問い合わせも可能です！</p>
 	</header>
 
-	<Form className="form max-w-lg mx-auto mt-8" name="contact" action="/about/thank-you">
+	<Form className="form max-w-lg mx-auto mt-8" name="contact">
 		<Input name="name" label="Name" placeholder="Shohei Ohtani" required />
 		<Input name="email" label="Email" type="email" placeholder="shotime@angels.com" required />
 		<Input name="tel" label="Tel" placeholder="(000) 000-0000" />
