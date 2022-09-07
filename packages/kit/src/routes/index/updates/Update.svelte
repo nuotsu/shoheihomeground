@@ -9,7 +9,7 @@
 		{:else if type?._type == 'graphic'}
 			<p>Added graphic: <strong>{type.title}</strong>.</p>
 		{:else}
-			<p>{content}</p>
+			<p>{@html content}</p>
 		{/if}
 	</a>
 </li>
