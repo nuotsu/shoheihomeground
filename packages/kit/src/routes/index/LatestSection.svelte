@@ -32,7 +32,11 @@
 
 	const size = 150
 
-	const { date, categories } = $page.data.sanity.photos[0]
+	// ignore giveaway only photos
+	const { date, categories } = $page.data.sanity.photos.filter(p => !(
+		p.categories.length === 1 &&
+		p.categories.map(c => c.category.name).includes('Giveaway')
+	))[0]
 
 	const photos = categories
 		.flatMap(c => c.photosets)
