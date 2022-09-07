@@ -29,6 +29,28 @@ export default {
 			type: 'image',
 		},
 		{
+			name: 'announcement',
+			type: 'object',
+			options: { collapsible: true, collapsed: true },
+			fields: [
+				{
+					name: 'enabled',
+					type: 'boolean',
+				},
+				{
+					name: 'content',
+					type: 'text',
+					rows: 2,
+				},
+				{
+					name: 'url',
+					title: 'URL',
+					type: 'string',
+					placeholder: '/about',
+				},
+			],
+		},
+		{
 			name: 'ad',
 			title: 'Ad banner',
 			type: 'object',

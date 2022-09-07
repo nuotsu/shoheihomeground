@@ -10,6 +10,7 @@
 	{/if}
 </svelte:head>
 
+<Announcement/>
 <Header/>
 
 <main>
@@ -19,6 +20,7 @@
 <Footer/>
 
 <script>
+	import Announcement from '$lib/header/Announcement.svelte'
 	import Header from '$lib/header/Header.svelte'
 	import Footer from '$lib/footer/Footer.svelte'
 	import { dev } from '$app/env'
