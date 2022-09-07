@@ -21,6 +21,7 @@ export async function GET() {
 		page('/browse', 0.9),
 		page('/graphics', 0.9),
 		page('/latest', 0.9),
+		page('/featured', 0.9),
 		page('/about', 0.9),
 
 		data.categories.map(c => page(`/${ c }`, 0.8)).join('\n'),

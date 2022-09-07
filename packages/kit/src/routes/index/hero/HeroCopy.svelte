@@ -13,9 +13,13 @@
 		taken at Angels Stadium.
 	</h2>
 
-	<p class="md:text-2xl <md:text-xl md:!mt-12">
+	<p class="flex flex-wrap items-center gap-4 md:text-xl <md:text-xl md:!mt-12 <md:justify-center">
 		<a class="action-2" href="/browse">
 			Browse all photos
+			<Right/>
+		</a>
+		<a class="action-2" href="/featured">
+			Featured photos
 			<Right/>
 		</a>
 	</p>

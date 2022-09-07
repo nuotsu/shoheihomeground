@@ -1,4 +1,4 @@
-<div class="grid pointer-events-none">
+<div class="grid pointer-events-none self-stretch mx-auto <md:max-w-[400px]">
 	{#each heroPhotos as image, i}
 		<figure class="<md:chiseled text-[25vw]" class:active={active === i}>
 			<Img {image} w={1000} h={800} />
@@ -7,10 +7,6 @@
 </div>
 
 <style>
-	div {
-		align-self: stretch;
-	}
-
 	figure {
 		grid-column: 1 / -1;
 		grid-row: 1 / -1;
