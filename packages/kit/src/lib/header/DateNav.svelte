@@ -49,7 +49,7 @@
 </style>
 
 <script>
-	import { groupBy } from 'lodash'
+	import { groupBy } from 'lodash-es'
 	import Date, { format } from '$lib/Date.svelte'
 	import Right from '$icon/Right.svelte'
 	import { page } from '$app/stores'
