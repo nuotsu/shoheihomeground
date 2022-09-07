@@ -2,16 +2,16 @@
 
 <H1>{pg.title}</H1>
 
+<ContactForm/>
 <FeaturedVideos/>
-<Marquee/>
 <InstagramFeed/>
 <OhtaniFunAd/>
 
 <script>
 	import Head from '$lib/Head.svelte'
 	import H1 from '$lib/H1.svelte'
+	import ContactForm from './ContactForm.svelte'
 	import FeaturedVideos from './FeaturedVideos.svelte'
-	import Marquee from '$lib/Marquee.svelte'
 	import InstagramFeed from './InstagramFeed.svelte'
 	import OhtaniFunAd from '$lib/OhtaniFunAd.svelte'
 

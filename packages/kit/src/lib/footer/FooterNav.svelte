@@ -32,6 +32,7 @@
 	<li>
 		<p><a href="/about">About</a></p>
 		<ul>
+			<li><a href="/about#contact">Contact</a></li>
 			<li><a href="https://instagram.com/shoheihomeground" target="_blank">Instagram</a></li>
 			<li><a href="https://youtube.com/shoheihomeground" target="_blank">YouTube</a></li>
 			<li><a href="https://ohtani.fun" target="_blank">ohtani.fun</a></li>
