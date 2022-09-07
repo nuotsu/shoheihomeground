@@ -7,17 +7,17 @@ import {
 	PUBLIC_SANITY_TOKEN,
 } from '$env/static/public'
 
-const client = sanityClient({
+const client = (apiVersion = '2022-08-01') => sanityClient({
 	projectId: PUBLIC_SANITY_ID,
 	dataset: PUBLIC_SANITY_DATASET,
-	apiVersion: '2022-08-01',
+	apiVersion,
 	useCdn: true,
 	token: PUBLIC_SANITY_TOKEN,
 })
 
 export default client
 
-const builder = imageUrlBuilder(client)
+const builder = imageUrlBuilder(client())
 
 export function urlFor(source) {
 	return builder.image(source)

@@ -9,7 +9,7 @@
 				{category.name}
 
 				{#if featured}
-					&starf;
+					&star;
 				{/if}
 			</figcaption>
 		</figure>

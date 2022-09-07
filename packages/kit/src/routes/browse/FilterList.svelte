@@ -8,18 +8,14 @@
 
 	<form bind:this={form} class="flex flex-wrap gap-y-4 gap-x-12 mt-4" on:change={onChange}>
 		<fieldset>
-			<legend class="font-bold">Tags</legend>
-			<div>
+			<legend class="font-bold">By category</legend>
+
+			<div class="columns-2 gap-8">
 				<label>
 					<input name="featured" bind:checked={$featured} type="checkbox" />
-					&starf; Featured
+					&star; Featured
 				</label>
-			</div>
-		</fieldset>
 
-		<fieldset>
-			<legend class="font-bold">By category</legend>
-			<div class="columns-2 gap-8">
 				{#each categories as { code, name }}
 					{@const disabled = !$available_categories.includes(code)}
 

@@ -3,7 +3,7 @@ import groq from 'groq'
 
 export async function load({ params }) {
 	return {
-		photos: await client.fetch(groq`
+		photos: await client().fetch(groq`
 			*[_type == 'photos' && date == $date][0]{
 				date,
 				categories[]{

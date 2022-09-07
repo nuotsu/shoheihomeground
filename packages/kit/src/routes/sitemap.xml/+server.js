@@ -5,7 +5,7 @@ import { toXML } from 'jstoxml'
 const BASE = 'https://shoheihomeground.com'
 
 export async function GET() {
-	const data = await client.fetch(groq`{
+	const data = await client().fetch(groq`{
 		'categories': *[_type == 'category'].code,
 		'dates': *[_type == 'photos']{
 			date,

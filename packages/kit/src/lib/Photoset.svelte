@@ -15,7 +15,7 @@
 		<div class="txt">
 			{#if featured}
 				<p class="text-right">
-					<small>&starf; Featured</small>
+					<small>&star; Featured</small>
 				</p>
 			{/if}
 

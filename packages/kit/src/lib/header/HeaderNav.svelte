@@ -10,6 +10,8 @@
 	<li>
 		<Menu title="Categories">
 			<ul class="columns-2 gap-8">
+				<li><a href="/featured">&star; Featured</a></li>
+
 				{#each categories as { code, name }}
 					<li><a href="/{code}">{name}</a></li>
 				{/each}

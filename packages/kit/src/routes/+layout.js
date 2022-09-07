@@ -4,7 +4,7 @@ import { live } from '$data/groq'
 
 export async function load() {
 	return {
-		sanity: await client.fetch(groq`{
+		sanity: await client().fetch(groq`{
 			'site': *[_type == 'site' && ${ live }][0],
 			'photos': *[_type == 'photos' && ${ live }]|order(date desc){
 				date,
