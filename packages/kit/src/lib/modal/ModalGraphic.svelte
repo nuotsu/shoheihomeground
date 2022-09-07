@@ -8,7 +8,7 @@
 			<h2 class="h2">{title}</h2>
 
 			{#if description}
-				<p>{description}</p>
+				<p>{@html nl2br(description)}</p>
 			{/if}
 
 			{#if date}
@@ -50,6 +50,7 @@
 	import Date from '$lib/Date.svelte'
 	import ShareOrCopy from '$lib/ShareOrCopy.svelte'
 	import { urlFor } from '$utils/sanity'
+	import nl2br from '$utils/nl2br'
 	import { page } from '$app/stores'
 
 	export let _id, image, title, description, date

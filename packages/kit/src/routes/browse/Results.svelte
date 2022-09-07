@@ -3,7 +3,7 @@
 </p>
 
 <div class="<md:full-width mt-4">
-	{#each filtered.slice(0, $max) as image (image._key)}
+	{#each ($shuffled ? shuffle(filtered) : filtered).slice(0, $max) as image (image._key)}
 		<PhotosetMini {...image} />
 	{/each}
 
@@ -23,6 +23,7 @@
 </style>
 
 <script>
+	import { shuffle } from 'lodash'
 	import PhotosetMini from './PhotosetMini.svelte'
 
 	export let photos, points
@@ -54,6 +55,7 @@
 	import { writable } from 'svelte/store'
 
 	export const featured = writable(false)
+	export const shuffled = writable(false)
 
 	export const selected_categories = writable([])
 	export const selected_dates = writable([])

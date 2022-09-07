@@ -7,39 +7,30 @@
 	</summary>
 
 	<form bind:this={form} class="flex flex-wrap gap-y-4 gap-x-12 mt-4" on:change={onChange}>
-		<fieldset>
-			<legend class="font-bold">By category</legend>
+		<Fieldset title="Tags">
+			<Filter name="featured" bind:checked={$featured}>&star; Featured</Filter>
+			<Filter name="shuffled" bind:checked={$shuffled}>Shuffled</Filter>
+		</Fieldset>
 
-			<div class="columns-2 gap-8">
-				<label>
-					<input name="featured" bind:checked={$featured} type="checkbox" />
-					&star; Featured
-				</label>
+		<Fieldset title="By category" contentClass="columns-2 gap-8">
+			{#each categories as { code, name }}
+				{@const disabled = !$available_categories.includes(code)}
 
-				{#each categories as { code, name }}
-					{@const disabled = !$available_categories.includes(code)}
+				<Filter name="categories" value={code} {disabled}>
+					{name}
+				</Filter>
+			{/each}
+		</Fieldset>
 
-					<label class:disabled>
-						<input name="categories" value={code} type="checkbox" {disabled} />
-						{name}
-					</label>
-				{/each}
-			</div>
-		</fieldset>
+		<Fieldset title="By date" className="grow" contentClass="dates">
+			{#each dates as date}
+				{@const disabled = $available_dates.includes(date)}
 
-		<fieldset class="grow">
-			<legend class="font-bold">By date</legend>
-			<div class="dates">
-				{#each dates as date}
-					{@const disabled = $available_dates.includes(date)}
-
-					<label class:disabled>
-						<input name="dates" value={date} checked={false} type="checkbox" {disabled} />
-						{format(date)}
-					</label>
-				{/each}
-			</div>
-		</fieldset>
+				<Filter name="dates" value={date} {disabled}>
+					{format(date)}
+				</Filter>
+			{/each}
+		</Fieldset>
 	</form>
 </details>
 
@@ -64,19 +55,7 @@
 		}
 	}
 
-	label {
-		user-select: none;
-		display: flex;
-		align-items: center;
-		gap: 0.5ch;
-	}
-
-	.disabled {
-		text-decoration: line-through;
-		@apply text-ink/50;
-	}
-
-	.dates {
+	form :global(.dates) {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(12ch, 1fr));
 		gap: 0 2rem;
@@ -85,15 +64,17 @@
 
 <script>
 	import Right from '$icon/Right.svelte'
+	import Fieldset from './Fieldset.svelte'
+	import Filter from './Filter.svelte'
 	import { format } from '$lib/Date.svelte'
-	import { page } from '$app/stores'
 	import {
-		featured,
+		featured, shuffled,
 		selected_categories, selected_dates,
 		available_categories, available_dates,
 		max, MAX_INC
 	} from './Results.svelte'
 	import { onMount } from 'svelte'
+	import { page } from '$app/stores'
 
 	const { categories, photos } = $page.data.sanity
 	const dates = photos.map(p => p.date)

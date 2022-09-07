@@ -12,6 +12,8 @@
 	<li>
 		<p><a href="/#categories">Categories</a></p>
 		<ul class="columns-2 gap-x-8">
+			<li><a href="/featured">&star; Featured</a></li>
+
 			{#each categories as { code, name }}
 				<li><a href="/{code}">{name}</a></li>
 			{/each}
