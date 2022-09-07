@@ -38,6 +38,7 @@
 				})
 			)
 		)
+		.filter(p => !$featured || p.featured === $featured)
 
 	$: $available_dates = points
 		.filter(({ categories }) => $selected_categories.length && categories.every(c => !$selected_categories.includes(c)))
@@ -51,6 +52,8 @@
 
 <script context="module">
 	import { writable } from 'svelte/store'
+
+	export const featured = writable(false)
 
 	export const selected_categories = writable([])
 	export const selected_dates = writable([])

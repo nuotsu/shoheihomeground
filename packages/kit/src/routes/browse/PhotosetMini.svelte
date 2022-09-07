@@ -7,6 +7,10 @@
 				<Date {date} options={{ month: 'short', day: 'numeric' }} />
 				—
 				{category.name}
+
+				{#if featured}
+					&starf;
+				{/if}
 			</figcaption>
 		</figure>
 	</a>
@@ -46,7 +50,7 @@
 	import Img from '$lib/Img.svelte'
 	import { num } from '$lib/Set.svelte'
 
-	export let date, category, photos, thumbnail, set
+	export let date, category, photos, thumbnail, set, featured
 
 	const image = photos[thumbnail-1]
 </script>
