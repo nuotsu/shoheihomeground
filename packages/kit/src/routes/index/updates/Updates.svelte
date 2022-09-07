@@ -21,5 +21,5 @@
 
 	const { updates } = $page.data
 
-	$: filtered = updates.filter(u => !$type || u.type._type === $type)
+	$: filtered = updates.filter(u => !$type || u.type?._type === $type)
 </script>

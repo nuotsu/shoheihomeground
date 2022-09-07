@@ -4,9 +4,9 @@
 			{format(date, { month: 'numeric', day: 'numeric' })}
 		</time>
 
-		{#if type._type == 'photos'}
+		{#if type?._type == 'photos'}
 			<p>Added photos for <strong class="inline-block"><Date {date} /></strong>.</p>
-		{:else if type._type == 'graphic'}
+		{:else if type?._type == 'graphic'}
 			<p>Added graphic: <strong>{type.title}</strong>.</p>
 		{:else}
 			<p>{content}</p>
@@ -23,7 +23,7 @@
 		grid-template-columns: 2.5ch 1fr;
 	}
 
-	a:hover p {
+	a[href]:hover p {
 		text-decoration: underline;
 	}
 </style>
@@ -35,8 +35,8 @@
 
 	function resolveLink({ date, type, link }) {
 		return (
-			type._type == 'photos' ? `/${ date }` :
-			type._type == 'graphic' ? `/graphics#${ type._id }` :
+			type?._type == 'photos' ? `/${ date }` :
+			type?._type == 'graphic' ? `/graphics#${ type._id }` :
 			link
 		)
 	}

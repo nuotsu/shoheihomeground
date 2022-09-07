@@ -16,7 +16,7 @@
 
 	const { updates } = $page.data
 
-	const types = [...new Set(updates.map(u => u.type._type || 'custom'))]
+	const types = [...new Set(updates.map(u => u.type?._type || 'custom'))]
 </script>
 
 <script context="module">
