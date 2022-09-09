@@ -93,6 +93,11 @@ export const photoset = {
 	type: 'object',
 	fields: [
 		{
+			name: 'title',
+			type: 'string',
+			placeholder: 'Photoset #',
+		},
+		{
 			name: 'photos',
 			type: 'array',
 			of: [{ type: 'image' }],
@@ -114,14 +119,14 @@ export const photoset = {
 	],
 	preview: {
 		select: {
+			title: 'title',
 			photos: 'photos',
 			featured: 'featured',
 			media: 'photos.0',
 		},
 		prepare: ({ photos, featured, ...selection }) => {
 			return ({
-				title: count(Object.keys(photos), 'photos'),
-				subtitle: featured && 'Featured',
+				subtitle: [count(Object.keys(photos), 'photos'), featured && 'Featured'].filter(Boolean).join(' / '),
 				...selection,
 			})
 		}

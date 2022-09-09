@@ -7,6 +7,7 @@
 
 	<p slot="sub">
 		Photoset {set}
+		{#if title}"{title}"{/if}
 		—
 		<a class="link-hover" href="/{date}">
 			<Date {date} />
@@ -53,7 +54,7 @@
 	const { category, categories } = data
 	const { date, set } = $page.params
 
-	const { photos } = categories
+	const { photos, title } = categories
 		.find(c => c.category.code === category.code)
 		.photosets[set - 1]
 
