@@ -1,3 +1,7 @@
+<svelte:head>
+	<script src="//www.instagram.com/embed.js" />
+</svelte:head>
+
 <section class="section">
 	<header class="text-center">
 		<h2 class="h1">Follow us on Instagram</h2>
@@ -25,13 +29,6 @@
 	let elem
 
 	onMount(() => {
-		const script = document.createElement('script')
-		script.src = '//www.instagram.com/embed.js'
-		script.defer = true
-		elem.appendChild(script)
-
-		return () => {
-			elem.removeChild(script)
-		}
+		instgrm.Embeds.process()
 	})
 </script>
