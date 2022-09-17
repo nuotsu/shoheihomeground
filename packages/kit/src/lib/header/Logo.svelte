@@ -34,7 +34,6 @@
 
 		picture :global(img) {
 			max-height: 3em;
-			@apply rounded-full;
 		}
 	}
 </style>
