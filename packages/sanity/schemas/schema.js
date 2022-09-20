@@ -11,6 +11,8 @@ import category from './documents/category'
 import { photos, photoCategory, photoset } from './documents/photos'
 import graphic from './documents/graphic'
 
+import blogPost from './documents/blog.post'
+
 // objects
 import instagram from './objects/instagram'
 import seo from './objects/seo'
@@ -28,6 +30,8 @@ export default createSchema({
 		category,
 		photos, photoCategory, photoset,
 		graphic,
+
+		blogPost,
 
 		// objects
 		instagram,

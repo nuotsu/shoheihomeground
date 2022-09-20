@@ -18,4 +18,8 @@ export default () => S.list()
 		orderableList({ title: 'Categories', type: 'category', icon: Icon('🏷') }),
 		list('Photos', 'photos'),
 		list('Graphics', 'graphic'),
+
+		S.divider(),
+
+		list('Blog posts', 'blog.post').icon(Icon('📝')),
 	])
