@@ -1,4 +1,4 @@
-<a class="block max-w-[300px] mx-auto" href="/">
+<a class="block max-w-[250px] mx-auto" href="/">
 	<Img
 		image={logo.large}
 		alt="Shohei Home Ground logo"
@@ -8,6 +8,12 @@
 <style>
 	a :global(img) {
 		width: auto;
+	}
+
+	@screen <md {
+		a {
+			max-width: 200px;
+		}
 	}
 </style>
 

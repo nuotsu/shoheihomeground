@@ -29,11 +29,11 @@
 
 	@media (max-width: 1080px) {
 		a {
-			padding-block: 0.5rem;
+			padding-block: 0.8rem;
 		}
 
 		picture :global(img) {
-			max-height: 3em;
+			max-height: 2.5em;
 		}
 	}
 </style>
