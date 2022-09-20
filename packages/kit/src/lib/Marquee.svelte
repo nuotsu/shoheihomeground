@@ -1,5 +1,5 @@
 <Marquee duration="120s">
-	<p class="font-digital">
+	<p class="font-digital" aria-hidden="true">
 		{#each new Array(10) as _}
 			<span>{site.title} ⚾️ {site.title} 🏟</span>
 		{/each}

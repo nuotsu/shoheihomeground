@@ -14,11 +14,11 @@
 	</h2>
 
 	<p class="flex flex-wrap items-center gap-4 md:text-xl <md:text-xl md:!mt-12 <md:justify-center">
-		<a class="action-2" href="/browse">
+		<a class="action-accent" href="/browse">
 			Browse all photos
 			<Right/>
 		</a>
-		<a class="action-2" href="/featured">
+		<a class="action-on-dark" href="/featured">
 			Featured photos
 			<Right/>
 		</a>

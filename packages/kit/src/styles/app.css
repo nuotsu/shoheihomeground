@@ -63,7 +63,6 @@
 	.action {
 		position: relative;
 		padding: 0.5em 1em;
-		box-shadow: 0 1em 1em #fff;
 
 		@apply with-icon border border-current chiseled hover:bg-ink/10 transition-colors;
 	}
@@ -87,8 +86,12 @@
 		border-bottom: var(--size) solid;
 	}
 
-	.action-2 {
+	.action-on-dark {
 		@apply action hover:bg-white/10;
+	}
+
+	.action-accent {
+		@apply action bg-gradient-to-br from-accent to-red-300;
 	}
 
 	.input {
